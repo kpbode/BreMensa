@@ -7,13 +7,17 @@
 //
 
 #import "KPBAppDelegate.h"
+#import "KPBPickMensaViewController.h"
 
 @implementation KPBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    KPBPickMensaViewController *pickMensaViewController = [[KPBPickMensaViewController alloc] init];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:pickMensaViewController];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

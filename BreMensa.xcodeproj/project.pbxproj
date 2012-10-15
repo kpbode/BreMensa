@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB73F664162B181F00F5E310 /* KPBMealplanInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB73F663162B181F00F5E310 /* KPBMealplanInfoView.m */; };
 		CBE6E1151629B060003E550A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1141629B060003E550A /* UIKit.framework */; };
 		CBE6E1171629B060003E550A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1161629B060003E550A /* Foundation.framework */; };
 		CBE6E1191629B060003E550A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1181629B060003E550A /* CoreGraphics.framework */; };
@@ -21,6 +22,30 @@
 		CBE6E1351629B060003E550A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1161629B060003E550A /* Foundation.framework */; };
 		CBE6E13D1629B061003E550A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBE6E13B1629B061003E550A /* InfoPlist.strings */; };
 		CBE6E1401629B061003E550A /* BreMensaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E13F1629B061003E550A /* BreMensaTests.m */; };
+		CBE6E14F1629B1F0003E550A /* KPBPickMensaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E14E1629B1F0003E550A /* KPBPickMensaViewController.m */; };
+		CBE6E1511629B24F003E550A /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBE6E1501629B24F003E550A /* config.plist */; };
+		CBE6E1571629B41F003E550A /* KPBMensa.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1561629B41F003E550A /* KPBMensa.m */; };
+		CBE6E1701629B813003E550A /* PSTCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E15A1629B813003E550A /* PSTCollectionView.m */; };
+		CBE6E1711629B813003E550A /* PSTCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E15C1629B813003E550A /* PSTCollectionViewCell.m */; };
+		CBE6E1721629B813003E550A /* PSTCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E15F1629B813003E550A /* PSTCollectionViewController.m */; };
+		CBE6E1731629B813003E550A /* PSTCollectionViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1611629B813003E550A /* PSTCollectionViewData.m */; };
+		CBE6E1741629B813003E550A /* PSTCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1631629B813003E550A /* PSTCollectionViewFlowLayout.m */; };
+		CBE6E1751629B813003E550A /* PSTCollectionViewItemKey.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1651629B813003E550A /* PSTCollectionViewItemKey.m */; };
+		CBE6E1761629B813003E550A /* PSTCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1671629B813003E550A /* PSTCollectionViewLayout.m */; };
+		CBE6E1771629B813003E550A /* PSTGridLayoutInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1691629B813003E550A /* PSTGridLayoutInfo.m */; };
+		CBE6E1781629B813003E550A /* PSTGridLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E16B1629B813003E550A /* PSTGridLayoutItem.m */; };
+		CBE6E1791629B813003E550A /* PSTGridLayoutRow.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E16D1629B813003E550A /* PSTGridLayoutRow.m */; };
+		CBE6E17A1629B813003E550A /* PSTGridLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E16F1629B813003E550A /* PSTGridLayoutSection.m */; };
+		CBE6E17D1629B84D003E550A /* KPBMealplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E17C1629B84D003E550A /* KPBMealplanViewController.m */; };
+		CBE6E17F1629B95E003E550A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E17E1629B95E003E550A /* QuartzCore.framework */; };
+		CBE6E1821629BA18003E550A /* KPBMealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1811629BA18003E550A /* KPBMealCell.m */; };
+		CBE6E1891629D000003E550A /* KPBMealplanLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1881629D000003E550A /* KPBMealplanLayout.m */; };
+		CBE6E18C1629D33E003E550A /* KPBMealplanLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E18B1629D33E003E550A /* KPBMealplanLayoutSection.m */; };
+		CBE6E193162AD9E9003E550A /* KPBMenuHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E192162AD9E9003E550A /* KPBMenuHeaderCell.m */; };
+		CBE6E196162AE194003E550A /* KPBMealplan.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E195162AE194003E550A /* KPBMealplan.m */; };
+		CBE6E199162AE1A9003E550A /* KPBMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E198162AE1A9003E550A /* KPBMenu.m */; };
+		CBE6E19C162AE1B8003E550A /* KPBMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E19B162AE1B8003E550A /* KPBMeal.m */; };
+		CBE6E1A7162AE572003E550A /* KPBMensaDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1A6162AE572003E550A /* KPBMensaDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB73F662162B181F00F5E310 /* KPBMealplanInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanInfoView.h; sourceTree = "<group>"; };
+		CB73F663162B181F00F5E310 /* KPBMealplanInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplanInfoView.m; sourceTree = "<group>"; };
 		CBE6E1101629B060003E550A /* BreMensa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreMensa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE6E1141629B060003E550A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBE6E1161629B060003E550A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,6 +80,53 @@
 		CBE6E13C1629B061003E550A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBE6E13E1629B061003E550A /* BreMensaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BreMensaTests.h; sourceTree = "<group>"; };
 		CBE6E13F1629B061003E550A /* BreMensaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BreMensaTests.m; sourceTree = "<group>"; };
+		CBE6E14D1629B1F0003E550A /* KPBPickMensaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBPickMensaViewController.h; sourceTree = "<group>"; };
+		CBE6E14E1629B1F0003E550A /* KPBPickMensaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBPickMensaViewController.m; sourceTree = "<group>"; };
+		CBE6E1501629B24F003E550A /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		CBE6E1551629B41F003E550A /* KPBMensa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensa.h; sourceTree = "<group>"; };
+		CBE6E1561629B41F003E550A /* KPBMensa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensa.m; sourceTree = "<group>"; };
+		CBE6E1591629B813003E550A /* PSTCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionView.h; sourceTree = "<group>"; };
+		CBE6E15A1629B813003E550A /* PSTCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionView.m; sourceTree = "<group>"; };
+		CBE6E15B1629B813003E550A /* PSTCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewCell.h; sourceTree = "<group>"; };
+		CBE6E15C1629B813003E550A /* PSTCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewCell.m; sourceTree = "<group>"; };
+		CBE6E15D1629B813003E550A /* PSTCollectionViewCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewCommon.h; sourceTree = "<group>"; };
+		CBE6E15E1629B813003E550A /* PSTCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewController.h; sourceTree = "<group>"; };
+		CBE6E15F1629B813003E550A /* PSTCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewController.m; sourceTree = "<group>"; };
+		CBE6E1601629B813003E550A /* PSTCollectionViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewData.h; sourceTree = "<group>"; };
+		CBE6E1611629B813003E550A /* PSTCollectionViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewData.m; sourceTree = "<group>"; };
+		CBE6E1621629B813003E550A /* PSTCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		CBE6E1631629B813003E550A /* PSTCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		CBE6E1641629B813003E550A /* PSTCollectionViewItemKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewItemKey.h; sourceTree = "<group>"; };
+		CBE6E1651629B813003E550A /* PSTCollectionViewItemKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewItemKey.m; sourceTree = "<group>"; };
+		CBE6E1661629B813003E550A /* PSTCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewLayout.h; sourceTree = "<group>"; };
+		CBE6E1671629B813003E550A /* PSTCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewLayout.m; sourceTree = "<group>"; };
+		CBE6E1681629B813003E550A /* PSTGridLayoutInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutInfo.h; sourceTree = "<group>"; };
+		CBE6E1691629B813003E550A /* PSTGridLayoutInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutInfo.m; sourceTree = "<group>"; };
+		CBE6E16A1629B813003E550A /* PSTGridLayoutItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutItem.h; sourceTree = "<group>"; };
+		CBE6E16B1629B813003E550A /* PSTGridLayoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutItem.m; sourceTree = "<group>"; };
+		CBE6E16C1629B813003E550A /* PSTGridLayoutRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutRow.h; sourceTree = "<group>"; };
+		CBE6E16D1629B813003E550A /* PSTGridLayoutRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutRow.m; sourceTree = "<group>"; };
+		CBE6E16E1629B813003E550A /* PSTGridLayoutSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutSection.h; sourceTree = "<group>"; };
+		CBE6E16F1629B813003E550A /* PSTGridLayoutSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutSection.m; sourceTree = "<group>"; };
+		CBE6E17B1629B84D003E550A /* KPBMealplanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanViewController.h; sourceTree = "<group>"; };
+		CBE6E17C1629B84D003E550A /* KPBMealplanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplanViewController.m; sourceTree = "<group>"; };
+		CBE6E17E1629B95E003E550A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CBE6E1801629BA18003E550A /* KPBMealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealCell.h; sourceTree = "<group>"; };
+		CBE6E1811629BA18003E550A /* KPBMealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealCell.m; sourceTree = "<group>"; };
+		CBE6E1871629D000003E550A /* KPBMealplanLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanLayout.h; sourceTree = "<group>"; };
+		CBE6E1881629D000003E550A /* KPBMealplanLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplanLayout.m; sourceTree = "<group>"; };
+		CBE6E18A1629D33E003E550A /* KPBMealplanLayoutSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanLayoutSection.h; sourceTree = "<group>"; };
+		CBE6E18B1629D33E003E550A /* KPBMealplanLayoutSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplanLayoutSection.m; sourceTree = "<group>"; };
+		CBE6E191162AD9E8003E550A /* KPBMenuHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMenuHeaderCell.h; sourceTree = "<group>"; };
+		CBE6E192162AD9E9003E550A /* KPBMenuHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMenuHeaderCell.m; sourceTree = "<group>"; };
+		CBE6E194162AE194003E550A /* KPBMealplan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplan.h; sourceTree = "<group>"; };
+		CBE6E195162AE194003E550A /* KPBMealplan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplan.m; sourceTree = "<group>"; };
+		CBE6E197162AE1A8003E550A /* KPBMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMenu.h; sourceTree = "<group>"; };
+		CBE6E198162AE1A9003E550A /* KPBMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMenu.m; sourceTree = "<group>"; };
+		CBE6E19A162AE1B8003E550A /* KPBMeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMeal.h; sourceTree = "<group>"; };
+		CBE6E19B162AE1B8003E550A /* KPBMeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMeal.m; sourceTree = "<group>"; };
+		CBE6E1A5162AE572003E550A /* KPBMensaDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaDataManager.h; sourceTree = "<group>"; };
+		CBE6E1A6162AE572003E550A /* KPBMensaDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE6E17F1629B95E003E550A /* QuartzCore.framework in Frameworks */,
 				CBE6E1151629B060003E550A /* UIKit.framework in Frameworks */,
 				CBE6E1171629B060003E550A /* Foundation.framework in Frameworks */,
 				CBE6E1191629B060003E550A /* CoreGraphics.framework in Frameworks */,
@@ -82,6 +157,7 @@
 		CBE6E1051629B05F003E550A = {
 			isa = PBXGroup;
 			children = (
+				CBE6E1581629B813003E550A /* PSTCollectionView */,
 				CBE6E11A1629B060003E550A /* BreMensa */,
 				CBE6E1381629B060003E550A /* BreMensaTests */,
 				CBE6E1131629B060003E550A /* Frameworks */,
@@ -101,6 +177,7 @@
 		CBE6E1131629B060003E550A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBE6E17E1629B95E003E550A /* QuartzCore.framework */,
 				CBE6E1141629B060003E550A /* UIKit.framework */,
 				CBE6E1161629B060003E550A /* Foundation.framework */,
 				CBE6E1181629B060003E550A /* CoreGraphics.framework */,
@@ -112,9 +189,15 @@
 		CBE6E11A1629B060003E550A /* BreMensa */ = {
 			isa = PBXGroup;
 			children = (
+				CBE6E1A2162AE496003E550A /* Model */,
+				CBE6E1A4162AE4D7003E550A /* View */,
+				CBE6E1A1162AE48B003E550A /* Controller */,
+				CBE6E1A3162AE49D003E550A /* Resources */,
 				CBE6E1231629B060003E550A /* KPBAppDelegate.h */,
 				CBE6E1241629B060003E550A /* KPBAppDelegate.m */,
 				CBE6E11B1629B060003E550A /* Supporting Files */,
+				CBE6E1A5162AE572003E550A /* KPBMensaDataManager.h */,
+				CBE6E1A6162AE572003E550A /* KPBMensaDataManager.m */,
 			);
 			path = BreMensa;
 			sourceTree = "<group>";
@@ -150,6 +233,88 @@
 				CBE6E13B1629B061003E550A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CBE6E1581629B813003E550A /* PSTCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CBE6E1591629B813003E550A /* PSTCollectionView.h */,
+				CBE6E15A1629B813003E550A /* PSTCollectionView.m */,
+				CBE6E15B1629B813003E550A /* PSTCollectionViewCell.h */,
+				CBE6E15C1629B813003E550A /* PSTCollectionViewCell.m */,
+				CBE6E15D1629B813003E550A /* PSTCollectionViewCommon.h */,
+				CBE6E15E1629B813003E550A /* PSTCollectionViewController.h */,
+				CBE6E15F1629B813003E550A /* PSTCollectionViewController.m */,
+				CBE6E1601629B813003E550A /* PSTCollectionViewData.h */,
+				CBE6E1611629B813003E550A /* PSTCollectionViewData.m */,
+				CBE6E1621629B813003E550A /* PSTCollectionViewFlowLayout.h */,
+				CBE6E1631629B813003E550A /* PSTCollectionViewFlowLayout.m */,
+				CBE6E1641629B813003E550A /* PSTCollectionViewItemKey.h */,
+				CBE6E1651629B813003E550A /* PSTCollectionViewItemKey.m */,
+				CBE6E1661629B813003E550A /* PSTCollectionViewLayout.h */,
+				CBE6E1671629B813003E550A /* PSTCollectionViewLayout.m */,
+				CBE6E1681629B813003E550A /* PSTGridLayoutInfo.h */,
+				CBE6E1691629B813003E550A /* PSTGridLayoutInfo.m */,
+				CBE6E16A1629B813003E550A /* PSTGridLayoutItem.h */,
+				CBE6E16B1629B813003E550A /* PSTGridLayoutItem.m */,
+				CBE6E16C1629B813003E550A /* PSTGridLayoutRow.h */,
+				CBE6E16D1629B813003E550A /* PSTGridLayoutRow.m */,
+				CBE6E16E1629B813003E550A /* PSTGridLayoutSection.h */,
+				CBE6E16F1629B813003E550A /* PSTGridLayoutSection.m */,
+			);
+			name = PSTCollectionView;
+			path = ../PSTCollectionView/PSTCollectionView;
+			sourceTree = "<group>";
+		};
+		CBE6E1A1162AE48B003E550A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CBE6E14D1629B1F0003E550A /* KPBPickMensaViewController.h */,
+				CBE6E14E1629B1F0003E550A /* KPBPickMensaViewController.m */,
+				CBE6E17B1629B84D003E550A /* KPBMealplanViewController.h */,
+				CBE6E17C1629B84D003E550A /* KPBMealplanViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CBE6E1A2162AE496003E550A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBE6E1551629B41F003E550A /* KPBMensa.h */,
+				CBE6E1561629B41F003E550A /* KPBMensa.m */,
+				CBE6E194162AE194003E550A /* KPBMealplan.h */,
+				CBE6E195162AE194003E550A /* KPBMealplan.m */,
+				CBE6E197162AE1A8003E550A /* KPBMenu.h */,
+				CBE6E198162AE1A9003E550A /* KPBMenu.m */,
+				CBE6E19A162AE1B8003E550A /* KPBMeal.h */,
+				CBE6E19B162AE1B8003E550A /* KPBMeal.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CBE6E1A3162AE49D003E550A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CBE6E1501629B24F003E550A /* config.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CBE6E1A4162AE4D7003E550A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBE6E1871629D000003E550A /* KPBMealplanLayout.h */,
+				CBE6E1881629D000003E550A /* KPBMealplanLayout.m */,
+				CBE6E18A1629D33E003E550A /* KPBMealplanLayoutSection.h */,
+				CBE6E18B1629D33E003E550A /* KPBMealplanLayoutSection.m */,
+				CBE6E191162AD9E8003E550A /* KPBMenuHeaderCell.h */,
+				CBE6E192162AD9E9003E550A /* KPBMenuHeaderCell.m */,
+				CBE6E1801629BA18003E550A /* KPBMealCell.h */,
+				CBE6E1811629BA18003E550A /* KPBMealCell.m */,
+				CB73F662162B181F00F5E310 /* KPBMealplanInfoView.h */,
+				CB73F663162B181F00F5E310 /* KPBMealplanInfoView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +393,7 @@
 				CBE6E1271629B060003E550A /* Default.png in Resources */,
 				CBE6E1291629B060003E550A /* Default@2x.png in Resources */,
 				CBE6E12B1629B060003E550A /* Default-568h@2x.png in Resources */,
+				CBE6E1511629B24F003E550A /* config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +430,29 @@
 			files = (
 				CBE6E1211629B060003E550A /* main.m in Sources */,
 				CBE6E1251629B060003E550A /* KPBAppDelegate.m in Sources */,
+				CBE6E14F1629B1F0003E550A /* KPBPickMensaViewController.m in Sources */,
+				CBE6E1571629B41F003E550A /* KPBMensa.m in Sources */,
+				CBE6E1701629B813003E550A /* PSTCollectionView.m in Sources */,
+				CBE6E1711629B813003E550A /* PSTCollectionViewCell.m in Sources */,
+				CBE6E1721629B813003E550A /* PSTCollectionViewController.m in Sources */,
+				CBE6E1731629B813003E550A /* PSTCollectionViewData.m in Sources */,
+				CBE6E1741629B813003E550A /* PSTCollectionViewFlowLayout.m in Sources */,
+				CBE6E1751629B813003E550A /* PSTCollectionViewItemKey.m in Sources */,
+				CBE6E1761629B813003E550A /* PSTCollectionViewLayout.m in Sources */,
+				CBE6E1771629B813003E550A /* PSTGridLayoutInfo.m in Sources */,
+				CBE6E1781629B813003E550A /* PSTGridLayoutItem.m in Sources */,
+				CBE6E1791629B813003E550A /* PSTGridLayoutRow.m in Sources */,
+				CBE6E17A1629B813003E550A /* PSTGridLayoutSection.m in Sources */,
+				CBE6E17D1629B84D003E550A /* KPBMealplanViewController.m in Sources */,
+				CBE6E1821629BA18003E550A /* KPBMealCell.m in Sources */,
+				CBE6E1891629D000003E550A /* KPBMealplanLayout.m in Sources */,
+				CBE6E18C1629D33E003E550A /* KPBMealplanLayoutSection.m in Sources */,
+				CBE6E193162AD9E9003E550A /* KPBMenuHeaderCell.m in Sources */,
+				CBE6E196162AE194003E550A /* KPBMealplan.m in Sources */,
+				CBE6E199162AE1A9003E550A /* KPBMenu.m in Sources */,
+				CBE6E19C162AE1B8003E550A /* KPBMeal.m in Sources */,
+				CBE6E1A7162AE572003E550A /* KPBMensaDataManager.m in Sources */,
+				CB73F664162B181F00F5E310 /* KPBMealplanInfoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +551,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "BreMensa/BreMensa-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -373,7 +564,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "BreMensa/BreMensa-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -432,6 +625,7 @@
 				CBE6E1451629B061003E550A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBE6E1461629B061003E550A /* Build configuration list for PBXNativeTarget "BreMensaTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +634,7 @@
 				CBE6E1481629B061003E550A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

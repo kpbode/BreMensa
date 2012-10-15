@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>application_config</key>
+	<dict>
+		<key>mensa_config</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Airport</string>
+				<key>serverId</key>
+				<string>air</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Bremerhaven</string>
+				<key>serverId</key>
+				<string>bhv</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>GW2</string>
+				<key>serverId</key>
+				<string>gw2</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Neustadtswall</string>
+				<key>serverId</key>
+				<string>hsb</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Uniboulevard</string>
+				<key>serverId</key>
+				<string>uni</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Werderstraße</string>
+				<key>serverId</key>
+				<string>wer</string>
+			</dict>
+		</array>
+		<key>server_base_path</key>
+		<string>http://17.latest.foodspl.appspot.com/mensa</string>
+	</dict>
+	<key>remote_config_url</key>
+	<string>http://web12.leon.servertools24.de/bremensa.plist</string>
+</dict>
+</plist>
