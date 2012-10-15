@@ -8,11 +8,13 @@
 
 #import "KPBMensaDetailViewController.h"
 #import "KPBMensaDetailView.h"
+#import "KPBMensaLocationMarker.h"
 
-@interface KPBMensaDetailViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface KPBMensaDetailViewController () <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
 
 @property (nonatomic, strong, readwrite) KPBMensa *mensa;
 @property (nonatomic, weak, readwrite) KPBMensaDetailView *mensaView;
+@property (nonatomic, weak, readwrite) MKMapView *mapView;
 
 @end
 
@@ -37,6 +39,9 @@
     detailView.tableView.dataSource = self;
     detailView.tableView.delegate = self;
     
+    self.mapView = detailView.mapView;
+    self.mapView.delegate = self;
+    
     self.view = detailView;
     self.mensaView = detailView;
 }
@@ -45,6 +50,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    //53.05517, 8.78330
+    
+    KPBMensaLocationMarker *locationMarker = [[KPBMensaLocationMarker alloc] initWithMensa:self.mensa];
+    [self.mapView addAnnotation:locationMarker];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 53.05517;
+    zoomLocation.longitude= 8.78330;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1000.0, 1000.0);
+    [self.mapView setRegion:viewRegion animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,6 +100,32 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     return cell;
+}
+
+#pragma mark MKMapViewDelegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    
+    static NSString *AnnotationIdentifier = @"MensaLocationAnnotation";
+    if ([annotation isKindOfClass:[KPBMensaLocationMarker class]]) {
+        
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
+        
+        if (annotationView == nil) {
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
+        } else {
+            annotationView.annotation = annotation;
+        }
+        
+        annotationView.enabled = YES;
+        annotationView.draggable = NO;
+        annotationView.canShowCallout = YES;
+        
+        return annotationView;
+    }
+    
+    return nil;    
 }
 
 @end

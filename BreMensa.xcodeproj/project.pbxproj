@@ -50,6 +50,8 @@
 		CBF6079B162C4E2A008EC76B /* KPBMensaDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF6079A162C4E2A008EC76B /* KPBMensaDetailView.m */; };
 		CBF6079E162C5340008EC76B /* KPBMoreInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF6079D162C5340008EC76B /* KPBMoreInfoViewController.m */; };
 		CBF607A9162C79F5008EC76B /* KPBMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607A8162C79F5008EC76B /* KPBMenuHeaderView.m */; };
+		CBF607AD162C9707008EC76B /* KPBMensaLocationMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607AC162C9707008EC76B /* KPBMensaLocationMarker.m */; };
+		CBF607AF162C992E008EC76B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF607AE162C992E008EC76B /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,9 @@
 		CBF6079D162C5340008EC76B /* KPBMoreInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMoreInfoViewController.m; sourceTree = "<group>"; };
 		CBF607A7162C79F5008EC76B /* KPBMenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMenuHeaderView.h; sourceTree = "<group>"; };
 		CBF607A8162C79F5008EC76B /* KPBMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMenuHeaderView.m; sourceTree = "<group>"; };
+		CBF607AB162C9707008EC76B /* KPBMensaLocationMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaLocationMarker.h; sourceTree = "<group>"; };
+		CBF607AC162C9707008EC76B /* KPBMensaLocationMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaLocationMarker.m; sourceTree = "<group>"; };
+		CBF607AE162C992E008EC76B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF607AF162C992E008EC76B /* CoreLocation.framework in Frameworks */,
 				CBF60794162C4DA2008EC76B /* MapKit.framework in Frameworks */,
 				CBE6E17F1629B95E003E550A /* QuartzCore.framework in Frameworks */,
 				CBE6E1151629B060003E550A /* UIKit.framework in Frameworks */,
@@ -220,6 +226,7 @@
 		CBE6E1131629B060003E550A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBF607AE162C992E008EC76B /* CoreLocation.framework */,
 				CBF60793162C4DA2008EC76B /* MapKit.framework */,
 				CBE6E17E1629B95E003E550A /* QuartzCore.framework */,
 				CBE6E1141629B060003E550A /* UIKit.framework */,
@@ -305,6 +312,8 @@
 				CBE6E198162AE1A9003E550A /* KPBMenu.m */,
 				CBE6E19A162AE1B8003E550A /* KPBMeal.h */,
 				CBE6E19B162AE1B8003E550A /* KPBMeal.m */,
+				CBF607AB162C9707008EC76B /* KPBMensaLocationMarker.h */,
+				CBF607AC162C9707008EC76B /* KPBMensaLocationMarker.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -475,6 +484,7 @@
 				CBF6079B162C4E2A008EC76B /* KPBMensaDetailView.m in Sources */,
 				CBF6079E162C5340008EC76B /* KPBMoreInfoViewController.m in Sources */,
 				CBF607A9162C79F5008EC76B /* KPBMenuHeaderView.m in Sources */,
+				CBF607AD162C9707008EC76B /* KPBMensaLocationMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

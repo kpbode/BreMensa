@@ -52,7 +52,7 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute" style:UIBarButtonItemStyleBordered target:self action:@selector(onScrollToToday:)];
     
-    self.collectionView.backgroundColor = [UIColor blackColor];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:0.773 green:0.773 blue:0.773 alpha:1];
     
     [self.collectionView registerClass:[KPBMealCell class] forCellWithReuseIdentifier:kMealCellIdentifier];
     [self.collectionView registerClass:[KPBMenuHeaderView class] forSupplementaryViewOfKind:PSTCollectionElementKindSectionHeader withReuseIdentifier:kMenuHeaderViewIdentifier];
@@ -169,7 +169,7 @@
 
 - (UIEdgeInsets)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout *)layout itemInsetsForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(10.f, 5.f, 10.f, 5.f);
+    return UIEdgeInsetsMake(4.f, 2.f, 4.f, 2.f);
 }
 
 - (CGSize)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout *)layout sizeForItemWithWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath
@@ -209,7 +209,7 @@
 
 - (UIEdgeInsets)collectionView:(PSUICollectionView_ *)collectionView layout:(PSUICollectionViewLayout_ *)layout insetsForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    return UIEdgeInsetsMake(0.f, 5.f, 5.f, 5.f);
+    return UIEdgeInsetsMake(0.f, 2.f, 0.f, 2.f);
 }
 
 - (NSDateFormatter *)menuHeaderDateFormatter
