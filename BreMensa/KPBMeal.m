@@ -94,9 +94,9 @@
         case KPBMealTypeBeef: return @"Rind";
         case KPBMealTypeFowl: return @"Geflügel";
         case KPBMealTypeLamb: return @"Lamm";
-        case KPBMealTypeUndefined: return @"";
+        case KPBMealTypeUndefined: return nil;
     }
-    return @"";
+    return nil;
 }
 
 - (NSString *)extraAsString
@@ -104,9 +104,9 @@
     switch (self.extra) {
         case KPBMealExtraDessert: return @"Dessert";
         case KPBMealExtraSoup: return @"Suppe";
-        case KPBMealExtraNone: return @"";
+        case KPBMealExtraNone: return nil;
     }
-    return @"";
+    return nil;
 }
 
 @end

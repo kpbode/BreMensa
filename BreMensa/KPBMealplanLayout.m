@@ -11,7 +11,7 @@
 
 @interface KPBMealplanLayout ()
 
-@property (nonatomic, copy, readwrite) NSArray *sectionData;
+@property (nonatomic, copy, readwrite) NSArray *sections;
 @property (nonatomic, assign, readwrite) CGFloat width;
 @property (nonatomic, assign, readwrite) CGFloat height;
 
@@ -23,7 +23,7 @@
 {
     [super prepareLayout];
 
-    NSMutableArray *sectionData = [[NSMutableArray alloc] init];
+    NSMutableArray *sections = [[NSMutableArray alloc] init];
     CGFloat height = 0.f;
     CGFloat width = 0.f;
     
@@ -31,6 +31,9 @@
     NSInteger numberOfSections = [self.collectionView numberOfSections];
     
     PSUICollectionView *collectionView = (PSUICollectionView *) self.collectionView;
+    
+    currentOrigin.y += 50.f;
+    height = 50.f;
     
     for (NSInteger sectionIndex = 0; sectionIndex < numberOfSections; sectionIndex++) {
         
@@ -83,7 +86,7 @@
             [section addItemOfSize:itemSize forIndex:itemIndex toColumnWithWidth:columnWidth];
         }
         
-        [sectionData addObject:section];
+        [sections addObject:section];
         
         height += CGRectGetHeight(section.frame);
         currentOrigin.y = height;
@@ -92,7 +95,7 @@
     
     height += self.footerHeight;
     
-    self.sectionData = sectionData;
+    self.sections = sections;
     self.width = width;
     self.height = height;
 }
@@ -103,7 +106,7 @@
 }
 
 - (PSUICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
-    KPBMealplanLayoutSection *section = self.sectionData[indexPath.section];
+    KPBMealplanLayoutSection *section = self.sections[indexPath.section];
     PSUICollectionViewLayoutAttributes *layoutAttributes = [PSUICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     layoutAttributes.frame = [section frameForItemAtIndex:indexPath.item];
     
@@ -112,13 +115,38 @@
 
 - (PSUICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    KPBMealplanLayoutSection *section = self.sectionData[indexPath.section];
+    
+    KPBMealplanLayoutSection *section = self.sections[indexPath.section];
     PSUICollectionViewLayoutAttributes *layoutAttributes = [PSUICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:kind withIndexPath:indexPath];
     
-    CGRect sectionFrame = section.frame;
-    CGRect footerFrame = CGRectMake(0.f, CGRectGetMaxY(sectionFrame), CGRectGetWidth(sectionFrame), self.footerHeight);
+    PSUICollectionView *collectionView = (PSUICollectionView *) self.collectionView;
     
-    layoutAttributes.frame = footerFrame;
+    UIEdgeInsets insets = [self.delegate collectionView:collectionView
+                                                 layout:self
+                        insetsForSupplementaryViewOfKind:kind
+                                             atIndexPath:indexPath];
+    
+    CGRect sectionFrame = section.frame;
+    
+    if ([PSTCollectionElementKindSectionFooter isEqualToString:kind]) {
+        CGRect footerFrame = CGRectMake(0.f, CGRectGetMaxY(sectionFrame), CGRectGetWidth(sectionFrame), self.footerHeight);
+        layoutAttributes.frame = footerFrame;
+    } else if ([PSTCollectionElementKindSectionHeader isEqualToString:kind]) {
+        
+        CGFloat columnWidth = [self.delegate collectionView:collectionView
+                                                     layout:self
+                                             widthForColumn:indexPath.item
+                                          forSectionAtIndex:indexPath.section];
+        
+        CGSize headerSize = [self.delegate collectionView:collectionView
+                                                   layout:self
+                                   sizeForHeaderWithWidth:columnWidth atIndexPath:indexPath];
+        
+        layoutAttributes.frame = CGRectMake(indexPath.item * columnWidth, collectionView.contentOffset.y, headerSize.width, headerSize.height);
+        layoutAttributes.zIndex = 1024;
+    }
+    
+    layoutAttributes.frame = UIEdgeInsetsInsetRect(layoutAttributes.frame, insets);
     
     return layoutAttributes;
 }
@@ -127,16 +155,35 @@
 {
     NSMutableArray *attributes = [[NSMutableArray alloc] init];
     
-    [self.sectionData enumerateObjectsUsingBlock:^(KPBMealplanLayoutSection *section, NSUInteger sectionIndex, BOOL *stop) {
+    [self.sections enumerateObjectsUsingBlock:^(KPBMealplanLayoutSection *section, NSUInteger sectionIndex, BOOL *stop) {
         
         CGRect sectionFrame = section.frame;
-        CGRect footerFrame = CGRectMake(0.f, CGRectGetMaxY(sectionFrame), CGRectGetWidth(sectionFrame), self.footerHeight);
+        
+        
+        
+        for (NSInteger column = 0; column < section.columns; column++) {
+            
+            
+            
+            NSIndexPath *indexPath = [NSIndexPath indexPathForItem:column inSection:sectionIndex];
+            PSUICollectionViewLayoutAttributes *layoutAttributes = (PSUICollectionViewLayoutAttributes *) [self layoutAttributesForSupplementaryViewOfKind:PSTCollectionElementKindSectionHeader
+                                                                                                                                               atIndexPath:indexPath];
+            
+            CGRect headerFrame = layoutAttributes.frame;
+            
+            if (CGRectIntersectsRect(headerFrame, rect)) {
+                [attributes addObject:layoutAttributes];
+            }
+        }
+        
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:sectionIndex];
+        PSUICollectionViewLayoutAttributes *footerLayoutAttributes = (PSUICollectionViewLayoutAttributes *) [self layoutAttributesForSupplementaryViewOfKind:PSTCollectionElementKindSectionFooter
+                                                                                                                                                 atIndexPath:indexPath];
+        
+        CGRect footerFrame = footerLayoutAttributes.frame;
         
         if (CGRectIntersectsRect(footerFrame, rect)) {
-            NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:sectionIndex];
-            PSUICollectionViewLayoutAttributes *layoutAttributes = (PSUICollectionViewLayoutAttributes *) [self layoutAttributesForSupplementaryViewOfKind:PSTCollectionElementKindSectionFooter
-                                                                                                                                               atIndexPath:indexPath];
-            [attributes addObject:layoutAttributes];
+            [attributes addObject:footerLayoutAttributes];
         }
         
         if (CGRectIntersectsRect(sectionFrame, rect)) {

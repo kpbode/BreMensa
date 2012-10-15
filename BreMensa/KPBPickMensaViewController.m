@@ -9,6 +9,8 @@
 #import "KPBPickMensaViewController.h"
 #import "KPBMensaDataManager.h"
 #import "KPBMealplanViewController.h"
+#import "KPBMensaDetailViewController.h"
+#import "KPBMoreInfoViewController.h"
 
 @interface KPBPickMensaViewController ()
 
@@ -163,8 +165,16 @@
         KPBMealplanViewController *mealplanViewController = [[KPBMealplanViewController alloc] initWithMensa:mensa];
         [self.navigationController pushViewController:mealplanViewController animated:YES];
     } else {
-        
+        KPBMoreInfoViewController *moreInfoViewController = [[KPBMoreInfoViewController alloc] init];
+        [self.navigationController pushViewController:moreInfoViewController animated:YES];
     }
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    KPBMensa *mensa = [self.mensas objectAtIndex:indexPath.row];
+    KPBMensaDetailViewController *detailViewController = [[KPBMensaDetailViewController alloc] initWithMensa:mensa];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end

@@ -13,6 +13,7 @@
 @property (nonatomic, assign, readonly) CGRect frame;
 @property (nonatomic, assign, readonly) UIEdgeInsets itemInsets;
 @property (nonatomic, assign, readonly) NSInteger numberOfItems;
+@property (nonatomic, assign, readonly) NSInteger columns;
 
 - (id)initWithOrigin:(CGPoint)origin width:(CGFloat)width columns:(NSInteger)columns itemInsets:(UIEdgeInsets)itemInsets;
 

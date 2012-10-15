@@ -9,12 +9,12 @@
 #import "KPBMealplanViewController.h"
 #import "KPBMealplanLayout.h"
 #import "KPBMealCell.h"
-#import "KPBMenuHeaderCell.h"
 #import "KPBMensaDataManager.h"
 #import "KPBMealplanInfoView.h"
+#import "KPBMenuHeaderView.h"
 
 #define kMealCellIdentifier @"MealCell"
-#define kMenuHeaderCellIdentifier @"MenuHeaderCell"
+#define kMenuHeaderViewIdentifier @"MenuHeaderView"
 #define kMealplanInfoViewIdentifier @"MealplanInfoView"
 
 @interface KPBMealplanViewController () <KPBMealplanLayoutDelegate>
@@ -23,9 +23,7 @@
 @property (nonatomic, strong, readwrite) KPBMealplan *mealplan;
 @property (nonatomic, strong, readwrite) NSDateFormatter *menuHeaderDateFormatter;
 
-- (void)configureCell:(PSUICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-- (void)configureMealCell:(KPBMealCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-- (void)configureMenuHeaderCell:(KPBMenuHeaderCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)configureCell:(KPBMealCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 - (void)onScrollToToday:(id)sender;
 
@@ -54,10 +52,11 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute" style:UIBarButtonItemStyleBordered target:self action:@selector(onScrollToToday:)];
     
+    self.collectionView.backgroundColor = [UIColor blackColor];
+    
     [self.collectionView registerClass:[KPBMealCell class] forCellWithReuseIdentifier:kMealCellIdentifier];
-    [self.collectionView registerClass:[KPBMenuHeaderCell class] forCellWithReuseIdentifier:kMenuHeaderCellIdentifier];
+    [self.collectionView registerClass:[KPBMenuHeaderView class] forSupplementaryViewOfKind:PSTCollectionElementKindSectionHeader withReuseIdentifier:kMenuHeaderViewIdentifier];
     [self.collectionView registerClass:[KPBMealplanInfoView class] forSupplementaryViewOfKind:PSTCollectionElementKindSectionFooter withReuseIdentifier:kMealplanInfoViewIdentifier];
-    [self.collectionView registerClass:[KPBMealplanInfoView class] forSupplementaryViewOfKind:PSTCollectionElementKindSectionHeader withReuseIdentifier:kMealplanInfoViewIdentifier];
     
     BOOL success = [[KPBMensaDataManager sharedManager] mealplanForMensa:self.mensa withBlock:^(KPBMealplan *mealplan) {
         if (mealplan == nil) {
@@ -98,58 +97,21 @@
         maxMeals = MAX(maxMeals, [menu.meals count]);
     }
     
-    return maxMeals * 5 + 5;
+    return maxMeals * 5;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - PSTCollectionViewDelegate
 
 - (PSUICollectionViewCell *)collectionView:(PSUICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    PSUICollectionViewCell *cell = nil;
-    
-    if (indexPath.row < 5) {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:kMenuHeaderCellIdentifier forIndexPath:indexPath];
-    } else {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:kMealCellIdentifier forIndexPath:indexPath];
-    }
+    KPBMealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kMealCellIdentifier forIndexPath:indexPath];
     
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
 
-- (void)configureCell:(PSUICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    if ([cell isKindOfClass:[KPBMenuHeaderCell class]]) {
-        [self configureMenuHeaderCell:(KPBMenuHeaderCell *) cell atIndexPath:indexPath];
-    } else if ([cell isKindOfClass:[KPBMealCell class]]) {
-        [self configureMealCell:(KPBMealCell *) cell atIndexPath:indexPath];
-    }
-}
-
-- (void)configureMenuHeaderCell:(KPBMenuHeaderCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    if (self.mealplan == nil) return;
-    
-    NSDateFormatter *dateFormatter = self.menuHeaderDateFormatter;
-    
-    NSInteger day = indexPath.row % 5;
-    
-    KPBMenu *menu = self.mealplan.menus[day];
-    
-    
-    dateFormatter.dateFormat = @"cccc";
-    
-    cell.titleLabel.text = [dateFormatter stringFromDate:menu.date];
-    
-    dateFormatter.dateFormat = @"dd.MM.YYYY";
-    
-    cell.subtitleLabel.text = [dateFormatter stringFromDate:menu.date];
-    
-}
-
-- (void)configureMealCell:(KPBMealCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(KPBMealCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     if (self.mealplan == nil) return;
     
@@ -159,10 +121,9 @@
     
     if (menu == nil) return;
     
-    NSInteger mealIndex = indexPath.row / 5 - 1;
+    NSInteger mealIndex = indexPath.row / 5;
     
     KPBMeal *meal = menu.meals[mealIndex];
-    
     
     cell.mealTitleLabel.text = meal.title;
     cell.mealTextLabel.text = meal.text;
@@ -172,28 +133,34 @@
 
 - (PSUICollectionReusableView *)collectionView:(PSUICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    KPBMealplanInfoView *infoView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kMealplanInfoViewIdentifier forIndexPath:indexPath];
+    if ([PSTCollectionElementKindSectionFooter isEqualToString:kind]) {
+        KPBMealplanInfoView *infoView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kMealplanInfoViewIdentifier forIndexPath:indexPath];
+        
+        infoView.textLabel.text = @"bla bla bla";
+        
+        return infoView;
+    } else if ([PSTCollectionElementKindSectionHeader isEqualToString:kind]) {
+        KPBMenuHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kMenuHeaderViewIdentifier forIndexPath:indexPath];
+        
+        NSDateFormatter *dateFormatter = self.menuHeaderDateFormatter;
+        
+        NSInteger day = indexPath.row % 5;
+        
+        KPBMenu *menu = self.mealplan.menus[day];
+        
+        dateFormatter.dateFormat = @"cccc";
+        
+        headerView.dayLabel.text = [dateFormatter stringFromDate:menu.date];
+        
+        dateFormatter.dateFormat = @"dd.MM.YYYY";
+        
+        headerView.dateLabel.text = [dateFormatter stringFromDate:menu.date];
+        
+        return headerView;
+    }
     
-    infoView.textLabel.text = @"bla bla bla";
-    
-    return infoView;
+    return nil;
 }
-
-//
-/////////////////////////////////////////////////////////////////////////////////////////////
-//#pragma mark - PSTCollectionViewDelegateFlowLayout
-//
-//- (CGSize)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    return CGSizeMake(200, 200);
-//}
-//
-//- (CGFloat)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-//    return 10.f;
-//}
-//
-//- (CGFloat)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-//    return 5.f;
-//}
 
 - (NSInteger)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout *)layout numberOfColumnsInSection:(NSInteger)section
 {
@@ -207,9 +174,6 @@
 
 - (CGSize)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout *)layout sizeForItemWithWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row < 5) {
-        return CGSizeMake(width, 50.f);
-    }
     
     if (self.mealplan == nil) CGSizeMake(width, 80.f);
     
@@ -219,11 +183,11 @@
     
     if (menu == nil) return CGSizeMake(width, 80.f);
     
-    NSInteger mealIndex = indexPath.row / 5 - 1;
+    NSInteger mealIndex = indexPath.item / 5;
     
     KPBMeal *meal = menu.meals[mealIndex];
     
-    CGFloat height = [KPBMealCell heightForWidth:width title:meal.title text:meal.text priceText:meal.staffPrice andInfoText:meal.extraAsString];
+    CGFloat height = [KPBMealCell heightForWidth:width title:meal.title text:meal.text priceText:meal.priceText andInfoText:meal.infoText];
     
     return CGSizeMake(width, height);
 }
@@ -236,6 +200,16 @@
 - (NSInteger)collectionView:(PSUICollectionReusableView *)collectionView layout:(PSUICollectionViewLayout *)layout columnIndexForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return indexPath.row % 5;
+}
+
+- (CGSize)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout *)layout sizeForHeaderWithWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(width, 50.f);
+}
+
+- (UIEdgeInsets)collectionView:(PSUICollectionView_ *)collectionView layout:(PSUICollectionViewLayout_ *)layout insetsForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    return UIEdgeInsetsMake(0.f, 5.f, 5.f, 5.f);
 }
 
 - (NSDateFormatter *)menuHeaderDateFormatter

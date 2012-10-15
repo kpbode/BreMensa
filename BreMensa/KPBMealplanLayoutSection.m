@@ -14,6 +14,7 @@
 @property (nonatomic, assign, readwrite) UIEdgeInsets itemInsets;
 @property (nonatomic, strong, readwrite) NSMutableArray *columnHeights;
 @property (nonatomic, strong, readwrite) NSMutableDictionary *indexToFrameMap;
+@property (nonatomic, assign, readwrite) NSInteger columns;
 
 @end
 
@@ -26,6 +27,7 @@
         self.frame = CGRectMake(origin.x, origin.y, width, 0.f);
         self.itemInsets = itemInsets;
         self.columnHeights = [[NSMutableArray alloc] init];
+        self.columns = columns;
         
         for (NSInteger i = 0; i < columns; i++) {
             [self.columnHeights addObject:@0.f];
@@ -54,7 +56,7 @@
     
     self.indexToFrameMap[@(index)] = [NSValue valueWithCGRect:frame];
     
-    NSLog(@"item(%i).frame: %@", index, NSStringFromCGRect(frame));
+//    NSLog(@"item(%i).frame: %@", index, NSStringFromCGRect(frame));
     
     if (CGRectGetMaxY(frame) > CGRectGetMaxY(self.frame)) {
         CGFloat newHeight = CGRectGetMaxY(frame) - CGRectGetMinY(self.frame) + self.itemInsets.bottom;

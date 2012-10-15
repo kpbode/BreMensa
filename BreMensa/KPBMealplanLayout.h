@@ -32,6 +32,15 @@
                         layout:(PSUICollectionViewLayout *)layout
    itemInsetsForSectionAtIndex:(NSInteger)section;
 
+- (CGSize)collectionView:(PSUICollectionView *)collectionView
+                  layout:(PSUICollectionViewLayout *)layout 
+  sizeForHeaderWithWidth:(CGFloat)width
+             atIndexPath:(NSIndexPath *)indexPath;
+
+- (UIEdgeInsets)collectionView:(PSUICollectionView *)collectionView
+                        layout:(PSUICollectionViewLayout *)layout insetsForSupplementaryViewOfKind:(NSString *)kind
+                   atIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 @interface KPBMealplanLayout : PSUICollectionViewLayout

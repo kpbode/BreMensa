@@ -41,11 +41,15 @@
 		CBE6E1821629BA18003E550A /* KPBMealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1811629BA18003E550A /* KPBMealCell.m */; };
 		CBE6E1891629D000003E550A /* KPBMealplanLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1881629D000003E550A /* KPBMealplanLayout.m */; };
 		CBE6E18C1629D33E003E550A /* KPBMealplanLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E18B1629D33E003E550A /* KPBMealplanLayoutSection.m */; };
-		CBE6E193162AD9E9003E550A /* KPBMenuHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E192162AD9E9003E550A /* KPBMenuHeaderCell.m */; };
 		CBE6E196162AE194003E550A /* KPBMealplan.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E195162AE194003E550A /* KPBMealplan.m */; };
 		CBE6E199162AE1A9003E550A /* KPBMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E198162AE1A9003E550A /* KPBMenu.m */; };
 		CBE6E19C162AE1B8003E550A /* KPBMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E19B162AE1B8003E550A /* KPBMeal.m */; };
 		CBE6E1A7162AE572003E550A /* KPBMensaDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1A6162AE572003E550A /* KPBMensaDataManager.m */; };
+		CBF60794162C4DA2008EC76B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF60793162C4DA2008EC76B /* MapKit.framework */; };
+		CBF60798162C4DC7008EC76B /* KPBMensaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF60797162C4DC7008EC76B /* KPBMensaDetailViewController.m */; };
+		CBF6079B162C4E2A008EC76B /* KPBMensaDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF6079A162C4E2A008EC76B /* KPBMensaDetailView.m */; };
+		CBF6079E162C5340008EC76B /* KPBMoreInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF6079D162C5340008EC76B /* KPBMoreInfoViewController.m */; };
+		CBF607A9162C79F5008EC76B /* KPBMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607A8162C79F5008EC76B /* KPBMenuHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,8 +121,6 @@
 		CBE6E1881629D000003E550A /* KPBMealplanLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplanLayout.m; sourceTree = "<group>"; };
 		CBE6E18A1629D33E003E550A /* KPBMealplanLayoutSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanLayoutSection.h; sourceTree = "<group>"; };
 		CBE6E18B1629D33E003E550A /* KPBMealplanLayoutSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplanLayoutSection.m; sourceTree = "<group>"; };
-		CBE6E191162AD9E8003E550A /* KPBMenuHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMenuHeaderCell.h; sourceTree = "<group>"; };
-		CBE6E192162AD9E9003E550A /* KPBMenuHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMenuHeaderCell.m; sourceTree = "<group>"; };
 		CBE6E194162AE194003E550A /* KPBMealplan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplan.h; sourceTree = "<group>"; };
 		CBE6E195162AE194003E550A /* KPBMealplan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplan.m; sourceTree = "<group>"; };
 		CBE6E197162AE1A8003E550A /* KPBMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMenu.h; sourceTree = "<group>"; };
@@ -127,6 +129,15 @@
 		CBE6E19B162AE1B8003E550A /* KPBMeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMeal.m; sourceTree = "<group>"; };
 		CBE6E1A5162AE572003E550A /* KPBMensaDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaDataManager.h; sourceTree = "<group>"; };
 		CBE6E1A6162AE572003E550A /* KPBMensaDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaDataManager.m; sourceTree = "<group>"; };
+		CBF60793162C4DA2008EC76B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CBF60796162C4DC7008EC76B /* KPBMensaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaDetailViewController.h; sourceTree = "<group>"; };
+		CBF60797162C4DC7008EC76B /* KPBMensaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaDetailViewController.m; sourceTree = "<group>"; };
+		CBF60799162C4E2A008EC76B /* KPBMensaDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaDetailView.h; sourceTree = "<group>"; };
+		CBF6079A162C4E2A008EC76B /* KPBMensaDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaDetailView.m; sourceTree = "<group>"; };
+		CBF6079C162C5340008EC76B /* KPBMoreInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMoreInfoViewController.h; sourceTree = "<group>"; };
+		CBF6079D162C5340008EC76B /* KPBMoreInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMoreInfoViewController.m; sourceTree = "<group>"; };
+		CBF607A7162C79F5008EC76B /* KPBMenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMenuHeaderView.h; sourceTree = "<group>"; };
+		CBF607A8162C79F5008EC76B /* KPBMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMenuHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF60794162C4DA2008EC76B /* MapKit.framework in Frameworks */,
 				CBE6E17F1629B95E003E550A /* QuartzCore.framework in Frameworks */,
 				CBE6E1151629B060003E550A /* UIKit.framework in Frameworks */,
 				CBE6E1171629B060003E550A /* Foundation.framework in Frameworks */,
@@ -208,6 +220,7 @@
 		CBE6E1131629B060003E550A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBF60793162C4DA2008EC76B /* MapKit.framework */,
 				CBE6E17E1629B95E003E550A /* QuartzCore.framework */,
 				CBE6E1141629B060003E550A /* UIKit.framework */,
 				CBE6E1161629B060003E550A /* Foundation.framework */,
@@ -273,6 +286,10 @@
 				CBE6E14E1629B1F0003E550A /* KPBPickMensaViewController.m */,
 				CBE6E17B1629B84D003E550A /* KPBMealplanViewController.h */,
 				CBE6E17C1629B84D003E550A /* KPBMealplanViewController.m */,
+				CBF60796162C4DC7008EC76B /* KPBMensaDetailViewController.h */,
+				CBF60797162C4DC7008EC76B /* KPBMensaDetailViewController.m */,
+				CBF6079C162C5340008EC76B /* KPBMoreInfoViewController.h */,
+				CBF6079D162C5340008EC76B /* KPBMoreInfoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -307,12 +324,14 @@
 				CBE6E1881629D000003E550A /* KPBMealplanLayout.m */,
 				CBE6E18A1629D33E003E550A /* KPBMealplanLayoutSection.h */,
 				CBE6E18B1629D33E003E550A /* KPBMealplanLayoutSection.m */,
-				CBE6E191162AD9E8003E550A /* KPBMenuHeaderCell.h */,
-				CBE6E192162AD9E9003E550A /* KPBMenuHeaderCell.m */,
 				CBE6E1801629BA18003E550A /* KPBMealCell.h */,
 				CBE6E1811629BA18003E550A /* KPBMealCell.m */,
 				CB73F662162B181F00F5E310 /* KPBMealplanInfoView.h */,
 				CB73F663162B181F00F5E310 /* KPBMealplanInfoView.m */,
+				CBF60799162C4E2A008EC76B /* KPBMensaDetailView.h */,
+				CBF6079A162C4E2A008EC76B /* KPBMensaDetailView.m */,
+				CBF607A7162C79F5008EC76B /* KPBMenuHeaderView.h */,
+				CBF607A8162C79F5008EC76B /* KPBMenuHeaderView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -436,7 +455,6 @@
 				CBE6E1821629BA18003E550A /* KPBMealCell.m in Sources */,
 				CBE6E1891629D000003E550A /* KPBMealplanLayout.m in Sources */,
 				CBE6E18C1629D33E003E550A /* KPBMealplanLayoutSection.m in Sources */,
-				CBE6E193162AD9E9003E550A /* KPBMenuHeaderCell.m in Sources */,
 				CBE6E196162AE194003E550A /* KPBMealplan.m in Sources */,
 				CBE6E199162AE1A9003E550A /* KPBMenu.m in Sources */,
 				CBE6E19C162AE1B8003E550A /* KPBMeal.m in Sources */,
@@ -453,6 +471,10 @@
 				CBC982FC162C147600D33C4C /* PSTGridLayoutItem.m in Sources */,
 				CBC982FD162C147600D33C4C /* PSTGridLayoutRow.m in Sources */,
 				CBC982FE162C147600D33C4C /* PSTGridLayoutSection.m in Sources */,
+				CBF60798162C4DC7008EC76B /* KPBMensaDetailViewController.m in Sources */,
+				CBF6079B162C4E2A008EC76B /* KPBMensaDetailView.m in Sources */,
+				CBF6079E162C5340008EC76B /* KPBMoreInfoViewController.m in Sources */,
+				CBF607A9162C79F5008EC76B /* KPBMenuHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
