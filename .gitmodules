@@ -1,0 +1,3 @@
+[submodule "PSTCollectionView"]
+	path = PSTCollectionView
+	url = https://github.com/steipete/PSTCollectionView.git
