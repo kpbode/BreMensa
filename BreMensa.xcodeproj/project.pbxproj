@@ -19,6 +19,7 @@
 		CBC982FC162C147600D33C4C /* PSTGridLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982EF162C147600D33C4C /* PSTGridLayoutItem.m */; };
 		CBC982FD162C147600D33C4C /* PSTGridLayoutRow.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982F1162C147600D33C4C /* PSTGridLayoutRow.m */; };
 		CBC982FE162C147600D33C4C /* PSTGridLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982F3162C147600D33C4C /* PSTGridLayoutSection.m */; };
+		CBD36B4B162D74C900C2A9BE /* NSDate+HCAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B4A162D74C900C2A9BE /* NSDate+HCAExtensions.m */; };
 		CBE6E1151629B060003E550A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1141629B060003E550A /* UIKit.framework */; };
 		CBE6E1171629B060003E550A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1161629B060003E550A /* Foundation.framework */; };
 		CBE6E1191629B060003E550A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1181629B060003E550A /* CoreGraphics.framework */; };
@@ -52,6 +53,8 @@
 		CBF607A9162C79F5008EC76B /* KPBMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607A8162C79F5008EC76B /* KPBMenuHeaderView.m */; };
 		CBF607AD162C9707008EC76B /* KPBMensaLocationMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607AC162C9707008EC76B /* KPBMensaLocationMarker.m */; };
 		CBF607AF162C992E008EC76B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF607AE162C992E008EC76B /* CoreLocation.framework */; };
+		CBF607B6162D5D87008EC76B /* KPBMensaOpeningTime.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607B5162D5D87008EC76B /* KPBMensaOpeningTime.m */; };
+		CBF607BA162D5DBB008EC76B /* KPBMensaOpeningInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607B9162D5DBB008EC76B /* KPBMensaOpeningInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,8 @@
 		CBC982F1162C147600D33C4C /* PSTGridLayoutRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutRow.m; sourceTree = "<group>"; };
 		CBC982F2162C147600D33C4C /* PSTGridLayoutSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutSection.h; sourceTree = "<group>"; };
 		CBC982F3162C147600D33C4C /* PSTGridLayoutSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutSection.m; sourceTree = "<group>"; };
+		CBD36B49162D74C900C2A9BE /* NSDate+HCAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HCAExtensions.h"; sourceTree = "<group>"; };
+		CBD36B4A162D74C900C2A9BE /* NSDate+HCAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HCAExtensions.m"; sourceTree = "<group>"; };
 		CBE6E1101629B060003E550A /* BreMensa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreMensa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE6E1141629B060003E550A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBE6E1161629B060003E550A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -143,6 +148,10 @@
 		CBF607AB162C9707008EC76B /* KPBMensaLocationMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaLocationMarker.h; sourceTree = "<group>"; };
 		CBF607AC162C9707008EC76B /* KPBMensaLocationMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaLocationMarker.m; sourceTree = "<group>"; };
 		CBF607AE162C992E008EC76B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CBF607B4162D5D87008EC76B /* KPBMensaOpeningTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaOpeningTime.h; sourceTree = "<group>"; };
+		CBF607B5162D5D87008EC76B /* KPBMensaOpeningTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaOpeningTime.m; sourceTree = "<group>"; };
+		CBF607B8162D5DBB008EC76B /* KPBMensaOpeningInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaOpeningInfo.h; sourceTree = "<group>"; };
+		CBF607B9162D5DBB008EC76B /* KPBMensaOpeningInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaOpeningInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,9 +212,19 @@
 			path = PSTCollectionView/PSTCollectionView;
 			sourceTree = "<group>";
 		};
+		CBD36B44162D748F00C2A9BE /* HCA */ = {
+			isa = PBXGroup;
+			children = (
+				CBD36B49162D74C900C2A9BE /* NSDate+HCAExtensions.h */,
+				CBD36B4A162D74C900C2A9BE /* NSDate+HCAExtensions.m */,
+			);
+			name = HCA;
+			sourceTree = "<group>";
+		};
 		CBE6E1051629B05F003E550A = {
 			isa = PBXGroup;
 			children = (
+				CBD36B44162D748F00C2A9BE /* HCA */,
 				CBC982DC162C147600D33C4C /* PSTCollectionView */,
 				CBE6E11A1629B060003E550A /* BreMensa */,
 				CBE6E1381629B060003E550A /* BreMensaTests */,
@@ -314,6 +333,10 @@
 				CBE6E19B162AE1B8003E550A /* KPBMeal.m */,
 				CBF607AB162C9707008EC76B /* KPBMensaLocationMarker.h */,
 				CBF607AC162C9707008EC76B /* KPBMensaLocationMarker.m */,
+				CBF607B4162D5D87008EC76B /* KPBMensaOpeningTime.h */,
+				CBF607B5162D5D87008EC76B /* KPBMensaOpeningTime.m */,
+				CBF607B8162D5DBB008EC76B /* KPBMensaOpeningInfo.h */,
+				CBF607B9162D5DBB008EC76B /* KPBMensaOpeningInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -485,6 +508,9 @@
 				CBF6079E162C5340008EC76B /* KPBMoreInfoViewController.m in Sources */,
 				CBF607A9162C79F5008EC76B /* KPBMenuHeaderView.m in Sources */,
 				CBF607AD162C9707008EC76B /* KPBMensaLocationMarker.m in Sources */,
+				CBF607B6162D5D87008EC76B /* KPBMensaOpeningTime.m in Sources */,
+				CBF607BA162D5DBB008EC76B /* KPBMensaOpeningInfo.m in Sources */,
+				CBD36B4B162D74C900C2A9BE /* NSDate+HCAExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

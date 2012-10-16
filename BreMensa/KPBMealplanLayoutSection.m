@@ -38,34 +38,24 @@
     return self;
 }
 
-- (void)addItemOfSize:(CGSize)size forIndex:(NSInteger)index toColumnWithWidth:(CGFloat)columnWidth
+- (void)addItemOfSize:(CGSize)size forIndex:(NSInteger)index toColumnWithIndex:(NSInteger)columnIndex andWidth:(CGFloat)columnWidth
 {
-    __block CGFloat shortestColumnHeight = CGFLOAT_MAX;
-    __block NSInteger shortestColumnIndex = 0;
     
-    [self.columnHeights enumerateObjectsUsingBlock:^(NSNumber *columnHeightNumber, NSUInteger index, BOOL *stop) {
-        CGFloat columnHeight = [columnHeightNumber floatValue];
-        if (columnHeight < shortestColumnHeight) {
-            shortestColumnHeight = columnHeight;
-            shortestColumnIndex = index;
-        }
-    }];
+    CGFloat columnHeight = [self.columnHeights[columnIndex] floatValue];
     
-    CGRect frame = CGRectMake(columnWidth * shortestColumnIndex, shortestColumnHeight, size.width, size.height);
+    CGRect frame = CGRectMake(columnWidth * columnIndex, columnHeight, size.width, size.height);
     frame = CGRectOffset(frame, CGRectGetMinX(self.frame) + self.itemInsets.left, CGRectGetMinY(self.frame) + self.itemInsets.top);
     
     self.indexToFrameMap[@(index)] = [NSValue valueWithCGRect:frame];
-    
-//    NSLog(@"item(%i).frame: %@", index, NSStringFromCGRect(frame));
     
     if (CGRectGetMaxY(frame) > CGRectGetMaxY(self.frame)) {
         CGFloat newHeight = CGRectGetMaxY(frame) - CGRectGetMinY(self.frame) + self.itemInsets.bottom;
         self.frame = CGRectMake(CGRectGetMinX(self.frame), CGRectGetMinY(self.frame), CGRectGetWidth(self.frame), newHeight);
     }
     
-    CGFloat columnHeight = shortestColumnHeight + size.height + self.itemInsets.bottom;
+    columnHeight = columnHeight + size.height + self.itemInsets.bottom;
     
-    [self.columnHeights replaceObjectAtIndex:shortestColumnIndex withObject:@(columnHeight)];
+    [self.columnHeights replaceObjectAtIndex:columnIndex withObject:@(columnHeight)];
 }
 
 - (NSInteger)numberOfItems

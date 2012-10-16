@@ -23,7 +23,7 @@
     if (self) {
         // Initialization code
         
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor colorWithRed:0.200 green:0.200 blue:0.196 alpha:1];
         
         CGRect dayLabelFrame = CGRectMake(0.f, 0.f, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) / 2.f);
         
@@ -32,6 +32,7 @@
         dayLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         dayLabel.textAlignment = UITextAlignmentCenter;
         dayLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.f];
+        dayLabel.textColor = [UIColor whiteColor];
         [self addSubview:dayLabel];
         self.dayLabel = dayLabel;
         
@@ -42,6 +43,7 @@
         dateLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         dateLabel.textAlignment = UITextAlignmentCenter;
         dateLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14.f];
+        dateLabel.textColor = [UIColor whiteColor];
         [self addSubview:dateLabel];
         self.dateLabel = dateLabel;
         

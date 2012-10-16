@@ -12,6 +12,7 @@
 #import "KPBMensaDataManager.h"
 #import "KPBMealplanInfoView.h"
 #import "KPBMenuHeaderView.h"
+#import "NSDate+HCAExtensions.h"
 
 #define kMealCellIdentifier @"MealCell"
 #define kMenuHeaderViewIdentifier @"MenuHeaderView"
@@ -53,6 +54,8 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute" style:UIBarButtonItemStyleBordered target:self action:@selector(onScrollToToday:)];
     
     self.collectionView.backgroundColor = [UIColor colorWithRed:0.773 green:0.773 blue:0.773 alpha:1];
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.showsVerticalScrollIndicator = NO;
     
     [self.collectionView registerClass:[KPBMealCell class] forCellWithReuseIdentifier:kMealCellIdentifier];
     [self.collectionView registerClass:[KPBMenuHeaderView class] forSupplementaryViewOfKind:PSTCollectionElementKindSectionHeader withReuseIdentifier:kMenuHeaderViewIdentifier];
@@ -78,6 +81,12 @@
     if (!success) {
         NSLog(@"failed to get mealplan data");
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.collectionView flashScrollIndicators];
 }
 
 #pragma mark - PSTCollectionViewDataSource
@@ -115,13 +124,15 @@
 {
     if (self.mealplan == nil) return;
     
-    NSInteger day = indexPath.row % 5;
+    NSInteger day = indexPath.item % 5;
     
     KPBMenu *menu = self.mealplan.menus[day];
     
     if (menu == nil) return;
     
-    NSInteger mealIndex = indexPath.row / 5;
+    NSInteger mealIndex = indexPath.item / 5;
+    
+    //NSString *path = [NSString stringWithFormat:@"%i : %i,%i", indexPath.item, day, mealIndex];
     
     KPBMeal *meal = menu.meals[mealIndex];
     
@@ -129,6 +140,22 @@
     cell.mealTextLabel.text = meal.text;
     cell.priceTextLabel.text = [meal priceText];
     cell.infoTextLabel.text = [meal infoText];
+    
+    UIColor *textColor = [UIColor blackColor];
+    UIColor *backgroundColor = [UIColor whiteColor];
+    
+    if ([menu.date isToday]) {
+        backgroundColor = [UIColor blackColor];
+        textColor = [UIColor whiteColor];
+    }
+    
+    cell.backgroundColor = backgroundColor;
+    
+    cell.mealTitleLabel.textColor = textColor;
+    cell.mealTextLabel.textColor = textColor;
+    cell.priceTextLabel.textColor = textColor;
+    cell.infoTextLabel.textColor = textColor;
+    
 }
 
 - (PSUICollectionReusableView *)collectionView:(PSUICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -136,7 +163,11 @@
     if ([PSTCollectionElementKindSectionFooter isEqualToString:kind]) {
         KPBMealplanInfoView *infoView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kMealplanInfoViewIdentifier forIndexPath:indexPath];
         
-        infoView.textLabel.text = @"bla bla bla";
+        NSDateFormatter *dateFormatter = self.menuHeaderDateFormatter;
+        
+        dateFormatter.dateFormat = @"'Daten geladen am' dd.MM.YYYY 'um' HH:MM 'Uhr'";
+        
+        infoView.textLabel.text = [dateFormatter stringFromDate:self.mealplan.fetchDate];
         
         return infoView;
     } else if ([PSTCollectionElementKindSectionHeader isEqualToString:kind]) {
@@ -144,7 +175,7 @@
         
         NSDateFormatter *dateFormatter = self.menuHeaderDateFormatter;
         
-        NSInteger day = indexPath.row % 5;
+        NSInteger day = indexPath.item % 5;
         
         KPBMenu *menu = self.mealplan.menus[day];
         
@@ -177,11 +208,9 @@
     
     if (self.mealplan == nil) CGSizeMake(width, 80.f);
     
-    NSInteger day = indexPath.row % 5;
+    NSInteger day = indexPath.item % 5;
     
     KPBMenu *menu = self.mealplan.menus[day];
-    
-    if (menu == nil) return CGSizeMake(width, 80.f);
     
     NSInteger mealIndex = indexPath.item / 5;
     
@@ -204,7 +233,7 @@
 
 - (CGSize)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout *)layout sizeForHeaderWithWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(width, 50.f);
+    return CGSizeMake(width, 40.f);
 }
 
 - (UIEdgeInsets)collectionView:(PSUICollectionView_ *)collectionView layout:(PSUICollectionViewLayout_ *)layout insetsForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath

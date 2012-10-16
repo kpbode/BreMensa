@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KPBMensaOpeningInfo.h"
 
 @interface KPBMensa : NSObject
 
 @property (nonatomic, copy, readwrite) NSString *name;
 @property (nonatomic, copy, readwrite) NSString *serverId;
+@property (nonatomic, copy, readwrite) NSArray *openingInfos;
 
 @end

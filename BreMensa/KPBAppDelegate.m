@@ -16,6 +16,10 @@
     
     UINavigationBar *navigationBarProxy = [UINavigationBar appearance];
     navigationBarProxy.tintColor = [UIColor colorWithRed:0.769 green:0.314 blue:0.294 alpha:1];
+
+    if (SYSTEM_VERSION_LESS_THAN(@"6.0")) {
+        application.statusBarStyle = UIBarStyleBlackOpaque;
+    }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 

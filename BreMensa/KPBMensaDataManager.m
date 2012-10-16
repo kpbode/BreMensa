@@ -40,7 +40,42 @@
         NSMutableArray *mensas = [[NSMutableArray alloc] init];
         for (NSDictionary *mensaConfig in mensaConfigs) {
             KPBMensa *mensa = [[KPBMensa alloc] init];
-            [mensa setValuesForKeysWithDictionary:mensaConfig];
+            mensa.name = mensaConfig[@"name"];
+            mensa.serverId = mensaConfig[@"serverId"];
+            
+                    
+            NSMutableArray *openingInfos = [[NSMutableArray alloc] init];
+            
+            NSArray *openingInfoDictionaries = mensaConfig[@"openingInfos"];
+            
+            for (NSDictionary *openingInfoDictionary in openingInfoDictionaries) {
+                
+                KPBMensaOpeningInfo *openingInfo = [[KPBMensaOpeningInfo alloc] init];
+                openingInfo.title = openingInfoDictionary[@"title"];
+                openingInfo.subtitle = openingInfoDictionary[@"subtitle"];
+                
+                NSMutableArray *openingTimes = [[NSMutableArray alloc] init];
+                
+                NSArray *openingTimeDictionaries = openingInfoDictionary[@"times"];
+                
+                for (NSDictionary *openingTimeDictionary in openingTimeDictionaries) {
+                    
+                    KPBMensaOpeningTime *openingTime = [[KPBMensaOpeningTime alloc] init];
+                    
+                    openingTime.label = openingTimeDictionary[@"label"];
+                    openingTime.value = openingTimeDictionary[@"value"];
+                    
+                    [openingTimes addObject:openingTime];
+                }
+                
+                openingInfo.times = openingTimes;
+                
+                [openingInfos addObject:openingInfo];
+            }
+            
+            mensa.openingInfos = openingInfos;
+            
+            
             [mensas addObject:mensa];
         }
         self.mensas = mensas;

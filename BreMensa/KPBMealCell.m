@@ -29,8 +29,8 @@ static UIFont *InfoFont;
 {
     TitleFont = [UIFont fontWithName:@"HelveticaNeue" size:15.f];
     TextFont =  [UIFont fontWithName:@"HelveticaNeue" size:14.f];
-    PriceFont =  [UIFont fontWithName:@"HelveticaNeue" size:12.f];
-    InfoFont =  [UIFont fontWithName:@"HelveticaNeue" size:12.f];
+    PriceFont =  [UIFont fontWithName:@"HelveticaNeue" size:10.f];
+    InfoFont =  [UIFont fontWithName:@"HelveticaNeue" size:10.f];
 }
 
 + (CGFloat)heightForWidth:(CGFloat)width
@@ -101,10 +101,6 @@ static UIFont *InfoFont;
         [self.contentView addSubview:infoTextLabel];
         self.infoTextLabel = infoTextLabel;
         
-        UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-        selectedBackgroundView.backgroundColor = [UIColor redColor];
-        self.selectedBackgroundView = selectedBackgroundView;
-        
     }
     return self;
 }
@@ -121,27 +117,27 @@ static UIFont *InfoFont;
                                                      forWidth:contentWidth
                                                 lineBreakMode:NSLineBreakByClipping];
     CGRect titleLabelFrame = CGRectMake(insetX, 10.f, titleSize.width, titleSize.height);
-    self.mealTitleLabel.frame = titleLabelFrame;
+    self.mealTitleLabel.frame = CGRectIntegral(titleLabelFrame);
     
     CGSize mealTextSize = [self.mealTextLabel.text sizeWithFont:self.mealTextLabel.font
                                               constrainedToSize:CGSizeMake(contentWidth, CGFLOAT_MAX)
                                                   lineBreakMode:NSLineBreakByClipping];
     CGRect mealTextLabelFrame = CGRectMake(insetX, CGRectGetMaxY(titleLabelFrame) + 10.f, mealTextSize.width, mealTextSize.height);
-    self.mealTextLabel.frame = mealTextLabelFrame;
+    self.mealTextLabel.frame = CGRectIntegral(mealTextLabelFrame);
     
     
     CGSize priceSize = [self.priceTextLabel.text sizeWithFont:self.priceTextLabel.font
                                                      forWidth:contentWidth
                                                 lineBreakMode:NSLineBreakByClipping];
     CGRect priceLabelFrame = CGRectMake(insetX, CGRectGetMaxY(mealTextLabelFrame) + 10.f, priceSize.width, priceSize.height);
-    self.priceTextLabel.frame = priceLabelFrame;
+    self.priceTextLabel.frame = CGRectIntegral(priceLabelFrame);
     
     
     CGSize infoSize = [self.infoTextLabel.text sizeWithFont:self.infoTextLabel.font
                                                    forWidth:contentWidth
                                               lineBreakMode:NSLineBreakByClipping];
     CGRect infoLabelFrame = CGRectMake(insetX, CGRectGetMaxY(priceLabelFrame) + 10.f, infoSize.width, infoSize.height);
-    self.infoTextLabel.frame = infoLabelFrame;
+    self.infoTextLabel.frame = CGRectIntegral(infoLabelFrame);
 }
 
 @end

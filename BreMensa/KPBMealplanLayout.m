@@ -32,14 +32,14 @@
     
     PSUICollectionView *collectionView = (PSUICollectionView *) self.collectionView;
     
-    currentOrigin.y += 50.f;
-    height = 50.f;
-    
     for (NSInteger sectionIndex = 0; sectionIndex < numberOfSections; sectionIndex++) {
         
         NSInteger numberOfColumns = [self.delegate collectionView:collectionView
                                                            layout:self
                                          numberOfColumnsInSection:sectionIndex];
+        
+        
+        
         
         NSInteger numberOfItems = [collectionView numberOfItemsInSection:sectionIndex];
         
@@ -51,13 +51,29 @@
         
         NSMutableArray *columnWidths = [[NSMutableArray alloc] init];
         
+        CGFloat maxHeaderHeight = CGFLOAT_MIN;
+        
         for (NSInteger columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
+            
+            
+            
             CGFloat columnWidth = [self.delegate collectionView:collectionView layout:self widthForColumn:columnIndex forSectionAtIndex:sectionIndex];
             sectionWidth += columnWidth;
             [columnWidths addObject:@(columnWidth)];
+            
+            CGSize headerSize = [self.delegate collectionView:collectionView
+                                                       layout:self
+                                       sizeForHeaderWithWidth:columnWidth
+                                                  atIndexPath:[NSIndexPath indexPathForItem:columnIndex inSection:sectionIndex]];
+            
+            maxHeaderHeight = MAX(maxHeaderHeight, headerSize.height);
+            
         }
         
         width = MAX(width, sectionWidth);
+        
+        currentOrigin.y += maxHeaderHeight;
+        height = maxHeaderHeight;
         
         KPBMealplanLayoutSection *section = [[KPBMealplanLayoutSection alloc] initWithOrigin:currentOrigin
                                                                                        width:sectionWidth
@@ -81,9 +97,7 @@
                                         sizeForItemWithWidth:itemWidth
                                                  atIndexPath:itemIndexPath];
             
-            //NSLog(@"item(%i).size: %@", itemIndex, NSStringFromCGSize(itemSize));
-            
-            [section addItemOfSize:itemSize forIndex:itemIndex toColumnWithWidth:columnWidth];
+            [section addItemOfSize:itemSize forIndex:itemIndex toColumnWithIndex:columnIndex andWidth:columnWidth];
         }
         
         [sections addObject:section];
