@@ -63,9 +63,7 @@
 {
     [super viewWillAppear:animated];
     
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 53.05517;
-    zoomLocation.longitude= 8.78330;
+    CLLocationCoordinate2D zoomLocation = self.mensa.location.coordinate;
     
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1000.0, 1000.0);
     [self.mapView setRegion:viewRegion animated:YES];

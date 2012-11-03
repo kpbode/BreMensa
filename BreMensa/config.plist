@@ -11,6 +11,10 @@
 				<string>Airport</string>
 				<key>serverId</key>
 				<string>air</string>
+                <key>latitude</key>
+                <real>53.055199</real>
+                <key>longitude</key>
+                <real>8.783312</real>
                 <key>openingInfos</key>
                 <array>
                     <dict>
@@ -56,6 +60,10 @@
 				<string>Bremerhaven</string>
 				<key>serverId</key>
 				<string>bhv</string>
+                <key>latitude</key>
+                <real>53.53946</real>
+                <key>longitude</key>
+                <real>8.58218</real>
                 <key>openingInfos</key>
                 <array>
                     <dict>
@@ -101,6 +109,10 @@
 				<string>GW2</string>
 				<key>serverId</key>
 				<string>gw2</string>
+                <key>latitude</key>
+                <real>53.107189</real>
+                <key>longitude</key>
+                <real>8.854012</real>
                 <key>openingInfos</key>
                 <array>
                     <dict>
@@ -152,6 +164,10 @@
 				<string>Neustadtswall</string>
 				<key>serverId</key>
 				<string>hsb</string>
+                <key>latitude</key>
+                <real>53.072402</real>
+                <key>longitude</key>
+                <real>8.793748</real>
                 <key>openingInfos</key>
                 <array>
                     <dict>
@@ -221,6 +237,10 @@
 				<string>Uniboulevard</string>
 				<key>serverId</key>
 				<string>uni</string>
+                <key>latitude</key>
+                <real>53.10876</real>
+                <key>longitude</key>
+                <real>8.85021</real>
                 <key>openingInfos</key>
                 <array>
                     <dict>
@@ -290,6 +310,10 @@
 				<string>Werderstraße</string>
 				<key>serverId</key>
 				<string>wer</string>
+                <key>latitude</key>
+                <real>53.06989</real>
+                <key>longitude</key>
+                <real>8.80680</real>
                 <key>openingInfos</key>
                 <array>
                     <dict>

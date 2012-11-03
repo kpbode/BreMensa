@@ -26,6 +26,7 @@
 
 - (void)configureCell:(KPBMealCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
+- (void)scrollToTodayAnimated:(BOOL)animated;
 - (void)onScrollToToday:(id)sender;
 
 @end
@@ -50,9 +51,7 @@
     [super viewDidLoad];
     
     self.title = self.mensa.name;
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute" style:UIBarButtonItemStyleBordered target:self action:@selector(onScrollToToday:)];
-    
+        
     self.collectionView.backgroundColor = [UIColor colorWithRed:0.773 green:0.773 blue:0.773 alpha:1];
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = NO;
@@ -70,17 +69,26 @@
                                                       cancelButtonTitle:@"Ok"
                                                       otherButtonTitles:nil];
             [alertView show];
-            return;
+        } else {
+            self.mealplan = mealplan;
+            [self.collectionView reloadData];
         }
-        
-        self.mealplan = mealplan;
-        [self.collectionView reloadData];
-        
     }];
     
     if (!success) {
         NSLog(@"failed to get mealplan data");
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if ([self canScrollToToday]) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute" style:UIBarButtonItemStyleBordered target:self action:@selector(onScrollToToday:)];
+    }
+    
+    [self scrollToTodayAnimated:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -144,8 +152,8 @@
     UIColor *textColor = [UIColor blackColor];
     UIColor *backgroundColor = [UIColor whiteColor];
     
-    if ([menu.date isToday]) {
-        backgroundColor = [UIColor blackColor];
+    if ([menu.date HCA_isToday]) {
+        backgroundColor = [UIColor colorWithRed:0.165 green:0.165 blue:0.165 alpha:1];
         textColor = [UIColor whiteColor];
     }
     
@@ -250,7 +258,14 @@
     return _menuHeaderDateFormatter;
 }
 
+
+
 - (void)onScrollToToday:(id)sender
+{
+    [self scrollToTodayAnimated:YES];
+}
+
+- (void)scrollToTodayAnimated:(BOOL)animated
 {
     
     NSDate *now = [NSDate date];
@@ -263,9 +278,19 @@
     NSInteger weekday = nowComponents.weekday - 2;
     
     if (weekday >= 0 && weekday < 5) {
-        [self.collectionView setContentOffset:CGPointMake(weekday * 200.f, self.collectionView.contentOffset.y) animated:YES];
+        [self.collectionView setContentOffset:CGPointMake(weekday * 200.f, self.collectionView.contentOffset.y) animated:animated];
     }
     
+}
+
+- (BOOL)canScrollToToday
+{
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    calendar.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"DE_de"];
+    NSDateComponents *nowComponents = [calendar components:NSWeekdayCalendarUnit fromDate:now];
+    NSInteger weekday = nowComponents.weekday - 2;
+    return weekday >= 0 && weekday < 5;
 }
 
 @end

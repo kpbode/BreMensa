@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "KPBMensaOpeningInfo.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface KPBMensa : NSObject
 
 @property (nonatomic, copy, readwrite) NSString *name;
 @property (nonatomic, copy, readwrite) NSString *serverId;
 @property (nonatomic, copy, readwrite) NSArray *openingInfos;
+@property (nonatomic, strong, readwrite) CLLocation *location;
 
 @end

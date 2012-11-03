@@ -23,7 +23,7 @@
     if (self) {
         // Initialization code
         
-        self.backgroundColor = [UIColor colorWithRed:0.200 green:0.200 blue:0.196 alpha:1];
+        self.backgroundColor = [UIColor colorWithRed:0.376 green:0.376 blue:0.376 alpha:1];
         
         CGRect dayLabelFrame = CGRectMake(0.f, 0.f, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) / 2.f);
         

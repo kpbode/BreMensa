@@ -10,6 +10,6 @@
 
 @interface NSDate (HCAExtensions)
 
-- (BOOL)isToday;
+- (BOOL)HCA_isToday;
 
 @end

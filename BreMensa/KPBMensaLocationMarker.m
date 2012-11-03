@@ -37,7 +37,7 @@
 
 - (CLLocationCoordinate2D)coordinate
 {
-    return CLLocationCoordinate2DMake(53.05517, 8.78330);
+    return self.mensa.location.coordinate;
 }
 
 @end

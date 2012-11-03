@@ -7,18 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFAD15AD3FDF4ECAB3D16B34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3C0EF188C74A17A4F5B557 /* libPods.a */; };
 		CB73F664162B181F00F5E310 /* KPBMealplanInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB73F663162B181F00F5E310 /* KPBMealplanInfoView.m */; };
-		CBC982F4162C147600D33C4C /* PSTCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982DE162C147600D33C4C /* PSTCollectionView.m */; };
-		CBC982F5162C147600D33C4C /* PSTCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982E0162C147600D33C4C /* PSTCollectionViewCell.m */; };
-		CBC982F6162C147600D33C4C /* PSTCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982E3162C147600D33C4C /* PSTCollectionViewController.m */; };
-		CBC982F7162C147600D33C4C /* PSTCollectionViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982E5162C147600D33C4C /* PSTCollectionViewData.m */; };
-		CBC982F8162C147600D33C4C /* PSTCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982E7162C147600D33C4C /* PSTCollectionViewFlowLayout.m */; };
-		CBC982F9162C147600D33C4C /* PSTCollectionViewItemKey.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982E9162C147600D33C4C /* PSTCollectionViewItemKey.m */; };
-		CBC982FA162C147600D33C4C /* PSTCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982EB162C147600D33C4C /* PSTCollectionViewLayout.m */; };
-		CBC982FB162C147600D33C4C /* PSTGridLayoutInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982ED162C147600D33C4C /* PSTGridLayoutInfo.m */; };
-		CBC982FC162C147600D33C4C /* PSTGridLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982EF162C147600D33C4C /* PSTGridLayoutItem.m */; };
-		CBC982FD162C147600D33C4C /* PSTGridLayoutRow.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982F1162C147600D33C4C /* PSTGridLayoutRow.m */; };
-		CBC982FE162C147600D33C4C /* PSTGridLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC982F3162C147600D33C4C /* PSTGridLayoutSection.m */; };
 		CBD36B4B162D74C900C2A9BE /* NSDate+HCAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B4A162D74C900C2A9BE /* NSDate+HCAExtensions.m */; };
 		CBE6E1151629B060003E550A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1141629B060003E550A /* UIKit.framework */; };
 		CBE6E1171629B060003E550A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1161629B060003E550A /* Foundation.framework */; };
@@ -55,6 +45,7 @@
 		CBF607AF162C992E008EC76B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF607AE162C992E008EC76B /* CoreLocation.framework */; };
 		CBF607B6162D5D87008EC76B /* KPBMensaOpeningTime.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607B5162D5D87008EC76B /* KPBMensaOpeningTime.m */; };
 		CBF607BA162D5DBB008EC76B /* KPBMensaOpeningInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607B9162D5DBB008EC76B /* KPBMensaOpeningInfo.m */; };
+		D6D22B5B7FE1446EAFD17376 /* libPods-BreMensaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B88CA4A70134B1CB6D5C93D /* libPods-BreMensaTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,37 +59,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A3C0EF188C74A17A4F5B557 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B88CA4A70134B1CB6D5C93D /* libPods-BreMensaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BreMensaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		544FECFB53554709B473E061 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		CB3C54CC1637DCC4002BD030 /* CoreData.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CB73F662162B181F00F5E310 /* KPBMealplanInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanInfoView.h; sourceTree = "<group>"; };
 		CB73F663162B181F00F5E310 /* KPBMealplanInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplanInfoView.m; sourceTree = "<group>"; };
-		CBC982DD162C147600D33C4C /* PSTCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionView.h; sourceTree = "<group>"; };
-		CBC982DE162C147600D33C4C /* PSTCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionView.m; sourceTree = "<group>"; };
-		CBC982DF162C147600D33C4C /* PSTCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewCell.h; sourceTree = "<group>"; };
-		CBC982E0162C147600D33C4C /* PSTCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewCell.m; sourceTree = "<group>"; };
-		CBC982E1162C147600D33C4C /* PSTCollectionViewCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewCommon.h; sourceTree = "<group>"; };
-		CBC982E2162C147600D33C4C /* PSTCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewController.h; sourceTree = "<group>"; };
-		CBC982E3162C147600D33C4C /* PSTCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewController.m; sourceTree = "<group>"; };
-		CBC982E4162C147600D33C4C /* PSTCollectionViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewData.h; sourceTree = "<group>"; };
-		CBC982E5162C147600D33C4C /* PSTCollectionViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewData.m; sourceTree = "<group>"; };
-		CBC982E6162C147600D33C4C /* PSTCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		CBC982E7162C147600D33C4C /* PSTCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		CBC982E8162C147600D33C4C /* PSTCollectionViewItemKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewItemKey.h; sourceTree = "<group>"; };
-		CBC982E9162C147600D33C4C /* PSTCollectionViewItemKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewItemKey.m; sourceTree = "<group>"; };
-		CBC982EA162C147600D33C4C /* PSTCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewLayout.h; sourceTree = "<group>"; };
-		CBC982EB162C147600D33C4C /* PSTCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTCollectionViewLayout.m; sourceTree = "<group>"; };
-		CBC982EC162C147600D33C4C /* PSTGridLayoutInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutInfo.h; sourceTree = "<group>"; };
-		CBC982ED162C147600D33C4C /* PSTGridLayoutInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutInfo.m; sourceTree = "<group>"; };
-		CBC982EE162C147600D33C4C /* PSTGridLayoutItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutItem.h; sourceTree = "<group>"; };
-		CBC982EF162C147600D33C4C /* PSTGridLayoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutItem.m; sourceTree = "<group>"; };
-		CBC982F0162C147600D33C4C /* PSTGridLayoutRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutRow.h; sourceTree = "<group>"; };
-		CBC982F1162C147600D33C4C /* PSTGridLayoutRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutRow.m; sourceTree = "<group>"; };
-		CBC982F2162C147600D33C4C /* PSTGridLayoutSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutSection.h; sourceTree = "<group>"; };
-		CBC982F3162C147600D33C4C /* PSTGridLayoutSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutSection.m; sourceTree = "<group>"; };
 		CBD36B49162D74C900C2A9BE /* NSDate+HCAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HCAExtensions.h"; sourceTree = "<group>"; };
 		CBD36B4A162D74C900C2A9BE /* NSDate+HCAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HCAExtensions.m"; sourceTree = "<group>"; };
 		CBE6E1101629B060003E550A /* BreMensa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreMensa.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBE6E1141629B060003E550A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		CBE6E1161629B060003E550A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		CBE6E1181629B060003E550A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CBE6E1141629B060003E550A /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CBE6E1161629B060003E550A /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CBE6E1181629B060003E550A /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CBE6E11C1629B060003E550A /* BreMensa-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BreMensa-Info.plist"; sourceTree = "<group>"; };
 		CBE6E11E1629B060003E550A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBE6E1201629B060003E550A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -109,7 +81,7 @@
 		CBE6E1281629B060003E550A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CBE6E12A1629B060003E550A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CBE6E1311629B060003E550A /* BreMensaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreMensaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBE6E1321629B060003E550A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		CBE6E1321629B060003E550A /* SenTestingKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CBE6E13A1629B061003E550A /* BreMensaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BreMensaTests-Info.plist"; sourceTree = "<group>"; };
 		CBE6E13C1629B061003E550A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBE6E13E1629B061003E550A /* BreMensaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BreMensaTests.h; sourceTree = "<group>"; };
@@ -121,7 +93,7 @@
 		CBE6E1561629B41F003E550A /* KPBMensa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensa.m; sourceTree = "<group>"; };
 		CBE6E17B1629B84D003E550A /* KPBMealplanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanViewController.h; sourceTree = "<group>"; };
 		CBE6E17C1629B84D003E550A /* KPBMealplanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplanViewController.m; sourceTree = "<group>"; };
-		CBE6E17E1629B95E003E550A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CBE6E17E1629B95E003E550A /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CBE6E1801629BA18003E550A /* KPBMealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealCell.h; sourceTree = "<group>"; };
 		CBE6E1811629BA18003E550A /* KPBMealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealCell.m; sourceTree = "<group>"; };
 		CBE6E1871629D000003E550A /* KPBMealplanLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanLayout.h; sourceTree = "<group>"; };
@@ -136,7 +108,7 @@
 		CBE6E19B162AE1B8003E550A /* KPBMeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMeal.m; sourceTree = "<group>"; };
 		CBE6E1A5162AE572003E550A /* KPBMensaDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaDataManager.h; sourceTree = "<group>"; };
 		CBE6E1A6162AE572003E550A /* KPBMensaDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaDataManager.m; sourceTree = "<group>"; };
-		CBF60793162C4DA2008EC76B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CBF60793162C4DA2008EC76B /* MapKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CBF60796162C4DC7008EC76B /* KPBMensaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaDetailViewController.h; sourceTree = "<group>"; };
 		CBF60797162C4DC7008EC76B /* KPBMensaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaDetailViewController.m; sourceTree = "<group>"; };
 		CBF60799162C4E2A008EC76B /* KPBMensaDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaDetailView.h; sourceTree = "<group>"; };
@@ -147,11 +119,13 @@
 		CBF607A8162C79F5008EC76B /* KPBMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMenuHeaderView.m; sourceTree = "<group>"; };
 		CBF607AB162C9707008EC76B /* KPBMensaLocationMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaLocationMarker.h; sourceTree = "<group>"; };
 		CBF607AC162C9707008EC76B /* KPBMensaLocationMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaLocationMarker.m; sourceTree = "<group>"; };
-		CBF607AE162C992E008EC76B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CBF607AE162C992E008EC76B /* CoreLocation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CBF607B4162D5D87008EC76B /* KPBMensaOpeningTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaOpeningTime.h; sourceTree = "<group>"; };
 		CBF607B5162D5D87008EC76B /* KPBMensaOpeningTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaOpeningTime.m; sourceTree = "<group>"; };
 		CBF607B8162D5DBB008EC76B /* KPBMensaOpeningInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaOpeningInfo.h; sourceTree = "<group>"; };
 		CBF607B9162D5DBB008EC76B /* KPBMensaOpeningInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaOpeningInfo.m; sourceTree = "<group>"; };
+		CBF71FAA1645299700DBDD74 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CBF71FAB1645299700DBDD74 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +139,7 @@
 				CBE6E1151629B060003E550A /* UIKit.framework in Frameworks */,
 				CBE6E1171629B060003E550A /* Foundation.framework in Frameworks */,
 				CBE6E1191629B060003E550A /* CoreGraphics.framework in Frameworks */,
+				BFAD15AD3FDF4ECAB3D16B34 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,43 +150,13 @@
 				CBE6E1331629B060003E550A /* SenTestingKit.framework in Frameworks */,
 				CBE6E1341629B060003E550A /* UIKit.framework in Frameworks */,
 				CBE6E1351629B060003E550A /* Foundation.framework in Frameworks */,
+				D6D22B5B7FE1446EAFD17376 /* libPods-BreMensaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CBC982DC162C147600D33C4C /* PSTCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				CBC982DD162C147600D33C4C /* PSTCollectionView.h */,
-				CBC982DE162C147600D33C4C /* PSTCollectionView.m */,
-				CBC982DF162C147600D33C4C /* PSTCollectionViewCell.h */,
-				CBC982E0162C147600D33C4C /* PSTCollectionViewCell.m */,
-				CBC982E1162C147600D33C4C /* PSTCollectionViewCommon.h */,
-				CBC982E2162C147600D33C4C /* PSTCollectionViewController.h */,
-				CBC982E3162C147600D33C4C /* PSTCollectionViewController.m */,
-				CBC982E4162C147600D33C4C /* PSTCollectionViewData.h */,
-				CBC982E5162C147600D33C4C /* PSTCollectionViewData.m */,
-				CBC982E6162C147600D33C4C /* PSTCollectionViewFlowLayout.h */,
-				CBC982E7162C147600D33C4C /* PSTCollectionViewFlowLayout.m */,
-				CBC982E8162C147600D33C4C /* PSTCollectionViewItemKey.h */,
-				CBC982E9162C147600D33C4C /* PSTCollectionViewItemKey.m */,
-				CBC982EA162C147600D33C4C /* PSTCollectionViewLayout.h */,
-				CBC982EB162C147600D33C4C /* PSTCollectionViewLayout.m */,
-				CBC982EC162C147600D33C4C /* PSTGridLayoutInfo.h */,
-				CBC982ED162C147600D33C4C /* PSTGridLayoutInfo.m */,
-				CBC982EE162C147600D33C4C /* PSTGridLayoutItem.h */,
-				CBC982EF162C147600D33C4C /* PSTGridLayoutItem.m */,
-				CBC982F0162C147600D33C4C /* PSTGridLayoutRow.h */,
-				CBC982F1162C147600D33C4C /* PSTGridLayoutRow.m */,
-				CBC982F2162C147600D33C4C /* PSTGridLayoutSection.h */,
-				CBC982F3162C147600D33C4C /* PSTGridLayoutSection.m */,
-			);
-			name = PSTCollectionView;
-			path = PSTCollectionView/PSTCollectionView;
-			sourceTree = "<group>";
-		};
 		CBD36B44162D748F00C2A9BE /* HCA */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,11 +170,11 @@
 			isa = PBXGroup;
 			children = (
 				CBD36B44162D748F00C2A9BE /* HCA */,
-				CBC982DC162C147600D33C4C /* PSTCollectionView */,
 				CBE6E11A1629B060003E550A /* BreMensa */,
 				CBE6E1381629B060003E550A /* BreMensaTests */,
 				CBE6E1131629B060003E550A /* Frameworks */,
 				CBE6E1111629B060003E550A /* Products */,
+				544FECFB53554709B473E061 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,6 +190,7 @@
 		CBE6E1131629B060003E550A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB3C54CC1637DCC4002BD030 /* CoreData.framework */,
 				CBF607AE162C992E008EC76B /* CoreLocation.framework */,
 				CBF60793162C4DA2008EC76B /* MapKit.framework */,
 				CBE6E17E1629B95E003E550A /* QuartzCore.framework */,
@@ -252,6 +198,8 @@
 				CBE6E1161629B060003E550A /* Foundation.framework */,
 				CBE6E1181629B060003E550A /* CoreGraphics.framework */,
 				CBE6E1321629B060003E550A /* SenTestingKit.framework */,
+				2A3C0EF188C74A17A4F5B557 /* libPods.a */,
+				4B88CA4A70134B1CB6D5C93D /* libPods-BreMensaTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -378,6 +326,7 @@
 				CBE6E10C1629B060003E550A /* Sources */,
 				CBE6E10D1629B060003E550A /* Frameworks */,
 				CBE6E10E1629B060003E550A /* Resources */,
+				98EB9514B6F24B74A26E2671 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -396,6 +345,7 @@
 				CBE6E12D1629B060003E550A /* Frameworks */,
 				CBE6E12E1629B060003E550A /* Resources */,
 				CBE6E12F1629B060003E550A /* ShellScript */,
+				1DE7994BA6C249D7800DC5C9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,6 +373,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = CBE6E1051629B05F003E550A;
 			productRefGroup = CBE6E1111629B060003E550A /* Products */;
@@ -459,6 +410,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1DE7994BA6C249D7800DC5C9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-BreMensaTests-resources.sh\"\n";
+		};
+		98EB9514B6F24B74A26E2671 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		CBE6E12F1629B060003E550A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,17 +471,6 @@
 				CBE6E19C162AE1B8003E550A /* KPBMeal.m in Sources */,
 				CBE6E1A7162AE572003E550A /* KPBMensaDataManager.m in Sources */,
 				CB73F664162B181F00F5E310 /* KPBMealplanInfoView.m in Sources */,
-				CBC982F4162C147600D33C4C /* PSTCollectionView.m in Sources */,
-				CBC982F5162C147600D33C4C /* PSTCollectionViewCell.m in Sources */,
-				CBC982F6162C147600D33C4C /* PSTCollectionViewController.m in Sources */,
-				CBC982F7162C147600D33C4C /* PSTCollectionViewData.m in Sources */,
-				CBC982F8162C147600D33C4C /* PSTCollectionViewFlowLayout.m in Sources */,
-				CBC982F9162C147600D33C4C /* PSTCollectionViewItemKey.m in Sources */,
-				CBC982FA162C147600D33C4C /* PSTCollectionViewLayout.m in Sources */,
-				CBC982FB162C147600D33C4C /* PSTGridLayoutInfo.m in Sources */,
-				CBC982FC162C147600D33C4C /* PSTGridLayoutItem.m in Sources */,
-				CBC982FD162C147600D33C4C /* PSTGridLayoutRow.m in Sources */,
-				CBC982FE162C147600D33C4C /* PSTGridLayoutSection.m in Sources */,
 				CBF60798162C4DC7008EC76B /* KPBMensaDetailViewController.m in Sources */,
 				CBF6079B162C4E2A008EC76B /* KPBMensaDetailView.m in Sources */,
 				CBF6079E162C5340008EC76B /* KPBMoreInfoViewController.m in Sources */,
@@ -537,6 +505,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CBE6E11E1629B060003E550A /* en */,
+				CBF71FAA1645299700DBDD74 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -545,6 +514,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CBE6E13C1629B061003E550A /* en */,
+				CBF71FAB1645299700DBDD74 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -606,6 +576,7 @@
 		};
 		CBE6E1441629B061003E550A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 544FECFB53554709B473E061 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
@@ -619,6 +590,7 @@
 		};
 		CBE6E1451629B061003E550A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 544FECFB53554709B473E061 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";

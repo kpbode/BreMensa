@@ -10,7 +10,7 @@
 
 @implementation NSDate (HCAExtensions)
 
-- (BOOL)isToday
+- (BOOL)HCA_isToday
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     

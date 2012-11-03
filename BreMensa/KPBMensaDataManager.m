@@ -43,6 +43,11 @@
             mensa.name = mensaConfig[@"name"];
             mensa.serverId = mensaConfig[@"serverId"];
             
+            double latitude = [mensaConfig[@"latitude"] doubleValue];
+            double longitude = [mensaConfig[@"longitude"] doubleValue];
+            
+            mensa.location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+            
                     
             NSMutableArray *openingInfos = [[NSMutableArray alloc] init];
             
@@ -102,7 +107,8 @@
         NSFileManager *fileManager = [[NSFileManager alloc] init];
         NSString *filePath = [self mealplanFilePathForMensa:mensa];
         
-        if (![fileManager fileExistsAtPath:filePath]) {
+//        if (![fileManager fileExistsAtPath:filePath]) {
+        if (YES) {
             
             [self loadMealplanForMensa:mensa withBlock:block];
             
