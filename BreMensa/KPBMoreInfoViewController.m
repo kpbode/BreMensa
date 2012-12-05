@@ -7,8 +7,9 @@
 //
 
 #import "KPBMoreInfoViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface KPBMoreInfoViewController ()
+@interface KPBMoreInfoViewController () <UIWebViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, weak, readwrite) UIWebView *webView;
 
@@ -36,6 +37,7 @@
     webView.backgroundColor = [UIColor clearColor];
     webView.opaque = NO;
     webView.dataDetectorTypes = UIDataDetectorTypeLink;
+    webView.delegate = self;
     
     // remove shadows
     for (UIView *subview in webView.scrollView.subviews) {
@@ -55,25 +57,20 @@
     
     self.title = @"Info";
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(onShareAppWithFriends:)]; 
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                               target:self action:@selector(onShareAppWithFriends:)];
+    }
+    
     
     NSURL *infoFileURL = [[NSBundle mainBundle] URLForResource:@"info" withExtension:@"html"];
     
     [self.webView loadRequest:[NSURLRequest requestWithURL:infoFileURL]];
-    
-    /*
-    self.textView.font = [UIFont fontWithName:@"HelveticaNeue" size:14.f];
-    self.textView.text = @"BreMensa ist keine offizielle App des Studentenwerk Bremen. \n" \
-                        "BreMensa ist ein privates Projekt von Karl Bode und Matthias Friedrich";
-     */
-    
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)onShareAppWithFriends:(id)sender
@@ -89,6 +86,38 @@
     activityViewController.excludedActivityTypes = @[ UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll ];
     
     [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+#pragma mark UIWebViewDelegate
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    if ([[request.URL absoluteString] hasPrefix:@"mailto:"]) {
+        
+        MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
+        mailComposeViewController.mailComposeDelegate = self;
+        [mailComposeViewController setToRecipients:@[@"kpbode@me.com"]];
+        [mailComposeViewController setSubject:@"BreMensa-Feedback"];
+        
+        NSBundle *bundle = [NSBundle mainBundle];
+        
+        NSString *message = [NSString stringWithFormat:@"\n\n --- BreMensa %@ [%@] -- %@, iOS %@ (%@)", [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [bundle objectForInfoDictionaryKey:@"CFBundleVersion"], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [bundle preferredLocalizations][0]];
+        
+        
+        [mailComposeViewController setMessageBody:message isHTML:NO];
+        
+        [self presentViewController:mailComposeViewController animated:YES completion:nil];
+        
+        return NO;
+    }
+    return YES;
+}
+
+#pragma mark MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

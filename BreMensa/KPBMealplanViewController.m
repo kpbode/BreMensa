@@ -68,10 +68,13 @@
 {
     [super viewDidAppear:animated];
     
-    if (self.mealplan == nil) {
-        [self showPlaceholder];
+    if (self.mensa != nil) {
+        if (IS_IPHONE) {
+            [self loadMealplan];
+        }
+    
     } else {
-        [self scrollToTodayAnimated:YES];
+        [self showPlaceholder];
     }
     
     [self.collectionView flashScrollIndicators];
@@ -92,13 +95,27 @@
     
     self.title = mensa.name;
     
+    if (IS_IPAD) {
+        [self loadMealplan];
+    }
+}
+
+- (void)loadMealplan
+{
+    NSLog(@"loadMealplan");
+    
+    if (self.mensa == nil) return;
+    
     [self hidePlaceholder];
     
     MBProgressHUD *progressHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     progressHud.mode = MBProgressHUDModeIndeterminate;
     progressHud.labelText = @"Speiseplan wird geladen";
     
-    BOOL success = [[KPBMensaDataManager sharedManager] mealplanForMensa:mensa withBlock:^(KPBMealplan *mealplan) {
+    BOOL success = [[KPBMensaDataManager sharedManager] mealplanForMensa:self.mensa withBlock:^(KPBMealplan *mealplan) {
+        
+        [progressHud hide:YES];
+        
         if (mealplan == nil) {
             
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
@@ -118,7 +135,7 @@
                                                                                          target:self action:@selector(onScrollToToday:)];
             }
             
-            int64_t delayInSeconds = 0.3;
+            int64_t delayInSeconds = 0.;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 [self scrollToTodayAnimated:YES];
@@ -126,7 +143,6 @@
             
         }
         
-        [progressHud hide:YES];
     }];
     
     if (!success) {

@@ -16,6 +16,7 @@
 		CB3DE7E1166F95BE00F87962 /* meal_header_today_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB3DE7DF166F95BE00F87962 /* meal_header_today_background@2x.png */; };
 		CB3DE7E4166FA24C00F87962 /* details_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = CB3DE7E2166FA24C00F87962 /* details_shadow.png */; };
 		CB3DE7E5166FA24C00F87962 /* details_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB3DE7E3166FA24C00F87962 /* details_shadow@2x.png */; };
+		CB3DE7E7166FAEDF00F87962 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3DE7E6166FAEDF00F87962 /* MessageUI.framework */; };
 		CB684C4B165693400040D6FE /* KPBDetailDisclosureButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB684C4A165693400040D6FE /* KPBDetailDisclosureButton.m */; };
 		CB73F664162B181F00F5E310 /* KPBMealplanInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB73F663162B181F00F5E310 /* KPBMealplanInfoView.m */; };
 		CBD36B4B162D74C900C2A9BE /* NSDate+HCAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B4A162D74C900C2A9BE /* NSDate+HCAExtensions.m */; };
@@ -74,6 +75,7 @@
 		CB3DE7DF166F95BE00F87962 /* meal_header_today_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meal_header_today_background@2x.png"; sourceTree = "<group>"; };
 		CB3DE7E2166FA24C00F87962 /* details_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details_shadow.png; sourceTree = "<group>"; };
 		CB3DE7E3166FA24C00F87962 /* details_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "details_shadow@2x.png"; sourceTree = "<group>"; };
+		CB3DE7E6166FAEDF00F87962 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CB684C491656933F0040D6FE /* KPBDetailDisclosureButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBDetailDisclosureButton.h; sourceTree = "<group>"; };
 		CB684C4A165693400040D6FE /* KPBDetailDisclosureButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBDetailDisclosureButton.m; sourceTree = "<group>"; };
 		CB73F662162B181F00F5E310 /* KPBMealplanInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanInfoView.h; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB3DE7E7166FAEDF00F87962 /* MessageUI.framework in Frameworks */,
 				CBF607AF162C992E008EC76B /* CoreLocation.framework in Frameworks */,
 				CBF60794162C4DA2008EC76B /* MapKit.framework in Frameworks */,
 				CBE6E17F1629B95E003E550A /* QuartzCore.framework in Frameworks */,
@@ -216,6 +219,7 @@
 		CBE6E1131629B060003E550A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB3DE7E6166FAEDF00F87962 /* MessageUI.framework */,
 				CB3C54CC1637DCC4002BD030 /* CoreData.framework */,
 				CBF607AE162C992E008EC76B /* CoreLocation.framework */,
 				CBF60793162C4DA2008EC76B /* MapKit.framework */,

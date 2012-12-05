@@ -23,12 +23,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
         
         MKMapView *mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
-        mapView.layer.borderColor = [[UIColor grayColor] CGColor];
-        mapView.layer.borderWidth = 1.f;
-        mapView.layer.cornerRadius = 7.f;
         
         [self addSubview:mapView];
         self.mapView = mapView;
@@ -45,6 +41,7 @@
         openingTimesLabel.backgroundColor = [UIColor clearColor];
         openingTimesLabel.textColor = [UIColor darkGrayColor];
         openingTimesLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.f];
+        openingTimesLabel.textAlignment = UITextAlignmentCenter;
         [self addSubview:openingTimesLabel];
         self.openingTimesLabel = openingTimesLabel;
         
@@ -56,29 +53,20 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
     CGRect mapViewFrame = CGRectMake(0.f, 0.f, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) / 2.f);
-    self.mapView.frame = CGRectInset(mapViewFrame, 10.f, 10.f);
+    self.mapView.frame = mapViewFrame;
     
-    self.shadowView.frame = CGRectMake(0.f, CGRectGetMaxY(self.mapView.frame) + 10.f, CGRectGetWidth(self.bounds), 23.f);
+    self.shadowView.frame = CGRectMake(0.f, CGRectGetMaxY(self.mapView.frame) + 0.f, CGRectGetWidth(self.bounds), 23.f);
     
-    self.openingTimesLabel.frame = CGRectMake(10.f, CGRectGetMaxY(self.shadowView.frame), CGRectGetWidth(self.bounds) - 20.f, 20.f);
+    self.openingTimesLabel.frame = CGRectMake(10.f, CGRectGetMaxY(self.shadowView.frame) - 10.f, CGRectGetWidth(self.bounds) - 20.f, 30.f);
     
     CGRect tableViewFrame = CGRectMake(0.f, CGRectGetMaxY(self.openingTimesLabel.frame), CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - CGRectGetMaxY(self.openingTimesLabel.frame));
     
-    self.tableView.frame = UIEdgeInsetsInsetRect(tableViewFrame, UIEdgeInsetsMake(10.f, 10.f, 0.f, 10.f));
+    self.tableView.frame = tableViewFrame;
 }
 
 @end
