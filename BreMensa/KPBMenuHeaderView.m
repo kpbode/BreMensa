@@ -23,7 +23,13 @@
     if (self) {
         // Initialization code
         
-        self.backgroundColor = [UIColor colorWithRed:0.376 green:0.376 blue:0.376 alpha:1];
+        self.backgroundColor = [UIColor clearColor];
+        
+        UIImage *backgroundImage = [[UIImage imageNamed:@"meal_header_background.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(4.f, 4.f, 16.f, 17.f)];
+        UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
+        backgroundView.image = backgroundImage;
+        
+        [self addSubview:backgroundView];
         
         CGRect dayLabelFrame = CGRectMake(0.f, 0.f, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) / 2.f);
         

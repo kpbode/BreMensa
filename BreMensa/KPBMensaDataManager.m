@@ -7,6 +7,8 @@
 //
 
 #import "KPBMensaDataManager.h"
+#import "KPBMensa.h"
+#import "KPBMealplan.h"
 
 @interface KPBMensaDataManager ()
 
@@ -107,9 +109,9 @@
         NSFileManager *fileManager = [[NSFileManager alloc] init];
         NSString *filePath = [self mealplanFilePathForMensa:mensa];
         
-//        if (![fileManager fileExistsAtPath:filePath]) {
-        if (YES) {
-            
+        if (![fileManager fileExistsAtPath:filePath]) {
+//        if (YES) {
+        
             [self loadMealplanForMensa:mensa withBlock:block];
             
         } else {
@@ -257,6 +259,19 @@
     NSString *filePath = [cacheDirPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.data", mensa.serverId]];
     
     return filePath;
+}
+
+- (KPBMensa *)mensaForServerId:(NSString *)serverId
+{
+    if (serverId == nil) return nil;
+    
+    for (KPBMensa *mensa in self.mensas) {
+        if ([serverId isEqualToString:mensa.serverId]) {
+            return mensa;
+        }
+    }
+    
+    return nil;
 }
 
 - (NSOperationQueue *)operationQueue

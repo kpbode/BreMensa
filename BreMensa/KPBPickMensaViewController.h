@@ -10,4 +10,6 @@
 
 @interface KPBPickMensaViewController : UITableViewController
 
+@property (nonatomic, weak, readonly) UIButton *moreInfoButton;
+
 @end

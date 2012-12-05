@@ -21,13 +21,14 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor colorWithRed:0.200 green:0.200 blue:0.196 alpha:1];
+        self.backgroundColor = [UIColor clearColor];
         
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectInset(self.bounds, 10.f, 0.f)];
         textLabel.backgroundColor = [UIColor clearColor];
-        textLabel.font = [UIFont fontWithName:@"HelveticeNeue" size:12.f];
-        textLabel.textColor = [UIColor whiteColor];
+        textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:11.f];
+        textLabel.textColor = [UIColor blackColor];
         textLabel.textAlignment = NSTextAlignmentRight;
+        textLabel.adjustsFontSizeToFitWidth = NO;
         
         [self addSubview:textLabel];
         self.textLabel = textLabel;

@@ -40,9 +40,13 @@
     
     detailView.tableView.dataSource = self;
     detailView.tableView.delegate = self;
+    detailView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    detailView.tableView.backgroundColor = [UIColor clearColor];
+    detailView.tableView.backgroundView = nil;
     
     self.mapView = detailView.mapView;
     self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
     
     self.view = detailView;
     self.mensaView = detailView;
@@ -55,6 +59,8 @@
     
     //53.05517, 8.78330
     
+    
+    
     KPBMensaLocationMarker *locationMarker = [[KPBMensaLocationMarker alloc] initWithMensa:self.mensa];
     [self.mapView addAnnotation:locationMarker];
 }
@@ -63,15 +69,18 @@
 {
     [super viewWillAppear:animated];
     
-    CLLocationCoordinate2D zoomLocation = self.mensa.location.coordinate;
-    
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1000.0, 1000.0);
-    [self.mapView setRegion:viewRegion animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    CLLocationCoordinate2D zoomLocation = self.mensa.location.coordinate;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 700.0, 700.0);
+    [self.mapView setRegion:viewRegion animated:YES];
+    
+    [self.mensaView.tableView flashScrollIndicators];
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,7 +110,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
         
         cell.textLabel.numberOfLines = 0;
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12.f];
+        cell.textLabel.textColor = [UIColor darkGrayColor];
+        
         cell.detailTextLabel.numberOfLines = 0;
+        cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14.f];
+        cell.detailTextLabel.textColor = [UIColor blackColor];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
@@ -118,6 +132,34 @@
     }
     
     return info.title;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30.f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString *title = [self tableView:tableView titleForHeaderInSection:section];
+    
+    if (title == nil) return nil;
+    
+    CGRect headerFrame = CGRectMake(0.f, 0.f, CGRectGetWidth(tableView.bounds), [self tableView:tableView heightForHeaderInSection:section]);
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:headerFrame];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectInset(headerFrame, 15.f, 0.f)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.text = title;
+    titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15.f];
+    titleLabel.textColor = [UIColor darkGrayColor];
+    titleLabel.shadowColor = [UIColor whiteColor];
+    titleLabel.shadowOffset = CGSizeMake(0.f, 1.f);
+    
+    [headerView addSubview:titleLabel];
+    
+    return headerView;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath

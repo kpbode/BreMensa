@@ -11,12 +11,13 @@
 #import "KPBMealplanViewController.h"
 #import "KPBMensaDetailViewController.h"
 #import "KPBMoreInfoViewController.h"
+#import "KPBDetailDisclosureButton.h"
+#import "KPBNavigationManager.h"
 
 @interface KPBPickMensaViewController ()
 
+@property (nonatomic, weak, readwrite) UIButton *moreInfoButton;
 @property (nonatomic, copy, readwrite) NSArray *mensas;
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -36,14 +37,19 @@
 {
     [super viewDidLoad];
 
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.tableView.backgroundView = nil;
-    self.tableView.backgroundColor = [UIColor colorWithRed:0.773 green:0.773 blue:0.773 alpha:1];
+    self.tableView.scrollEnabled = NO;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.contentInset = UIEdgeInsetsMake(20.f, 0.f, 0.f, 0.f);
+    
+    UIButton *moreInfoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    moreInfoButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
+    moreInfoButton.center = CGPointMake(CGRectGetWidth(self.tableView.bounds) - 20.f, CGRectGetHeight(self.tableView.bounds) - 40.f);
+    [moreInfoButton addTarget:self action:@selector(onShowMoreInfo:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:moreInfoButton];
+    self.moreInfoButton = moreInfoButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,25 +62,45 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0: return [self.mensas count];
-        case 1: return 1;
-    }
-    
-    return 0;
+    return [self.mensas count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return @"Mensen";
-    }
-    return nil;
+    return @"Mensen";
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30.f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString *title = [self tableView:tableView titleForHeaderInSection:section];
+    
+    if (title == nil) return nil;
+    
+    CGRect headerFrame = CGRectMake(0.f, 0.f, CGRectGetWidth(tableView.bounds), [self tableView:tableView heightForHeaderInSection:section]);
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:headerFrame];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectInset(headerFrame, 15.f, 0.f)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.text = title;
+    titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.f];
+    titleLabel.textColor = [UIColor darkGrayColor];
+    titleLabel.shadowColor = [UIColor whiteColor];
+    titleLabel.shadowOffset = CGSizeMake(0.f, 1.f);
+    
+    [headerView addSubview:titleLabel];
+    
+    return headerView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,26 +108,22 @@
     
     UITableViewCell *cell = nil;
     
-    if (indexPath.section == 0) {
+    static NSString *CellIdentifier = @"MensaCell";
+    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
         
-        static NSString *CellIdentifier = @"MensaCell";
-        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
-        
-    } else if (indexPath.section == 1) {
-        
-        static NSString *CellIdentifier = @"InfoCell";
-        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        if (IS_IPHONE) {
+            KPBDetailDisclosureButton *detailDisclosureButton = [[KPBDetailDisclosureButton alloc] initWithFrame:CGRectMake(267.f, 0.f, 43.f, 43.f)];
+            [detailDisclosureButton addTarget:self action:@selector(onDetailDisclosureButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            cell.accessoryView = detailDisclosureButton;
         }
         
     }
+
     
     [self configureCell:cell atIndexPath:indexPath];
     
@@ -111,66 +133,32 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        KPBMensa *mensa = [self.mensas objectAtIndex:indexPath.row];
-        cell.textLabel.text = mensa.name;
-    } else {
-        cell.textLabel.text = @"Weitere Informationen";
-    }
+    KPBMensa *mensa = [self.mensas objectAtIndex:indexPath.row];
+    cell.textLabel.text = mensa.name;
+}
+
+- (void)onDetailDisclosureButtonPressed:(id)sender
+{
+    UIButton *button = (UIButton *) sender;
+    
+    UITableViewCell *cell = (UITableViewCell *) button.superview;
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    [self tableView:self.tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
+    
     
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        KPBMensa *mensa = [self.mensas objectAtIndex:indexPath.row];
-        KPBMealplanViewController *mealplanViewController = [[KPBMealplanViewController alloc] initWithMensa:mensa];
-        [self.navigationController pushViewController:mealplanViewController animated:YES];
-    } else {
-        KPBMoreInfoViewController *moreInfoViewController = [[KPBMoreInfoViewController alloc] init];
-        [self.navigationController pushViewController:moreInfoViewController animated:YES];
-    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    KPBMensa *mensa = [self.mensas objectAtIndex:indexPath.row];
+        
+    [[KPBNavigationManager sharedManager] showMealplanForMensa:mensa];
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
@@ -178,6 +166,16 @@
     KPBMensa *mensa = [self.mensas objectAtIndex:indexPath.row];
     KPBMensaDetailViewController *detailViewController = [[KPBMensaDetailViewController alloc] initWithMensa:mensa];
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
+}
+
+- (void)onShowMoreInfo:(id)sender
+{
+    [[KPBNavigationManager sharedManager] showMoreInfo];
 }
 
 @end

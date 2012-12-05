@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		BFAD15AD3FDF4ECAB3D16B34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3C0EF188C74A17A4F5B557 /* libPods.a */; };
+		CB168104166C8EFD006FEB2E /* KPBNavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB168103166C8EFD006FEB2E /* KPBNavigationManager.m */; };
+		CB168107166C8F40006FEB2E /* KPBPadNavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB168106166C8F40006FEB2E /* KPBPadNavigationManager.m */; };
+		CB16810E166C900F006FEB2E /* KPBPhoneNavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB16810D166C900F006FEB2E /* KPBPhoneNavigationManager.m */; };
+		CB3DE7D9166F69E600F87962 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB3DE7D8166F69E600F87962 /* Default@2x.png */; };
+		CB684C4B165693400040D6FE /* KPBDetailDisclosureButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB684C4A165693400040D6FE /* KPBDetailDisclosureButton.m */; };
 		CB73F664162B181F00F5E310 /* KPBMealplanInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB73F663162B181F00F5E310 /* KPBMealplanInfoView.m */; };
 		CBD36B4B162D74C900C2A9BE /* NSDate+HCAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B4A162D74C900C2A9BE /* NSDate+HCAExtensions.m */; };
 		CBE6E1151629B060003E550A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1141629B060003E550A /* UIKit.framework */; };
@@ -17,13 +22,7 @@
 		CBE6E1211629B060003E550A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1201629B060003E550A /* main.m */; };
 		CBE6E1251629B060003E550A /* KPBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1241629B060003E550A /* KPBAppDelegate.m */; };
 		CBE6E1271629B060003E550A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE6E1261629B060003E550A /* Default.png */; };
-		CBE6E1291629B060003E550A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE6E1281629B060003E550A /* Default@2x.png */; };
 		CBE6E12B1629B060003E550A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE6E12A1629B060003E550A /* Default-568h@2x.png */; };
-		CBE6E1331629B060003E550A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1321629B060003E550A /* SenTestingKit.framework */; };
-		CBE6E1341629B060003E550A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1141629B060003E550A /* UIKit.framework */; };
-		CBE6E1351629B060003E550A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE6E1161629B060003E550A /* Foundation.framework */; };
-		CBE6E13D1629B061003E550A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBE6E13B1629B061003E550A /* InfoPlist.strings */; };
-		CBE6E1401629B061003E550A /* BreMensaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E13F1629B061003E550A /* BreMensaTests.m */; };
 		CBE6E14F1629B1F0003E550A /* KPBPickMensaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E14E1629B1F0003E550A /* KPBPickMensaViewController.m */; };
 		CBE6E1511629B24F003E550A /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBE6E1501629B24F003E550A /* config.plist */; };
 		CBE6E1571629B41F003E550A /* KPBMensa.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1561629B41F003E550A /* KPBMensa.m */; };
@@ -36,6 +35,15 @@
 		CBE6E199162AE1A9003E550A /* KPBMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E198162AE1A9003E550A /* KPBMenu.m */; };
 		CBE6E19C162AE1B8003E550A /* KPBMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E19B162AE1B8003E550A /* KPBMeal.m */; };
 		CBE6E1A7162AE572003E550A /* KPBMensaDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6E1A6162AE572003E550A /* KPBMensaDataManager.m */; };
+		CBE90445166B5E73007A3C5B /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = CBE90444166B5E73007A3C5B /* info.html */; };
+		CBEFE476165D5FF40067D3F2 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = CBEFE474165D5FF40067D3F2 /* background.png */; };
+		CBEFE477165D5FF40067D3F2 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBEFE475165D5FF40067D3F2 /* background@2x.png */; };
+		CBEFE47B165D635C0067D3F2 /* meal_background.png in Resources */ = {isa = PBXBuildFile; fileRef = CBEFE479165D635C0067D3F2 /* meal_background.png */; };
+		CBEFE47C165D635C0067D3F2 /* meal_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBEFE47A165D635C0067D3F2 /* meal_background@2x.png */; };
+		CBEFE47F165D65AE0067D3F2 /* meal_header_background.png in Resources */ = {isa = PBXBuildFile; fileRef = CBEFE47D165D65AE0067D3F2 /* meal_header_background.png */; };
+		CBEFE480165D65AE0067D3F2 /* meal_header_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBEFE47E165D65AE0067D3F2 /* meal_header_background@2x.png */; };
+		CBEFE482165D6FF90067D3F2 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CBEFE481165D6FF90067D3F2 /* icon.png */; };
+		CBEFE484165D6FFC0067D3F2 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBEFE483165D6FFC0067D3F2 /* icon@2x.png */; };
 		CBF60794162C4DA2008EC76B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF60793162C4DA2008EC76B /* MapKit.framework */; };
 		CBF60798162C4DC7008EC76B /* KPBMensaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF60797162C4DC7008EC76B /* KPBMensaDetailViewController.m */; };
 		CBF6079B162C4E2A008EC76B /* KPBMensaDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF6079A162C4E2A008EC76B /* KPBMensaDetailView.m */; };
@@ -45,24 +53,21 @@
 		CBF607AF162C992E008EC76B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF607AE162C992E008EC76B /* CoreLocation.framework */; };
 		CBF607B6162D5D87008EC76B /* KPBMensaOpeningTime.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607B5162D5D87008EC76B /* KPBMensaOpeningTime.m */; };
 		CBF607BA162D5DBB008EC76B /* KPBMensaOpeningInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF607B9162D5DBB008EC76B /* KPBMensaOpeningInfo.m */; };
-		D6D22B5B7FE1446EAFD17376 /* libPods-BreMensaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B88CA4A70134B1CB6D5C93D /* libPods-BreMensaTests.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CBE6E1361629B060003E550A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBE6E1071629B05F003E550A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CBE6E10F1629B060003E550A;
-			remoteInfo = BreMensa;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2A3C0EF188C74A17A4F5B557 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B88CA4A70134B1CB6D5C93D /* libPods-BreMensaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BreMensaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		544FECFB53554709B473E061 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		CB168102166C8EFD006FEB2E /* KPBNavigationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBNavigationManager.h; sourceTree = "<group>"; };
+		CB168103166C8EFD006FEB2E /* KPBNavigationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBNavigationManager.m; sourceTree = "<group>"; };
+		CB168105166C8F40006FEB2E /* KPBPadNavigationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBPadNavigationManager.h; sourceTree = "<group>"; };
+		CB168106166C8F40006FEB2E /* KPBPadNavigationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBPadNavigationManager.m; sourceTree = "<group>"; };
+		CB16810C166C900F006FEB2E /* KPBPhoneNavigationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBPhoneNavigationManager.h; sourceTree = "<group>"; };
+		CB16810D166C900F006FEB2E /* KPBPhoneNavigationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBPhoneNavigationManager.m; sourceTree = "<group>"; };
 		CB3C54CC1637DCC4002BD030 /* CoreData.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CB3DE7D8166F69E600F87962 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CB684C491656933F0040D6FE /* KPBDetailDisclosureButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBDetailDisclosureButton.h; sourceTree = "<group>"; };
+		CB684C4A165693400040D6FE /* KPBDetailDisclosureButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBDetailDisclosureButton.m; sourceTree = "<group>"; };
 		CB73F662162B181F00F5E310 /* KPBMealplanInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanInfoView.h; sourceTree = "<group>"; };
 		CB73F663162B181F00F5E310 /* KPBMealplanInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplanInfoView.m; sourceTree = "<group>"; };
 		CBD36B49162D74C900C2A9BE /* NSDate+HCAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HCAExtensions.h"; sourceTree = "<group>"; };
@@ -78,14 +83,8 @@
 		CBE6E1231629B060003E550A /* KPBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPBAppDelegate.h; sourceTree = "<group>"; };
 		CBE6E1241629B060003E550A /* KPBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KPBAppDelegate.m; sourceTree = "<group>"; };
 		CBE6E1261629B060003E550A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		CBE6E1281629B060003E550A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CBE6E12A1629B060003E550A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CBE6E1311629B060003E550A /* BreMensaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreMensaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE6E1321629B060003E550A /* SenTestingKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		CBE6E13A1629B061003E550A /* BreMensaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BreMensaTests-Info.plist"; sourceTree = "<group>"; };
-		CBE6E13C1629B061003E550A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CBE6E13E1629B061003E550A /* BreMensaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BreMensaTests.h; sourceTree = "<group>"; };
-		CBE6E13F1629B061003E550A /* BreMensaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BreMensaTests.m; sourceTree = "<group>"; };
 		CBE6E14D1629B1F0003E550A /* KPBPickMensaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBPickMensaViewController.h; sourceTree = "<group>"; };
 		CBE6E14E1629B1F0003E550A /* KPBPickMensaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBPickMensaViewController.m; sourceTree = "<group>"; };
 		CBE6E1501629B24F003E550A /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
@@ -108,6 +107,15 @@
 		CBE6E19B162AE1B8003E550A /* KPBMeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMeal.m; sourceTree = "<group>"; };
 		CBE6E1A5162AE572003E550A /* KPBMensaDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaDataManager.h; sourceTree = "<group>"; };
 		CBE6E1A6162AE572003E550A /* KPBMensaDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaDataManager.m; sourceTree = "<group>"; };
+		CBE90444166B5E73007A3C5B /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = info.html; sourceTree = "<group>"; };
+		CBEFE474165D5FF40067D3F2 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		CBEFE475165D5FF40067D3F2 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		CBEFE479165D635C0067D3F2 /* meal_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meal_background.png; sourceTree = "<group>"; };
+		CBEFE47A165D635C0067D3F2 /* meal_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meal_background@2x.png"; sourceTree = "<group>"; };
+		CBEFE47D165D65AE0067D3F2 /* meal_header_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meal_header_background.png; sourceTree = "<group>"; };
+		CBEFE47E165D65AE0067D3F2 /* meal_header_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meal_header_background@2x.png"; sourceTree = "<group>"; };
+		CBEFE481165D6FF90067D3F2 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		CBEFE483165D6FFC0067D3F2 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		CBF60793162C4DA2008EC76B /* MapKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CBF60796162C4DC7008EC76B /* KPBMensaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaDetailViewController.h; sourceTree = "<group>"; };
 		CBF60797162C4DC7008EC76B /* KPBMensaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaDetailViewController.m; sourceTree = "<group>"; };
@@ -125,7 +133,6 @@
 		CBF607B8162D5DBB008EC76B /* KPBMensaOpeningInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaOpeningInfo.h; sourceTree = "<group>"; };
 		CBF607B9162D5DBB008EC76B /* KPBMensaOpeningInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaOpeningInfo.m; sourceTree = "<group>"; };
 		CBF71FAA1645299700DBDD74 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CBF71FAB1645299700DBDD74 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,20 +150,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBE6E12D1629B060003E550A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CBE6E1331629B060003E550A /* SenTestingKit.framework in Frameworks */,
-				CBE6E1341629B060003E550A /* UIKit.framework in Frameworks */,
-				CBE6E1351629B060003E550A /* Foundation.framework in Frameworks */,
-				D6D22B5B7FE1446EAFD17376 /* libPods-BreMensaTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB168100166C8EEA006FEB2E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CB168102166C8EFD006FEB2E /* KPBNavigationManager.h */,
+				CB168103166C8EFD006FEB2E /* KPBNavigationManager.m */,
+				CB168105166C8F40006FEB2E /* KPBPadNavigationManager.h */,
+				CB168106166C8F40006FEB2E /* KPBPadNavigationManager.m */,
+				CB16810C166C900F006FEB2E /* KPBPhoneNavigationManager.h */,
+				CB16810D166C900F006FEB2E /* KPBPhoneNavigationManager.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		CB3DE7D3166F66A100F87962 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				CBE6E1A5162AE572003E550A /* KPBMensaDataManager.h */,
+				CBE6E1A6162AE572003E550A /* KPBMensaDataManager.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		CBD36B44162D748F00C2A9BE /* HCA */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,9 +187,10 @@
 		CBE6E1051629B05F003E550A = {
 			isa = PBXGroup;
 			children = (
+				CBEFE483165D6FFC0067D3F2 /* icon@2x.png */,
+				CBEFE481165D6FF90067D3F2 /* icon.png */,
 				CBD36B44162D748F00C2A9BE /* HCA */,
 				CBE6E11A1629B060003E550A /* BreMensa */,
-				CBE6E1381629B060003E550A /* BreMensaTests */,
 				CBE6E1131629B060003E550A /* Frameworks */,
 				CBE6E1111629B060003E550A /* Products */,
 				544FECFB53554709B473E061 /* Pods.xcconfig */,
@@ -182,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				CBE6E1101629B060003E550A /* BreMensa.app */,
-				CBE6E1311629B060003E550A /* BreMensaTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,7 +217,6 @@
 				CBE6E1181629B060003E550A /* CoreGraphics.framework */,
 				CBE6E1321629B060003E550A /* SenTestingKit.framework */,
 				2A3C0EF188C74A17A4F5B557 /* libPods.a */,
-				4B88CA4A70134B1CB6D5C93D /* libPods-BreMensaTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,6 +224,8 @@
 		CBE6E11A1629B060003E550A /* BreMensa */ = {
 			isa = PBXGroup;
 			children = (
+				CB3DE7D3166F66A100F87962 /* Other */,
+				CB168100166C8EEA006FEB2E /* Navigation */,
 				CBE6E1A2162AE496003E550A /* Model */,
 				CBE6E1A4162AE4D7003E550A /* View */,
 				CBE6E1A1162AE48B003E550A /* Controller */,
@@ -214,8 +233,6 @@
 				CBE6E1231629B060003E550A /* KPBAppDelegate.h */,
 				CBE6E1241629B060003E550A /* KPBAppDelegate.m */,
 				CBE6E11B1629B060003E550A /* Supporting Files */,
-				CBE6E1A5162AE572003E550A /* KPBMensaDataManager.h */,
-				CBE6E1A6162AE572003E550A /* KPBMensaDataManager.m */,
 			);
 			path = BreMensa;
 			sourceTree = "<group>";
@@ -228,27 +245,8 @@
 				CBE6E1201629B060003E550A /* main.m */,
 				CBE6E1221629B060003E550A /* BreMensa-Prefix.pch */,
 				CBE6E1261629B060003E550A /* Default.png */,
-				CBE6E1281629B060003E550A /* Default@2x.png */,
+				CB3DE7D8166F69E600F87962 /* Default@2x.png */,
 				CBE6E12A1629B060003E550A /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CBE6E1381629B060003E550A /* BreMensaTests */ = {
-			isa = PBXGroup;
-			children = (
-				CBE6E13E1629B061003E550A /* BreMensaTests.h */,
-				CBE6E13F1629B061003E550A /* BreMensaTests.m */,
-				CBE6E1391629B061003E550A /* Supporting Files */,
-			);
-			path = BreMensaTests;
-			sourceTree = "<group>";
-		};
-		CBE6E1391629B061003E550A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CBE6E13A1629B061003E550A /* BreMensaTests-Info.plist */,
-				CBE6E13B1629B061003E550A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -292,7 +290,14 @@
 		CBE6E1A3162AE49D003E550A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CBEFE47D165D65AE0067D3F2 /* meal_header_background.png */,
+				CBEFE47E165D65AE0067D3F2 /* meal_header_background@2x.png */,
+				CBEFE479165D635C0067D3F2 /* meal_background.png */,
+				CBEFE47A165D635C0067D3F2 /* meal_background@2x.png */,
+				CBEFE474165D5FF40067D3F2 /* background.png */,
+				CBEFE475165D5FF40067D3F2 /* background@2x.png */,
 				CBE6E1501629B24F003E550A /* config.plist */,
+				CBE90444166B5E73007A3C5B /* info.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -300,6 +305,8 @@
 		CBE6E1A4162AE4D7003E550A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CB684C491656933F0040D6FE /* KPBDetailDisclosureButton.h */,
+				CB684C4A165693400040D6FE /* KPBDetailDisclosureButton.m */,
 				CBE6E1871629D000003E550A /* KPBMealplanLayout.h */,
 				CBE6E1881629D000003E550A /* KPBMealplanLayout.m */,
 				CBE6E18A1629D33E003E550A /* KPBMealplanLayoutSection.h */,
@@ -337,26 +344,6 @@
 			productReference = CBE6E1101629B060003E550A /* BreMensa.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CBE6E1301629B060003E550A /* BreMensaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CBE6E1461629B061003E550A /* Build configuration list for PBXNativeTarget "BreMensaTests" */;
-			buildPhases = (
-				CBE6E12C1629B060003E550A /* Sources */,
-				CBE6E12D1629B060003E550A /* Frameworks */,
-				CBE6E12E1629B060003E550A /* Resources */,
-				CBE6E12F1629B060003E550A /* ShellScript */,
-				1DE7994BA6C249D7800DC5C9 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CBE6E1371629B060003E550A /* PBXTargetDependency */,
-			);
-			name = BreMensaTests;
-			productName = BreMensaTests;
-			productReference = CBE6E1311629B060003E550A /* BreMensaTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -381,7 +368,6 @@
 			projectRoot = "";
 			targets = (
 				CBE6E10F1629B060003E550A /* BreMensa */,
-				CBE6E1301629B060003E550A /* BreMensaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -393,37 +379,24 @@
 			files = (
 				CBE6E11F1629B060003E550A /* InfoPlist.strings in Resources */,
 				CBE6E1271629B060003E550A /* Default.png in Resources */,
-				CBE6E1291629B060003E550A /* Default@2x.png in Resources */,
 				CBE6E12B1629B060003E550A /* Default-568h@2x.png in Resources */,
 				CBE6E1511629B24F003E550A /* config.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBE6E12E1629B060003E550A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CBE6E13D1629B061003E550A /* InfoPlist.strings in Resources */,
+				CBEFE476165D5FF40067D3F2 /* background.png in Resources */,
+				CBEFE477165D5FF40067D3F2 /* background@2x.png in Resources */,
+				CBEFE47B165D635C0067D3F2 /* meal_background.png in Resources */,
+				CBEFE47C165D635C0067D3F2 /* meal_background@2x.png in Resources */,
+				CBEFE47F165D65AE0067D3F2 /* meal_header_background.png in Resources */,
+				CBEFE480165D65AE0067D3F2 /* meal_header_background@2x.png in Resources */,
+				CBEFE482165D6FF90067D3F2 /* icon.png in Resources */,
+				CBEFE484165D6FFC0067D3F2 /* icon@2x.png in Resources */,
+				CBE90445166B5E73007A3C5B /* info.html in Resources */,
+				CB3DE7D9166F69E600F87962 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1DE7994BA6C249D7800DC5C9 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-BreMensaTests-resources.sh\"\n";
-		};
 		98EB9514B6F24B74A26E2671 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -437,19 +410,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-		};
-		CBE6E12F1629B060003E550A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -479,26 +439,14 @@
 				CBF607B6162D5D87008EC76B /* KPBMensaOpeningTime.m in Sources */,
 				CBF607BA162D5DBB008EC76B /* KPBMensaOpeningInfo.m in Sources */,
 				CBD36B4B162D74C900C2A9BE /* NSDate+HCAExtensions.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBE6E12C1629B060003E550A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CBE6E1401629B061003E550A /* BreMensaTests.m in Sources */,
+				CB684C4B165693400040D6FE /* KPBDetailDisclosureButton.m in Sources */,
+				CB168104166C8EFD006FEB2E /* KPBNavigationManager.m in Sources */,
+				CB168107166C8F40006FEB2E /* KPBPadNavigationManager.m in Sources */,
+				CB16810E166C900F006FEB2E /* KPBPhoneNavigationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CBE6E1371629B060003E550A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CBE6E10F1629B060003E550A /* BreMensa */;
-			targetProxy = CBE6E1361629B060003E550A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CBE6E11D1629B060003E550A /* InfoPlist.strings */ = {
@@ -506,15 +454,6 @@
 			children = (
 				CBE6E11E1629B060003E550A /* en */,
 				CBF71FAA1645299700DBDD74 /* de */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		CBE6E13B1629B061003E550A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CBE6E13C1629B061003E550A /* en */,
-				CBF71FAB1645299700DBDD74 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -584,6 +523,7 @@
 				INFOPLIST_FILE = "BreMensa/BreMensa-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -598,41 +538,8 @@
 				INFOPLIST_FILE = "BreMensa/BreMensa-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		CBE6E1471629B061003E550A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BreMensa.app/BreMensa";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
-				INFOPLIST_FILE = "BreMensaTests/BreMensaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		CBE6E1481629B061003E550A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BreMensa.app/BreMensa";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
-				INFOPLIST_FILE = "BreMensaTests/BreMensaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -653,15 +560,6 @@
 			buildConfigurations = (
 				CBE6E1441629B061003E550A /* Debug */,
 				CBE6E1451629B061003E550A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CBE6E1461629B061003E550A /* Build configuration list for PBXNativeTarget "BreMensaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CBE6E1471629B061003E550A /* Debug */,
-				CBE6E1481629B061003E550A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

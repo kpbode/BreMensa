@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KPBMensa.h"
-#import "KPBMealplan.h"
+
+@class KPBMensa, KPBMealplan;
 
 typedef void(^KPBMensaDataManagerGetMealplanBlock)(KPBMealplan *mealplan);
 
@@ -19,5 +19,7 @@ typedef void(^KPBMensaDataManagerGetMealplanBlock)(KPBMealplan *mealplan);
 @property (nonatomic, copy, readonly) NSArray *mensas;
 
 - (BOOL)mealplanForMensa:(KPBMensa *)mensa withBlock:(KPBMensaDataManagerGetMealplanBlock)block;
+
+- (KPBMensa *)mensaForServerId:(NSString *)serverId;
 
 @end

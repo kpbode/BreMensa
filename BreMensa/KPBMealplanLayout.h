@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PSTCollectionView/PSTCollectionView.h>
 #import "KPBMealplanLayoutSection.h"
 
 @protocol KPBMealplanLayoutDelegate <PSUICollectionViewDelegate>

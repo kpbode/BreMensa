@@ -7,7 +7,8 @@
 //
 
 #import "KPBAppDelegate.h"
-#import "KPBPickMensaViewController.h"
+#import <DCIntrospect/DCIntrospect.h>
+#import "KPBNavigationManager.h"
 
 @implementation KPBAppDelegate
 
@@ -17,17 +18,20 @@
     UINavigationBar *navigationBarProxy = [UINavigationBar appearance];
     navigationBarProxy.tintColor = [UIColor colorWithRed:0.769 green:0.314 blue:0.294 alpha:1];
 
-    if (SYSTEM_VERSION_LESS_THAN(@"6.0")) {
-        application.statusBarStyle = UIBarStyleBlackOpaque;
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
+        application.statusBarStyle = UIBarStyleDefault;
     }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    KPBPickMensaViewController *pickMensaViewController = [[KPBPickMensaViewController alloc] init];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:pickMensaViewController];
-    
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.window.rootViewController = [[KPBNavigationManager sharedManager] rootViewController];
+    
     [self.window makeKeyAndVisible];
+    
+#if TARGET_IPHONE_SIMULATOR
+    [[DCIntrospect sharedIntrospector] start];
+#endif
     
     return YES;
 }

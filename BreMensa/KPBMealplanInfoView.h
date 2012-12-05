@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PSTCollectionView/PSTCollectionView.h>
 
 @interface KPBMealplanInfoView : PSUICollectionReusableView
 

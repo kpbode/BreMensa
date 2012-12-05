@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KPBMensa.h"
+#import <PSTCollectionView/PSTCollectionView.h>
+
+@class KPBMensa;
 
 @interface KPBMealplanViewController : PSUICollectionViewController
 
-- (id)initWithMensa:(KPBMensa *)mensa;
+@property (nonatomic, strong, readonly) KPBMensa *mensa;
+
+- (void)showMealplanForMensa:(KPBMensa *)mensa;
 
 @end

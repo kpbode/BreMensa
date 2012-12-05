@@ -156,7 +156,7 @@
                                                    layout:self
                                    sizeForHeaderWithWidth:columnWidth atIndexPath:indexPath];
         
-        layoutAttributes.frame = CGRectMake(indexPath.item * columnWidth, collectionView.contentOffset.y, headerSize.width, headerSize.height);
+        layoutAttributes.frame = CGRectMake(indexPath.item * columnWidth, collectionView.contentInset.top + collectionView.contentOffset.y, headerSize.width, headerSize.height);
         layoutAttributes.zIndex = 1024;
     }
     

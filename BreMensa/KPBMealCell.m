@@ -69,7 +69,14 @@ static UIFont *InfoFont;
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
+        
+        UIImage *backgroundImage = [[UIImage imageNamed:@"meal_background.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(4.f, 4.f, 16.f, 17.f)];
+        
+        UIImageView *backgroundView = [[UIImageView alloc] initWithImage:backgroundImage];
+        backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        self.backgroundView = backgroundView;
         
         UILabel *mealTitleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         mealTitleLabel.backgroundColor = [UIColor clearColor];
@@ -108,6 +115,8 @@ static UIFont *InfoFont;
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    self.backgroundView.frame = self.bounds;
     
     CGFloat contentWidth = CGRectGetWidth(self.contentView.bounds) - 20.f;
     
