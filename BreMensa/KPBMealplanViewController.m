@@ -70,6 +70,8 @@
     
     if (self.mealplan == nil) {
         [self showPlaceholder];
+    } else {
+        [self scrollToTodayAnimated:YES];
     }
     
     [self.collectionView flashScrollIndicators];
@@ -110,6 +112,18 @@
             [self hidePlaceholder];
             [self.collectionView reloadData];
             
+            if (IS_IPHONE && [self canScrollToToday]) {
+                self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute"
+                                                                                          style:UIBarButtonItemStyleBordered
+                                                                                         target:self action:@selector(onScrollToToday:)];
+            }
+            
+            int64_t delayInSeconds = 0.3;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self scrollToTodayAnimated:YES];
+            });
+            
         }
         
         [progressHud hide:YES];
@@ -119,9 +133,7 @@
         NSLog(@"failed to get mealplan data");
     }
     
-    if (IS_IPHONE && [self canScrollToToday]) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute" style:UIBarButtonItemStyleBordered target:self action:@selector(onScrollToToday:)];
-    }
+    
     
 }
 
@@ -175,11 +187,7 @@
     cell.priceTextLabel.text = [meal priceText];
     cell.infoTextLabel.text = [meal infoText];
     
-    UIColor *textColor = [UIColor grayColor];
-    
-    if ([menu.date HCA_isToday]) {
-        textColor = [UIColor blackColor];
-    }
+    UIColor *textColor = [UIColor blackColor];
     
     cell.mealTitleLabel.textColor = textColor;
     cell.mealTextLabel.textColor = textColor;
@@ -219,6 +227,8 @@
         
         headerView.dateLabel.text = [dateFormatter stringFromDate:menu.date];
         
+        [headerView setupBackgroundForToday:[menu.date HCA_isToday]];
+        
         return headerView;
     }
     
@@ -255,7 +265,7 @@
 
 - (CGFloat)collectionView:(PSUICollectionReusableView *)collectionView layout:(PSUICollectionViewLayout *)layout widthForColumn:(NSInteger)column forSectionAtIndex:(NSInteger)section
 {
-    return 200.f;
+    return IS_IPHONE ? 200.f : 300.f;
 }
 
 - (NSInteger)collectionView:(PSUICollectionReusableView *)collectionView layout:(PSUICollectionViewLayout *)layout columnIndexForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -265,7 +275,7 @@
 
 - (CGSize)collectionView:(PSUICollectionView *)collectionView layout:(PSUICollectionViewLayout *)layout sizeForHeaderWithWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(width, 50.f);
+    return CGSizeMake(width, IS_IPHONE ? 50.f : 70.f);
 }
 
 - (UIEdgeInsets)collectionView:(PSUICollectionView_ *)collectionView layout:(PSUICollectionViewLayout_ *)layout insetsForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -289,10 +299,8 @@
     [self scrollToTodayAnimated:YES];
 }
 
-- (void)scrollToTodayAnimated:(BOOL)animated
+- (NSInteger)currentWeekday
 {
-    if (self.mealplan == nil) return;
-    
     NSDate *now = [NSDate date];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -300,10 +308,30 @@
     
     NSDateComponents *nowComponents = [calendar components:NSWeekdayCalendarUnit fromDate:now];
     
-    NSInteger weekday = nowComponents.weekday - 2;
+    return nowComponents.weekday - 2;
+}
+
+- (void)scrollToTodayAnimated:(BOOL)animated
+{
+    if (self.mealplan == nil) return;
+    
+    NSInteger weekday = [self currentWeekday];
     
     if (weekday >= 0 && weekday < 5) {
-        [self.collectionView setContentOffset:CGPointMake(weekday * 200.f, self.collectionView.contentOffset.y) animated:animated];
+        
+        CGFloat columnWidth = [self collectionView:(PSUICollectionView *) self.collectionView
+                                            layout:(PSUICollectionViewLayout *) self.collectionView.collectionViewLayout
+                                    widthForColumn:weekday forSectionAtIndex:0];
+        
+        CGFloat offsetX = weekday * columnWidth - (CGRectGetWidth(self.collectionView.bounds) - columnWidth) / 2.f;
+        
+        offsetX = MIN(offsetX, (5*columnWidth) - CGRectGetWidth(self.collectionView.bounds));
+        
+        if (offsetX < 0.f) {
+            offsetX = 0.f;
+        }
+        
+        [self.collectionView setContentOffset:CGPointMake(offsetX, 0.f) animated:animated];
     }
     
 }
@@ -312,11 +340,7 @@
 {
     if (self.mealplan == nil) return NO;
     
-    NSDate *now = [NSDate date];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    calendar.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"DE_de"];
-    NSDateComponents *nowComponents = [calendar components:NSWeekdayCalendarUnit fromDate:now];
-    NSInteger weekday = nowComponents.weekday - 2;
+    NSInteger weekday = [self currentWeekday];
     return weekday >= 0 && weekday < 5;
 }
 

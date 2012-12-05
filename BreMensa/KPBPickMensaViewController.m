@@ -27,7 +27,11 @@
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-        self.title = @"Hauptmenü";
+        
+        if (IS_IPHONE) {
+            self.title = @"Hauptmenü";
+        }
+        
         self.mensas = [KPBMensaDataManager sharedManager].mensas;
     }
     return self;

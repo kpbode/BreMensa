@@ -11,6 +11,7 @@
 @interface KPBMensaDetailView ()
 
 @property (nonatomic, weak, readwrite) MKMapView *mapView;
+@property (nonatomic, weak, readwrite) UIImageView *shadowView;
 @property (nonatomic, weak, readwrite) UILabel *openingTimesLabel;
 @property (nonatomic, weak, readwrite) UITableView *tableView;
 
@@ -31,6 +32,13 @@
         
         [self addSubview:mapView];
         self.mapView = mapView;
+        
+        UIImage *shadowImage = [[UIImage imageNamed:@"details_shadow.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0.f, 10.f, 0.f, 10.f)];
+        
+        UIImageView *shadowView = [[UIImageView alloc] initWithImage:shadowImage];
+        
+        [self addSubview:shadowView];
+        self.shadowView = shadowView;
         
         UILabel *openingTimesLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         openingTimesLabel.text = @"Öffnungszeiten";
@@ -64,7 +72,9 @@
     CGRect mapViewFrame = CGRectMake(0.f, 0.f, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) / 2.f);
     self.mapView.frame = CGRectInset(mapViewFrame, 10.f, 10.f);
     
-    self.openingTimesLabel.frame = CGRectMake(10.f, CGRectGetMaxY(self.mapView.frame) + 10.f, CGRectGetWidth(self.bounds) - 20.f, 20.f);
+    self.shadowView.frame = CGRectMake(0.f, CGRectGetMaxY(self.mapView.frame) + 10.f, CGRectGetWidth(self.bounds), 23.f);
+    
+    self.openingTimesLabel.frame = CGRectMake(10.f, CGRectGetMaxY(self.shadowView.frame), CGRectGetWidth(self.bounds) - 20.f, 20.f);
     
     CGRect tableViewFrame = CGRectMake(0.f, CGRectGetMaxY(self.openingTimesLabel.frame), CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - CGRectGetMaxY(self.openingTimesLabel.frame));
     

@@ -35,6 +35,7 @@
     webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     webView.backgroundColor = [UIColor clearColor];
     webView.opaque = NO;
+    webView.dataDetectorTypes = UIDataDetectorTypeLink;
     
     // remove shadows
     for (UIView *subview in webView.scrollView.subviews) {

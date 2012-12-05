@@ -7,7 +7,6 @@
 //
 
 #import "KPBMealCell.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface KPBMealCell ()
 
@@ -24,13 +23,15 @@ static UIFont *TitleFont;
 static UIFont *TextFont;
 static UIFont *PriceFont;
 static UIFont *InfoFont;
+static UIImage *BackgroundImage;
 
 + (void)initialize
 {
-    TitleFont = [UIFont fontWithName:@"HelveticaNeue" size:15.f];
-    TextFont =  [UIFont fontWithName:@"HelveticaNeue" size:14.f];
-    PriceFont =  [UIFont fontWithName:@"HelveticaNeue" size:10.f];
-    InfoFont =  [UIFont fontWithName:@"HelveticaNeue" size:10.f];
+    TitleFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:IS_IPHONE ? 15.f : 20.f];
+    TextFont = [UIFont fontWithName:@"HelveticaNeue" size:IS_IPHONE ? 14.f : 19.f];
+    PriceFont = [UIFont fontWithName:@"HelveticaNeue-Italic" size:IS_IPHONE ? 10.f : 15.f];
+    InfoFont = [UIFont fontWithName:@"HelveticaNeue-Italic" size:IS_IPHONE ? 10.f : 15.f];
+    BackgroundImage = [[UIImage imageNamed:@"meal_background.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(4.f, 4.f, 16.f, 17.f)];
 }
 
 + (CGFloat)heightForWidth:(CGFloat)width
@@ -71,9 +72,7 @@ static UIFont *InfoFont;
         
         self.backgroundColor = [UIColor clearColor];
         
-        UIImage *backgroundImage = [[UIImage imageNamed:@"meal_background.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(4.f, 4.f, 16.f, 17.f)];
-        
-        UIImageView *backgroundView = [[UIImageView alloc] initWithImage:backgroundImage];
+        UIImageView *backgroundView = [[UIImageView alloc] initWithImage:BackgroundImage];
         backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         self.backgroundView = backgroundView;

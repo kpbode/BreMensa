@@ -14,4 +14,6 @@
 @property (nonatomic, weak, readonly) UILabel *dayLabel;
 @property (nonatomic, weak, readonly) UILabel *dateLabel;
 
+- (void)setupBackgroundForToday:(BOOL)today;
+
 @end

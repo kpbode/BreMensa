@@ -135,6 +135,7 @@
 {
     if (self.popoverController != nil) {
         [self.popoverController dismissPopoverAnimated:YES];
+        self.popoverController = nil;
     }
 }
 
