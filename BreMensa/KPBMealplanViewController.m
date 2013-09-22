@@ -5,10 +5,10 @@
 #import "KPBMenu.h"
 #import "KPBMeal.h"
 #import "KPBMealCell.h"
-
 #import "KPBMealplanInfoView.h"
 #import "KPBMenuHeaderView.h"
 #import "NSDate+KPBAdditions.h"
+#import "KPBMensaDetailViewController.h"
 
 static NSString * const KPBMealplanViewControllerMealCellIdentifier = @"MealCell";
 static NSString * const KPBMealplanViewControllerMenuHeaderViewIdentifier = @"MenuHeaderView";
@@ -260,7 +260,7 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)layout insetsForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    return UIEdgeInsetsMake(5.f, 2.f, 0.f, 2.f);
+    return UIEdgeInsetsZero;
 }
 
 - (NSDateFormatter *)menuHeaderDateFormatter
@@ -359,6 +359,12 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 - (void)onDismiss:(id)sender
 {
     [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    KPBMensaDetailViewController *mensaDetailViewController = segue.destinationViewController;
+    mensaDetailViewController.mensa = _mensa;
 }
 
 @end

@@ -108,6 +108,11 @@
     
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark KPBMealplanSegueDelegate
 
 - (void)mealplanSegue:(KPBMealplanSegue *)mealplanSegue screenshotTakenBeforeDismiss:(UIImage *)screenshot

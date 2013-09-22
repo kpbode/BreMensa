@@ -35,7 +35,6 @@
 		CB9806A617EEC31A0017D644 /* KPBMealplanLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98069C17EEC31A0017D644 /* KPBMealplanLayoutSection.m */; };
 		CB9806A717EEC31A0017D644 /* KPBMealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98069E17EEC31A0017D644 /* KPBMealCell.m */; };
 		CB9806A817EEC31A0017D644 /* KPBMealplanInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806A017EEC31A0017D644 /* KPBMealplanInfoView.m */; };
-		CB9806A917EEC31A0017D644 /* KPBMensaDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806A217EEC31A0017D644 /* KPBMensaDetailView.m */; };
 		CB9806AA17EEC31A0017D644 /* KPBMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806A417EEC31A0017D644 /* KPBMenuHeaderView.m */; };
 		CB9806B117EEC32C0017D644 /* KPBMealplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806AC17EEC32C0017D644 /* KPBMealplanViewController.m */; };
 		CB9806B217EEC32C0017D644 /* KPBMensaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806AE17EEC32C0017D644 /* KPBMensaDetailViewController.m */; };
@@ -45,6 +44,7 @@
 		CB9806BB17EECFDE0017D644 /* NSCalendar+KPBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806BA17EECFDE0017D644 /* NSCalendar+KPBAdditions.m */; };
 		CB9806BE17EEE09E0017D644 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9806BD17EEE09E0017D644 /* MapKit.framework */; };
 		CB9806C017EEE0AA0017D644 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */; };
+		CB9806C217EF25E20017D644 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = CB9806C117EF25E20017D644 /* info.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +105,6 @@
 		CB98069E17EEC31A0017D644 /* KPBMealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealCell.m; sourceTree = "<group>"; };
 		CB98069F17EEC31A0017D644 /* KPBMealplanInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanInfoView.h; sourceTree = "<group>"; };
 		CB9806A017EEC31A0017D644 /* KPBMealplanInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMealplanInfoView.m; sourceTree = "<group>"; };
-		CB9806A117EEC31A0017D644 /* KPBMensaDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaDetailView.h; sourceTree = "<group>"; };
-		CB9806A217EEC31A0017D644 /* KPBMensaDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaDetailView.m; sourceTree = "<group>"; };
 		CB9806A317EEC31A0017D644 /* KPBMenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMenuHeaderView.h; sourceTree = "<group>"; };
 		CB9806A417EEC31A0017D644 /* KPBMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMenuHeaderView.m; sourceTree = "<group>"; };
 		CB9806AB17EEC32C0017D644 /* KPBMealplanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanViewController.h; sourceTree = "<group>"; };
@@ -122,6 +120,7 @@
 		CB9806BA17EECFDE0017D644 /* NSCalendar+KPBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+KPBAdditions.m"; sourceTree = "<group>"; };
 		CB9806BD17EEE09E0017D644 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CB9806C117EF25E20017D644 /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = info.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +190,7 @@
 				CB98067717EEC26F0017D644 /* Classes */,
 				CB98067517EEC22E0017D644 /* Storyboard_iPhone.storyboard */,
 				CB9806B717EEC9880017D644 /* config.plist */,
+				CB9806C117EF25E20017D644 /* info.html */,
 				CB98065517EEC0840017D644 /* KPBAppDelegate.h */,
 				CB98065617EEC0840017D644 /* KPBAppDelegate.m */,
 				CB98065817EEC0840017D644 /* Images.xcassets */,
@@ -282,8 +282,6 @@
 				CB98069E17EEC31A0017D644 /* KPBMealCell.m */,
 				CB98069F17EEC31A0017D644 /* KPBMealplanInfoView.h */,
 				CB9806A017EEC31A0017D644 /* KPBMealplanInfoView.m */,
-				CB9806A117EEC31A0017D644 /* KPBMensaDetailView.h */,
-				CB9806A217EEC31A0017D644 /* KPBMensaDetailView.m */,
 				CB9806A317EEC31A0017D644 /* KPBMenuHeaderView.h */,
 				CB9806A417EEC31A0017D644 /* KPBMenuHeaderView.m */,
 			);
@@ -382,6 +380,7 @@
 				CB9806B817EEC9880017D644 /* config.plist in Resources */,
 				CB98065117EEC0840017D644 /* InfoPlist.strings in Resources */,
 				CB98067617EEC22E0017D644 /* Storyboard_iPhone.storyboard in Resources */,
+				CB9806C217EF25E20017D644 /* info.html in Resources */,
 				CB98065917EEC0840017D644 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,7 +441,6 @@
 				CB9806B217EEC32C0017D644 /* KPBMensaDetailViewController.m in Sources */,
 				CB98068117EEC2BF0017D644 /* KPBPhoneMealplanPresentationAnimator.m in Sources */,
 				CB9806B117EEC32C0017D644 /* KPBMealplanViewController.m in Sources */,
-				CB9806A917EEC31A0017D644 /* KPBMensaDetailView.m in Sources */,
 				CB98068017EEC2BF0017D644 /* KPBMealplanSegue.m in Sources */,
 				CB98069117EEC2DC0017D644 /* KPBMealplan.m in Sources */,
 				CB9806AA17EEC31A0017D644 /* KPBMenuHeaderView.m in Sources */,

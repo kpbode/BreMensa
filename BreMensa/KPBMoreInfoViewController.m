@@ -1,38 +1,11 @@
 #import "KPBMoreInfoViewController.h"
 #import <MessageUI/MessageUI.h>
 
-@interface KPBMoreInfoViewController () <UIWebViewDelegate, MFMailComposeViewControllerDelegate>
-
-@property (nonatomic, weak) UIWebView *webView;
+@interface KPBMoreInfoViewController () <MFMailComposeViewControllerDelegate>
 
 @end
 
 @implementation KPBMoreInfoViewController
-
-- (void)loadView
-{
-    UIView *containerView = [[UIView alloc] initWithFrame:CGRectZero];
-    containerView.autoresizesSubviews = YES;
-    containerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-    
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
-    webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    webView.backgroundColor = [UIColor clearColor];
-    webView.opaque = NO;
-    webView.dataDetectorTypes = UIDataDetectorTypeLink;
-    webView.delegate = self;
-    
-    // remove shadows
-    for (UIView *subview in webView.scrollView.subviews) {
-        if ([subview isKindOfClass:[UIImageView class]]) {
-            subview.hidden = YES;
-        }
-    }
-    
-    [containerView addSubview:webView];
-    self.webView = webView;
-    self.view = containerView;
-}
 
 - (void)viewDidLoad
 {
@@ -40,9 +13,8 @@
     
     self.title = @"Info";
     
-    
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                                                                               target:self action:@selector(onShareAppWithFriends:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                           target:self action:@selector(onShareAppWithFriends:)];
     
     
     NSURL *infoFileURL = [[NSBundle mainBundle] URLForResource:@"info" withExtension:@"html"];
@@ -50,22 +22,21 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:infoFileURL]];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+- (IBAction)onDone:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)onShareAppWithFriends:(id)sender
 {
 
-    NSString *text = @"Hast du BreMensa schon gesehen?";
-    NSURL *url = [NSURL URLWithString:@"http://bremensa.hotcoffeeapps.com"];
+    NSString *text = @"Kennst du schon BreMensa?";
+    NSURL *url = [NSURL URLWithString:@"http://kpbo.de/BreMensa"];
     
     NSArray *activityItems = @[ text, url ];
     
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.title = @"BreMensa teilen";
-    activityViewController.excludedActivityTypes = @[ UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll ];
+    activityViewController.excludedActivityTypes = @[ UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll ];
     
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
