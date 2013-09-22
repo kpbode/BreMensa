@@ -1,17 +1,9 @@
-//
-//  KPBMoreInfoViewController.m
-//  BreMensa
-//
-//  Created by Karl Bode on 15.10.12.
-//  Copyright (c) 2012 Karl Bode. All rights reserved.
-//
-
 #import "KPBMoreInfoViewController.h"
 #import <MessageUI/MessageUI.h>
 
 @interface KPBMoreInfoViewController () <UIWebViewDelegate, MFMailComposeViewControllerDelegate>
 
-@property (nonatomic, weak, readwrite) UIWebView *webView;
+@property (nonatomic, weak) UIWebView *webView;
 
 @end
 

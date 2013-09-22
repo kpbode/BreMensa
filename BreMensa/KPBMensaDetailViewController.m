@@ -6,9 +6,9 @@
 
 @interface KPBMensaDetailViewController () <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
 
-@property (nonatomic, strong, readwrite) KPBMensa *mensa;
-@property (nonatomic, weak, readwrite) KPBMensaDetailView *mensaView;
-@property (nonatomic, weak, readwrite) MKMapView *mapView;
+@property (nonatomic) KPBMensa *mensa;
+@property (nonatomic, weak) KPBMensaDetailView *mensaView;
+@property (nonatomic, weak) MKMapView *mapView;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 

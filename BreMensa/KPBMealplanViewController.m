@@ -16,9 +16,9 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 
 @interface KPBMealplanViewController () <KPBMealplanLayoutDelegate>
 
-@property (nonatomic, strong, readwrite) KPBMealplan *mealplan;
-@property (nonatomic, strong, readwrite) NSDateFormatter *menuHeaderDateFormatter;
-@property (nonatomic, weak, readwrite) UIView *placeholderView;
+@property (nonatomic) KPBMealplan *mealplan;
+@property (nonatomic) NSDateFormatter *menuHeaderDateFormatter;
+@property (nonatomic, weak) UIView *placeholderView;
 
 @end
 
