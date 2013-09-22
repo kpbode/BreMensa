@@ -20,8 +20,6 @@
 {
     [super prepareLayout];
     
-    NSLog(@"prepare layout");
-
     NSMutableArray *sections = [[NSMutableArray alloc] init];
     CGFloat height = 0.f;
     CGFloat width = 0.f;
@@ -53,8 +51,6 @@
         CGFloat maxHeaderHeight = CGFLOAT_MIN;
         
         for (NSInteger columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
-            
-            
             
             CGFloat columnWidth = [self.delegate collectionView:collectionView layout:self widthForColumn:columnIndex forSectionAtIndex:sectionIndex];
             sectionWidth += columnWidth;

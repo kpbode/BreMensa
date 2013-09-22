@@ -6,6 +6,7 @@
 @interface KPBMensaMenuViewController () <KPBMealplanSegueDelegate>
 
 @property (nonatomic, weak) UIImageView *containerView;
+@property (nonatomic) KPBMensa *lastSelectedMensa;
 
 @end
 
@@ -18,8 +19,17 @@
     CGRect containerFrame = self.view.bounds;
     
     UIImageView *containerView = [[UIImageView alloc] initWithFrame:containerFrame];
+    containerView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    containerView.layer.borderWidth = 1.f;
+    containerView.backgroundColor = [UIColor clearColor];
+    containerView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tapContainerViewGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapContainerView:)];
+    [containerView addGestureRecognizer:tapContainerViewGestureRecognizer];
+    
     [self.view addSubview:containerView];
     self.containerView = containerView;
+    
 
     CGAffineTransform transform = CGAffineTransformIdentity;
     transform = CGAffineTransformMakeScale(.6f, .6f);
@@ -60,15 +70,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue isKindOfClass:[KPBMealplanSegue class]]) {
-        
-        
-        
         KPBMealplanSegue *mealplanSegue = (KPBMealplanSegue *) segue;
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         KPBMensa *mensa = [self mensaObjectAtIndexPath:indexPath];
-        
-        NSLog(@"about to show mealplan: %@", mensa.name);
+        if (indexPath == nil) {
+            mensa = _lastSelectedMensa;
+        }
         
         UINavigationController *navigationController = (UINavigationController *) mealplanSegue.destinationViewController;
         KPBMealplanViewController *mealplanViewController = (KPBMealplanViewController *) navigationController.topViewController;
@@ -83,7 +91,21 @@
         
         mealplanSegue.hiddenTransform = _containerView.transform;
         mealplanSegue.delegate = self;
+        
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+        self.lastSelectedMensa = mensa;
     }
+}
+
+- (void)onTapContainerView:(id)sender
+{
+    if (_lastSelectedMensa == nil) return;
+    
+    
+    
+    [self performSegueWithIdentifier:@"ShowMealplanSegue" sender:self];
+    
 }
 
 #pragma mark KPBMealplanSegueDelegate

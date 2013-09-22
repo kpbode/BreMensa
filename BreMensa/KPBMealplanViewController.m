@@ -27,7 +27,7 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 //    self.collectionView.showsHorizontalScrollIndicator = NO;
 //    self.collectionView.showsVerticalScrollIndicator = NO;
@@ -106,17 +106,12 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
                                                                                           style:UIBarButtonItemStyleBordered
                                                                                          target:self action:@selector(onScrollToToday:)];
             }
-            
-            int64_t delayInSeconds = 0.;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [self scrollToTodayAnimated:YES];
-            });
-            
+                
+            [self scrollToTodayAnimated:YES];
         }
     } failure:^(KPBMensa *mensa, NSError *error) {
         [progressHud hide:YES];
-        NSLog(@"failed to get mealplan data");
+        NSLog(@"failed to get mealplan data: %@", error);
     }];
     
     

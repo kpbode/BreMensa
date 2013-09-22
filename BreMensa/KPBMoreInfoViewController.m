@@ -9,15 +9,6 @@
 
 @implementation KPBMoreInfoViewController
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)loadView
 {
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectZero];

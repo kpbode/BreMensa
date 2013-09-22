@@ -32,6 +32,7 @@ static NSTimeInterval const KPBPhoneMenuViewControllerTransitionDuration = .4;
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext
 {
+    
     if (_dismiss) {
         [self animateDismissTransition:transitionContext];
     } else {
@@ -41,7 +42,6 @@ static NSTimeInterval const KPBPhoneMenuViewControllerTransitionDuration = .4;
 
 - (void)animatePresentTransition:(id <UIViewControllerContextTransitioning>)transitionContext
 {
-    NSLog(@"should present with animation");
     
     UIView *containerView = [transitionContext containerView];
     
@@ -61,9 +61,6 @@ static NSTimeInterval const KPBPhoneMenuViewControllerTransitionDuration = .4;
         toViewController.view.transform = _shownTransform;
         
     } completion:^(BOOL finished) {
-        
-        NSLog(@"presentationAnimation complete");
-        
         [transitionContext completeTransition:finished];
     }];
 }
@@ -75,7 +72,8 @@ static NSTimeInterval const KPBPhoneMenuViewControllerTransitionDuration = .4;
     
     UIGraphicsBeginImageContextWithOptions(fromViewController.view.bounds.size, YES, 0.f);
     
-    [fromViewController.view drawViewHierarchyInRect:fromViewController.view.bounds afterScreenUpdates:YES];
+    [fromViewController.view drawViewHierarchyInRect:fromViewController.view.bounds
+                                  afterScreenUpdates:YES];
     
     UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
     
