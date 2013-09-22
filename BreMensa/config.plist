@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>application_config</key>
+	<dict>
+		<key>mensa_config</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Airport</string>
+				<key>serverId</key>
+				<string>air</string>
+                <key>latitude</key>
+                <real>53.055199</real>
+                <key>longitude</key>
+                <real>8.783312</real>
+                <key>openingInfos</key>
+                <array>
+                    <dict>
+                        <key>title</key>
+                        <string>Allgemein</string>
+                        <key>subtitle</key>
+                        <string></string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>7:30 Uhr bis 14:30 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                    <dict>
+                        <key>title</key>
+                        <string>Mittagsausgabe</string>
+                        <key>subtitle</key>
+                        <string></string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Donnerstag</string>
+                                <key>value</key>
+                                <string>11:30 Uhr bis 14:00 Uhr</string>
+                            </dict>
+                            <dict>
+                                <key>label</key>
+                                <string>Freitag</string>
+                                <key>value</key>
+                                <string>11:30 Uhr bis 13:30 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                </array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Bremerhaven</string>
+				<key>serverId</key>
+				<string>bhv</string>
+                <key>latitude</key>
+                <real>53.53946</real>
+                <key>longitude</key>
+                <real>8.58218</real>
+                <key>openingInfos</key>
+                <array>
+                    <dict>
+                        <key>title</key>
+                        <string>Allgemein</string>
+                        <key>subtitle</key>
+                        <string>Vorlesungszeit</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>7:45 Uhr bis 14:30 Uhr</string>
+                            </dict>
+                            <dict>
+                                <key>label</key>
+                                <string>Frühstück</string>
+                                <key>value</key>
+                                <string>ab 7:45 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                    <dict>
+                        <key>title</key>
+                        <string>Mittagsausgabe</string>
+                        <key>subtitle</key>
+                        <string>Vorlesungszeit</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>11:20 bis 14:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                </array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>GW2</string>
+				<key>serverId</key>
+				<string>gw2</string>
+                <key>latitude</key>
+                <real>53.107189</real>
+                <key>longitude</key>
+                <real>8.854012</real>
+                <key>openingInfos</key>
+                <array>
+                    <dict>
+                        <key>title</key>
+                        <string>Cafeteria</string>
+                        <key>subtitle</key>
+                        <string></string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Donnerstag</string>
+                                <key>value</key>
+                                <string>7:45 Uhr bis 18:45 Uhr</string>
+                            </dict>
+                            <dict>
+                                <key>label</key>
+                                <string>Freitag</string>
+                                <key>value</key>
+                                <string>7:45 Uhr bis 17:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                    <dict>
+                        <key>title</key>
+                        <string>Kaffeebar</string>
+                        <key>subtitle</key>
+                        <string></string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Donnerstag</string>
+                                <key>value</key>
+                                <string>11:30 bis 16:00 Uhr</string>
+                            </dict>
+                            <dict>
+                                <key>label</key>
+                                <string>Freitag</string>
+                                <key>value</key>
+                                <string>11:30 bis 15:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                </array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Neustadtswall</string>
+				<key>serverId</key>
+				<string>hsb</string>
+                <key>latitude</key>
+                <real>53.072402</real>
+                <key>longitude</key>
+                <real>8.793748</real>
+                <key>openingInfos</key>
+                <array>
+                    <dict>
+                        <key>title</key>
+                        <string>Snack-Corner</string>
+                        <key>subtitle</key>
+                        <string>Vorlesungszeit</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>7:45 Uhr bis 16:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                    <dict>
+                        <key>title</key>
+                        <string>Mittagsausgabe</string>
+                        <key>subtitle</key>
+                        <string>Vorlesungszeit</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>11:30 bis 14:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                    <dict>
+                        <key>title</key>
+                        <string>Front-Cooking</string>
+                        <key>subtitle</key>
+                        <string>heiße Snacks</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>14:00 bis 15:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                    <dict>
+                        <key>title</key>
+                        <string>Kaffeebar</string>
+                        <key>subtitle</key>
+                        <string>Vorlesungszeit</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>9:00 bis 16:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                </array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Uniboulevard</string>
+				<key>serverId</key>
+				<string>uni</string>
+                <key>latitude</key>
+                <real>53.10876</real>
+                <key>longitude</key>
+                <real>8.85021</real>
+                <key>openingInfos</key>
+                <array>
+                    <dict>
+                        <key>title</key>
+                        <string>Uni-Mensa</string>
+                        <key>subtitle</key>
+                        <string>Vorlesungszeit</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>11:30 Uhr bis 14:15 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                    <dict>
+                        <key>title</key>
+                        <string>Uni-Mensa</string>
+                        <key>subtitle</key>
+                        <string>Vorlesungsfreie Zeit</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>11:30 Uhr bis 14:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                    <dict>
+                        <key>title</key>
+                        <string>Café Central</string>
+                        <key>subtitle</key>
+                        <string>Vorlesungszeit</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>8:00 Uhr bis 17:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                    <dict>
+                        <key>title</key>
+                        <string>Café Central</string>
+                        <key>subtitle</key>
+                        <string>Vorlesungsfreie Zeit</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Freitag</string>
+                                <key>value</key>
+                                <string>8:00 Uhr bis 16:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                </array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Werderstraße</string>
+				<key>serverId</key>
+				<string>wer</string>
+                <key>latitude</key>
+                <real>53.06989</real>
+                <key>longitude</key>
+                <real>8.80680</real>
+                <key>openingInfos</key>
+                <array>
+                    <dict>
+                        <key>title</key>
+                        <string>Allgemein</string>
+                        <key>subtitle</key>
+                        <string>Vorlesungszeit</string>
+                        <key>times</key>
+                        <array>
+                            <dict>
+                                <key>label</key>
+                                <string>Montag bis Donnerstag</string>
+                                <key>value</key>
+                                <string>8:00 Uhr bis 16:15 Uhr</string>
+                            </dict>
+                            <dict>
+                                <key>label</key>
+                                <string>Freitag</string>
+                                <key>value</key>
+                                <string>8:00 Uhr bis 15:00 Uhr</string>
+                            </dict>
+                        </array>
+                    </dict>
+                </array>
+			</dict>
+		</array>
+		<key>server_base_path</key>
+		<string>http://17.latest.foodspl.appspot.com/mensa</string>
+	</dict>
+	<key>remote_config_url</key>
+	<string>http://web12.leon.servertools24.de/bremensa.plist</string>
+</dict>
+</plist>

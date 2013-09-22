@@ -7,4 +7,8 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <AFNetworking/AFNetworking.h>
+    #import <MBProgressHUD/MBProgressHUD.h>
+    #import "NSCalendar+KPBAdditions.h"
+    #import "NSDate+KPBAdditions.h"
 #endif
