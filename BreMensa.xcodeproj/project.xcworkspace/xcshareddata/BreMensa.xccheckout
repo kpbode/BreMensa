@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0DD4AB88-7BCB-49B2-A689-4EBF49C14889</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BreMensa</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2B15F408-19B5-477F-939E-41C29C53C17C</key>
+		<string>ssh://github.com/kpbode/BreMensa.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BreMensa.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2B15F408-19B5-477F-939E-41C29C53C17C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/kpbode/BreMensa.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2B15F408-19B5-477F-939E-41C29C53C17C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2B15F408-19B5-477F-939E-41C29C53C17C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BreMensa</string>
+		</dict>
+	</array>
+</dict>
+</plist>
