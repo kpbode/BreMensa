@@ -25,9 +25,7 @@ static UIFont *DateLabelFont;
         
         self.backgroundColor = [UIColor darkGrayColor];
         
-        CGRect dayLabelFrame = CGRectMake(0.f, 0.f, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) / 2.f);
-        
-        UILabel *dayLabel = [[UILabel alloc] initWithFrame:dayLabelFrame];
+        UILabel *dayLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         dayLabel.backgroundColor = [UIColor clearColor];
         dayLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         dayLabel.textAlignment = NSTextAlignmentCenter;
@@ -36,9 +34,7 @@ static UIFont *DateLabelFont;
         [self addSubview:dayLabel];
         self.dayLabel = dayLabel;
         
-        CGRect dateLabelFrame = CGRectMake(0.f, CGRectGetMaxY(dayLabelFrame), CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - CGRectGetHeight(dayLabelFrame));
-        
-        UILabel *dateLabel = [[UILabel alloc] initWithFrame:dateLabelFrame];
+        UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         dateLabel.backgroundColor = [UIColor clearColor];
         dateLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         dateLabel.textAlignment = NSTextAlignmentCenter;
@@ -54,6 +50,17 @@ static UIFont *DateLabelFont;
 - (void)setupBackgroundForToday:(BOOL)today
 {
     self.backgroundColor = today ? [UIColor blackColor] : [UIColor darkGrayColor];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    CGRect dayLabelFrame = CGRectMake(0.f, 0.f, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) / 2.f);
+    _dayLabel.frame = CGRectIntegral(dayLabelFrame);
+    
+    CGRect dateLabelFrame = CGRectMake(0.f, CGRectGetMaxY(dayLabelFrame), CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - CGRectGetHeight(dayLabelFrame));
+    _dateLabel.frame = CGRectIntegral(dateLabelFrame);
 }
 
 @end

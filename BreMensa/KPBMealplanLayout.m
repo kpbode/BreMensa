@@ -11,6 +11,15 @@
 
 @implementation KPBMealplanLayout
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.footerHeight = 30.f;
+    }
+    return self;
+}
+
 - (id<KPBMealplanLayoutDelegate>)delegate
 {
     return (id<KPBMealplanLayoutDelegate>) self.collectionView.delegate;

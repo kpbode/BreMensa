@@ -15,9 +15,9 @@
         
         self.backgroundColor = [UIColor clearColor];
         
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectInset(self.bounds, 10.f, 0.f)];
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         textLabel.backgroundColor = [UIColor clearColor];
-        textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:11.f];
+        textLabel.font = [UIFont systemFontOfSize:11.f];
         textLabel.textColor = [UIColor blackColor];
         textLabel.textAlignment = NSTextAlignmentRight;
         textLabel.adjustsFontSizeToFitWidth = NO;
@@ -27,6 +27,15 @@
         
     }
     return self;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    CGRect textLabelFrame = CGRectInset(self.bounds, 10.f, 0.f);
+    
+    _textLabel.frame = CGRectIntegral(textLabelFrame);
 }
 
 @end

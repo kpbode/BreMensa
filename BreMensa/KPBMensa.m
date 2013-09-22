@@ -108,7 +108,11 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
     AFJSONRequestOperation *fetchRequestOperation = [[AFJSONRequestOperation alloc] initWithRequest:request];
+    // app engine server answers with text/html on initial request
+    fetchRequestOperation.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[ @"text/html", @"application/json" ]];
     [fetchRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"response content type: %@", operation.response.allHeaderFields[@"Content-Type"]);
         
         KPBMealplan *mealplan = [KPBMealplan mealplanFromDictionary:responseObject];
         mealplan.mensa = self;
