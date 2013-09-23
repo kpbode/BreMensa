@@ -19,10 +19,10 @@ static UIImage *BackgroundImage;
 
 + (void)initialize
 {
-    TitleFont = [UIFont boldSystemFontOfSize:15.f];;
-    TextFont = [UIFont systemFontOfSize:14.f];
-    PriceFont = [UIFont italicSystemFontOfSize:10.f];
-    InfoFont = PriceFont;
+    TitleFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    TextFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    PriceFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption2];
+    InfoFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
     BackgroundImage = [[UIImage imageNamed:@"meal_background.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(4.f, 4.f, 16.f, 17.f)];
 }
 
@@ -76,10 +76,10 @@ static UIImage *BackgroundImage;
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor colorWithRed:0.925 green:0.925 blue:0.925 alpha:1];
         
         self.layer.borderColor = [[UIColor blackColor] CGColor];
-        self.layer.borderWidth = 1.f;
+        self.layer.borderWidth = 0.f;
         
         UILabel *mealTitleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         mealTitleLabel.backgroundColor = [UIColor clearColor];
@@ -98,6 +98,7 @@ static UIImage *BackgroundImage;
         
         UILabel *priceTextLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         priceTextLabel.backgroundColor = [UIColor clearColor];
+        priceTextLabel.numberOfLines = 0;
         priceTextLabel.font = PriceFont;
         
         [self.contentView addSubview:priceTextLabel];
@@ -106,6 +107,7 @@ static UIImage *BackgroundImage;
         
         UILabel *infoTextLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         infoTextLabel.backgroundColor = [UIColor clearColor];
+        infoTextLabel.numberOfLines = 0;
         infoTextLabel.font = InfoFont;
         
         [self.contentView addSubview:infoTextLabel];

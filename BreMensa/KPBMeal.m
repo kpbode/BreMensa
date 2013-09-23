@@ -58,7 +58,7 @@ static NSString * const KPBServerIdKey = @"serverId";
     
     if (self.staffPrice != nil) {
         if (text != nil) {
-            text = [text stringByAppendingString:@" - "];
+            text = [text stringByAppendingString:@"\n"];
         } else {
             text = @"";
         }
