@@ -45,6 +45,7 @@
 		CB9806BE17EEE09E0017D644 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9806BD17EEE09E0017D644 /* MapKit.framework */; };
 		CB9806C017EEE0AA0017D644 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */; };
 		CB9806C217EF25E20017D644 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = CB9806C117EF25E20017D644 /* info.html */; };
+		CB98070617F0B57E0017D644 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98070517F0B57E0017D644 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		CB9806BD17EEE09E0017D644 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CB9806C117EF25E20017D644 /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = info.html; sourceTree = "<group>"; };
+		CB98070517F0B57E0017D644 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB98070617F0B57E0017D644 /* SystemConfiguration.framework in Frameworks */,
 				CB9806C017EEE0AA0017D644 /* QuartzCore.framework in Frameworks */,
 				CB9806BE17EEE09E0017D644 /* MapKit.framework in Frameworks */,
 				CB98064917EEC0840017D644 /* CoreGraphics.framework in Frameworks */,
@@ -173,6 +176,7 @@
 		CB98064517EEC0840017D644 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB98070517F0B57E0017D644 /* SystemConfiguration.framework */,
 				CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */,
 				CB9806BD17EEE09E0017D644 /* MapKit.framework */,
 				CB98064617EEC0840017D644 /* Foundation.framework */,

@@ -5,6 +5,33 @@
 
 @implementation KPBMensa
 
++ (void)initialize
+{
+    [[self class] reachabilityManager];
+}
+
++ (AFNetworkReachabilityManager *)reachabilityManager
+{
+    static AFNetworkReachabilityManager *manager;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *domain = @"appspot.com";
+        manager = [AFNetworkReachabilityManager managerForDomain:domain];
+        [manager startMonitoring];
+    });
+    return manager;
+}
+
++ (BOOL)isBackendReachable
+{
+    return [[[self class] reachabilityManager] isReachable];
+}
+
++ (NSString *)backendBasePath
+{
+    return @"http://17.foodspl.appspot.com"; // should go to config
+}
+
 + (NSArray *)availableMensaObjects
 {
     static NSArray *mensas;
@@ -58,36 +85,35 @@
 - (void)currentMealplanWithSuccess:(void (^)(KPBMensa *mensa, KPBMealplan *mealplan))success
                            failure:(void (^)(KPBMensa *mensa, NSError *error))failure
 {
+    if ([self isCurrentMealplanCached]) {
+        KPBMealplan *mealplan = [self cachedMealplan];
+        success(self, mealplan);
+    } else {
+        [self fetchMealplanWithSuccess:success failure:failure];
+    }
+}
+        
+- (KPBMealplan *)cachedMealplan
+{
+    NSString *filePath = [self currentMealplanFilePath];
+    
+    NSData *mealplanData = [[NSData alloc] initWithContentsOfFile:filePath];
+    if (mealplanData == nil) return nil;
+    
+    KPBMealplan *mealplan = [NSKeyedUnarchiver unarchiveObjectWithData:mealplanData];
+    mealplan.mensa = self;
+    
+    return mealplan;
+}
+
+- (BOOL)isCurrentMealplanCached
+{
+    KPBMealplan *mealplan = [self cachedMealplan];
+    if (mealplan == nil) return NO;
     
     NSInteger currentWeek = [[NSCalendar KPB_germanCalendar] KPB_currentWeek];
     
-    NSFileManager *fileManager = [[NSFileManager alloc] init];
-    NSString *filePath = [self currentMealplanFilePath];
-    
-    if (![fileManager fileExistsAtPath:filePath]) {
-        
-        [self fetchMealplanWithSuccess:success failure:failure];
-        
-    } else {
-        
-        NSData *mealplanData = [[NSData alloc] initWithContentsOfFile:filePath];
-        KPBMealplan *mealplan = [NSKeyedUnarchiver unarchiveObjectWithData:mealplanData];
-        mealplan.mensa = self;
-        
-        if (currentWeek == mealplan.weekNumber) {
-            success(self, mealplan);
-        } else {
-            
-            NSError *removeError = nil;
-            if (![fileManager removeItemAtPath:filePath error:&removeError]) {
-                NSLog(@"failed to delete file at path: %@ (%@)", filePath, removeError);
-            }
-            
-            [self fetchMealplanWithSuccess:success failure:failure];
-        }
-        
-    }
-    
+    return currentWeek == mealplan.weekNumber;
 }
 
 - (NSString *)currentMealplanFilePath
@@ -103,8 +129,7 @@
 - (void)fetchMealplanWithSuccess:(void (^)(KPBMensa *mensa, KPBMealplan *mealplan))success
                          failure:(void (^)(KPBMensa *mensa, NSError *error))failure
 {
-    NSString *serverBasePath = @"http://17.foodspl.appspot.com"; // belongs in config
-    NSString *urlString = [NSString stringWithFormat:@"%@/mensa?id=%@&format=json", serverBasePath, _serverId];
+    NSString *urlString = [NSString stringWithFormat:@"%@/mensa?id=%@&format=json", [[self class] backendBasePath], _serverId];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
     AFJSONRequestOperation *fetchRequestOperation = [[AFJSONRequestOperation alloc] initWithRequest:request];

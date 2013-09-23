@@ -28,10 +28,6 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 {
     [super viewDidLoad];
     
-    self.collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-//    self.collectionView.showsHorizontalScrollIndicator = NO;
-//    self.collectionView.showsVerticalScrollIndicator = NO;
-    
     [self.collectionView registerClass:[KPBMealCell class] forCellWithReuseIdentifier:KPBMealplanViewControllerMealCellIdentifier];
     [self.collectionView registerClass:[KPBMenuHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KPBMealplanViewControllerMenuHeaderViewIdentifier];
     [self.collectionView registerClass:[KPBMealplanInfoView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:KPBMealplanViewControllerInfoViewIdentifier];
@@ -53,7 +49,7 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
     if (self.mensa != nil) {
         [self loadMealplan];
     } else {
-        [self showPlaceholder];
+        [self showNoMensaPlaceholder];
     }
     
     [self.collectionView flashScrollIndicators];
@@ -75,8 +71,21 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 - (void)loadMealplan
 {
     
-    if (self.mensa == nil) return;
-//    return;
+    if (self.mensa == nil) {
+        [self showNoMensaPlaceholder];
+        return;
+    }
+
+    if (![KPBMensa isBackendReachable]) {
+        
+        if (![self.mensa isCurrentMealplanCached]) {
+            [self showOfflinePlaceholder];
+        } else {
+            [self onLoadedMealplan:[self.mensa cachedMealplan]];
+        }
+        
+        return;
+    }
     
     [self hidePlaceholder];
     
@@ -88,32 +97,35 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
         [progressHud hide:YES];
         
         if (mealplan == nil) {
-            
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                message:@"Der Speiseplan konnte nicht geladen werden."
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil];
-            [alertView show];
-            
+            [self showErrorPlaceholder];
         } else {
-            self.mealplan = mealplan;
-            [self hidePlaceholder];
-            [self.collectionView reloadData];
-            
-            if ([self canScrollToToday]) {
-                self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute"
-                                                                                          style:UIBarButtonItemStyleBordered
-                                                                                         target:self action:@selector(onScrollToToday:)];
-            }
-                
-            [self scrollToTodayAnimated:YES];
+            [self onLoadedMealplan:mealplan];
         }
+        
     } failure:^(KPBMensa *mensa, NSError *error) {
+        
         [progressHud hide:YES];
         NSLog(@"failed to get mealplan data: %@", error);
+        [self showErrorPlaceholder];
+        
     }];
     
+}
+
+- (void)onLoadedMealplan:(KPBMealplan *)mealplan
+{
+    
+    self.mealplan = mealplan;
+    [self hidePlaceholder];
+    [self.collectionView reloadData];
+    
+    if ([self canScrollToToday]) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute"
+                                                                                  style:UIBarButtonItemStyleBordered
+                                                                                 target:self action:@selector(onScrollToToday:)];
+    }
+    
+    [self scrollToTodayAnimated:YES];
     
 }
 
@@ -311,7 +323,7 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
             offsetX = 0.f;
         }
         
-        [self.collectionView setContentOffset:CGPointMake(offsetX, 0.f) animated:animated];
+        [self.collectionView setContentOffset:CGPointMake(offsetX, -64.f) animated:animated];
     }
     
 }
@@ -324,7 +336,22 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
     return weekday >= 0 && weekday < 5;
 }
 
-- (void)showPlaceholder
+- (void)showNoMensaPlaceholder
+{
+    [self showPlaceholderWithText:@"Bitte wähle zunächst eine Mensa aus"];
+}
+
+- (void)showOfflinePlaceholder
+{
+    [self showPlaceholderWithText:@"Es besteht derzeit keine Verbindung zum Internet!"];
+}
+
+- (void)showErrorPlaceholder
+{
+    [self showPlaceholderWithText:@"Der Speiseplan konnte nicht geladen werden. Bitte probiere es später erneut! \n Manchmal dauert es am Montag leider ein wenig bis die Daten bereit stehen... :(  "];
+}
+
+- (void)showPlaceholderWithText:(NSString *)text
 {
     if (self.placeholderView != nil) return;
     
@@ -332,15 +359,9 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
     placeholderLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     placeholderLabel.backgroundColor = [UIColor clearColor];
     placeholderLabel.textColor = [UIColor blackColor];
-    placeholderLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:24.f];
+    placeholderLabel.font = [UIFont systemFontOfSize:16.f];
     placeholderLabel.numberOfLines = 0;
     placeholderLabel.textAlignment = NSTextAlignmentCenter;
-    
-    NSString *text = @"Bitte wähle zunächst eine Mensa aus";
-    
-    if (self.mensa != nil) {
-        text = @"Der Speiseplan konnte nicht geladen werden. Bitte probiere es später erneut...";
-    }
     
     placeholderLabel.text = text;
     

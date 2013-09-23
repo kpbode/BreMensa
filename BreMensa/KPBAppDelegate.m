@@ -1,9 +1,14 @@
 #import "KPBAppDelegate.h"
+#import "KPBMensa.h"
 
 @implementation KPBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window.tintColor = [UIColor colorWithRed:0.769 green:0.314 blue:0.294 alpha:1];
+    
+//    [[AFNetworkReachabilityManager managerForDomain:[KPBMensa backendBasePath]] startMonitoring];
+    
     return YES;
 }
 

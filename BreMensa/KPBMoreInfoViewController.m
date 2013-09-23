@@ -38,7 +38,9 @@
     activityViewController.title = @"BreMensa teilen";
     activityViewController.excludedActivityTypes = @[ UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll ];
     
-    [self presentViewController:activityViewController animated:YES completion:nil];
+    [self presentViewController:activityViewController
+                       animated:YES
+                     completion:nil];
 }
 
 #pragma mark UIWebViewDelegate
@@ -49,7 +51,7 @@
         
         MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
         mailComposeViewController.mailComposeDelegate = self;
-        [mailComposeViewController setToRecipients:@[@"kpbode@me.com"]];
+        [mailComposeViewController setToRecipients:@[@"mail@kpbo.de"]];
         [mailComposeViewController setSubject:@"BreMensa-Feedback"];
         
         NSBundle *bundle = [NSBundle mainBundle];

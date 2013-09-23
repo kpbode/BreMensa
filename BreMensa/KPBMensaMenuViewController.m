@@ -19,8 +19,8 @@
     CGRect containerFrame = self.view.bounds;
     
     UIImageView *containerView = [[UIImageView alloc] initWithFrame:containerFrame];
-    containerView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    containerView.layer.borderWidth = 1.f;
+//    containerView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+//    containerView.layer.borderWidth = 1.f;
     containerView.backgroundColor = [UIColor clearColor];
     containerView.userInteractionEnabled = YES;
     
@@ -102,10 +102,7 @@
 {
     if (_lastSelectedMensa == nil) return;
     
-    
-    
-    [self performSegueWithIdentifier:@"ShowMealplanSegue" sender:self];
-    
+    [self performSegueWithIdentifier:@"ShowMealplanSegue" sender:self];    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
