@@ -1,7 +1,9 @@
 #import "KPBMoreInfoViewController.h"
 #import <MessageUI/MessageUI.h>
 
-@interface KPBMoreInfoViewController () <MFMailComposeViewControllerDelegate>
+@interface KPBMoreInfoViewController () <MFMailComposeViewControllerDelegate, UITextViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UITextView *textView;
 
 @end
 
@@ -19,7 +21,7 @@
     
     NSURL *infoFileURL = [[NSBundle mainBundle] URLForResource:@"info" withExtension:@"html"];
     
-    [self.webView loadRequest:[NSURLRequest requestWithURL:infoFileURL]];
+//    [self.webView loadRequest:[NSURLRequest requestWithURL:infoFileURL]];
     
     
     NSError *error;
@@ -82,6 +84,36 @@
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange
+{
+    if ([URL.absoluteString hasPrefix:@"mailto:"]) {
+        
+        MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
+        mailComposeViewController.mailComposeDelegate = self;
+        [mailComposeViewController setToRecipients:@[@"mail@kpbo.de"]];
+        [mailComposeViewController setSubject:@"BreMensa-Feedback"];
+        
+        NSBundle *bundle = [NSBundle mainBundle];
+        
+        NSString *message = [NSString stringWithFormat:@"\n\n --- BreMensa %@ [%@] -- %@, iOS %@ (%@)", [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [bundle objectForInfoDictionaryKey:@"CFBundleVersion"], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [bundle preferredLocalizations][0]];
+        
+        
+        [mailComposeViewController setMessageBody:message isHTML:NO];
+        
+        [self presentViewController:mailComposeViewController animated:YES completion:nil];
+        
+    } else {
+        [[UIApplication sharedApplication] openURL:URL];
+    }
+    
+    return NO;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange
+{
+    return YES;
 }
 
 @end

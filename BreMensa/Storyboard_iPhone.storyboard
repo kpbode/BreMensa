@@ -111,36 +111,28 @@
                         <viewControllerLayoutGuide type="bottom" id="kRZ-JB-Xrx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Jag-Zz-z7r">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSo-dX-dzK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ide-Iv-c53" id="yAn-Dp-z06"/>
-                                </connections>
-                            </webView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRP-yy-Pfi">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRP-yy-Pfi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ide-Iv-c53" id="3Ao-6U-Jet"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="xSo-dX-dzK" secondAttribute="centerX" id="3ia-NY-zUT"/>
-                            <constraint firstAttribute="trailing" secondItem="xSo-dX-dzK" secondAttribute="trailing" id="BIH-PP-YAd"/>
-                            <constraint firstItem="xSo-dX-dzK" firstAttribute="top" secondItem="Jag-Zz-z7r" secondAttribute="top" id="Ycb-dc-jnW"/>
-                            <constraint firstItem="xSo-dX-dzK" firstAttribute="leading" secondItem="Jag-Zz-z7r" secondAttribute="leading" id="iB8-TS-RIS"/>
-                            <constraint firstAttribute="centerY" secondItem="xSo-dX-dzK" secondAttribute="centerY" id="xXI-ui-PJd"/>
+                            <constraint firstItem="dRP-yy-Pfi" firstAttribute="leading" secondItem="Jag-Zz-z7r" secondAttribute="leading" id="E0b-zY-3eF"/>
+                            <constraint firstAttribute="centerY" secondItem="dRP-yy-Pfi" secondAttribute="centerY" id="OG2-HF-8kz"/>
+                            <constraint firstAttribute="centerX" secondItem="dRP-yy-Pfi" secondAttribute="centerX" id="V6H-2e-VuP"/>
+                            <constraint firstItem="dRP-yy-Pfi" firstAttribute="top" secondItem="Jag-Zz-z7r" secondAttribute="top" id="gAo-Sw-nMy"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="2cu-Qt-GKw">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="Vwf-2p-SIw">
                             <connections>
@@ -150,7 +142,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="textView" destination="dRP-yy-Pfi" id="mlQ-Dx-j4f"/>
-                        <outlet property="webView" destination="xSo-dX-dzK" id="yVm-qR-Muf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUP-Ct-h79" userLabel="First Responder" sceneMemberID="firstResponder"/>
