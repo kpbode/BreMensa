@@ -20,6 +20,15 @@
     NSURL *infoFileURL = [[NSBundle mainBundle] URLForResource:@"info" withExtension:@"html"];
     
     [self.webView loadRequest:[NSURLRequest requestWithURL:infoFileURL]];
+    
+    
+    NSError *error;
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithFileURL:infoFileURL options:@{ NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType } documentAttributes:NULL error:&error];
+    if (attributedString == nil) {
+        NSLog(@"error: %@", error);
+    } else {
+        _textView.attributedText = attributedString;
+    }
 }
 
 - (IBAction)onDone:(id)sender {
