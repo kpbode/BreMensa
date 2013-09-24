@@ -16,14 +16,27 @@ static UIFont *TextFont;
 static UIFont *PriceFont;
 static UIFont *InfoFont;
 static UIImage *BackgroundImage;
+static NSCache *textSizeCache;
 
-+ (void)initialize
++ (void)setupFonts
 {
     TitleFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     TextFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     PriceFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption2];
     InfoFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
     BackgroundImage = [[UIImage imageNamed:@"meal_background.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(4.f, 4.f, 16.f, 17.f)];
+}
+
++ (void)initialize
+{
+    textSizeCache = [[NSCache alloc] init];
+    [[self class] setupFonts];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIContentSizeCategoryDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSLog(@"need to empty cache and reinitalize fonts");
+        [textSizeCache removeAllObjects];
+        [[self class] setupFonts];
+    }];
 }
 
 + (CGFloat)heightForWidth:(CGFloat)width
@@ -39,36 +52,46 @@ static UIImage *BackgroundImage;
     
     CGSize targetSize = CGSizeMake(targetWidth, CGFLOAT_MAX);
     
-    CGSize titleSize = [title boundingRectWithSize:targetSize
-                                           options:NSStringDrawingUsesLineFragmentOrigin
-                                        attributes:@{ NSFontAttributeName : TitleFont }
-                                           context:nil].size;
-    
+    CGSize titleSize = [[self class] sizeForText:title
+                                        withFont:TitleFont
+                                 andBoundingSize:targetSize];
     height += titleSize.height + 10.f;
     
-    CGSize textSize = [text boundingRectWithSize:targetSize
-                                         options:NSStringDrawingUsesLineFragmentOrigin
-                                      attributes:@{ NSFontAttributeName : TextFont }
-                                         context:nil].size;
-    
+    CGSize textSize = [[self class] sizeForText:text
+                                       withFont:TextFont
+                                andBoundingSize:targetSize];
     height += textSize.height + 10.f;
     
-    CGSize priceSize = [priceText boundingRectWithSize:targetSize
-                                               options:NSStringDrawingUsesLineFragmentOrigin
-                                            attributes:@{ NSFontAttributeName : PriceFont }
-                                               context:nil].size;
-    
+    CGSize priceSize = [[self class] sizeForText:priceText
+                                        withFont:PriceFont
+                                 andBoundingSize:targetSize];
     height += priceSize.height + 10.f;
     
     if ([infoText length] > 0) {
-        CGSize infoSize = [infoText boundingRectWithSize:targetSize
-                                                 options:NSStringDrawingUsesLineFragmentOrigin
-                                              attributes:@{ NSFontAttributeName : InfoFont }
-                                                 context:nil].size;
+        CGSize infoSize = [[self class] sizeForText:infoText
+                                           withFont:InfoFont
+                                    andBoundingSize:targetSize];
         height += infoSize.height + 10.f;
     }
     
     return height;
+}
+
++ (CGSize)sizeForText:(NSString *)text withFont:(UIFont *)font andBoundingSize:(CGSize)boundingSize
+{
+    NSString *cacheKey = [NSString stringWithFormat:@"%@|%@|%f,%@", text, font.fontName, font.pointSize, NSStringFromCGSize(boundingSize)];
+    NSValue *sizeValue = [textSizeCache objectForKey:cacheKey];
+    if (sizeValue != nil) return [sizeValue CGSizeValue];
+    
+    CGSize textSize = [text boundingRectWithSize:boundingSize
+                                         options:NSStringDrawingUsesLineFragmentOrigin
+                                      attributes:@{ NSFontAttributeName : font }
+                                         context:nil].size;
+    
+    sizeValue = [NSValue valueWithCGSize:textSize];
+    [textSizeCache setObject:sizeValue forKey:cacheKey];
+    
+    return textSize;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -127,37 +150,29 @@ static UIImage *BackgroundImage;
     
     CGFloat insetX = 10.f;
     
-    
-    
-    CGSize titleSize = [self.mealTitleLabel.text boundingRectWithSize:CGSizeMake(contentWidth, CGFLOAT_MAX)
-                                                             options:NSStringDrawingUsesLineFragmentOrigin
-                                                          attributes:@{ NSFontAttributeName : self.mealTitleLabel.font }
-                                                             context:nil].size;
+    CGSize titleSize = [[self class] sizeForText:self.mealTitleLabel.text
+                                        withFont:self.mealTitleLabel.font
+                                 andBoundingSize:CGSizeMake(contentWidth, CGFLOAT_MAX)];
     CGRect titleLabelFrame = CGRectMake(insetX, 10.f, titleSize.width, titleSize.height);
     self.mealTitleLabel.frame = CGRectIntegral(titleLabelFrame);
     
-    
-    
-    CGSize mealTextSize = [self.mealTextLabel.text boundingRectWithSize:CGSizeMake(contentWidth, CGFLOAT_MAX)
-                                                                options:NSStringDrawingUsesLineFragmentOrigin
-                                                             attributes:@{ NSFontAttributeName : self.mealTextLabel.font }
-                                                                context:nil].size;
+    CGSize mealTextSize = [[self class] sizeForText:self.mealTextLabel.text
+                                           withFont:self.mealTextLabel.font
+                                    andBoundingSize:CGSizeMake(contentWidth, CGFLOAT_MAX)];
     CGRect mealTextLabelFrame = CGRectMake(insetX, CGRectGetMaxY(titleLabelFrame) + 10.f, mealTextSize.width, mealTextSize.height);
     self.mealTextLabel.frame = CGRectIntegral(mealTextLabelFrame);
     
     
-    CGSize priceSize = [self.priceTextLabel.text boundingRectWithSize:CGSizeMake(contentWidth, CGFLOAT_MAX)
-                                                              options:NSStringDrawingUsesLineFragmentOrigin
-                                                           attributes:@{ NSFontAttributeName : self.priceTextLabel.font }
-                                                              context:nil].size;
+    CGSize priceSize = [[self class] sizeForText:self.priceTextLabel.text
+                                        withFont:self.priceTextLabel.font
+                                 andBoundingSize:CGSizeMake(contentWidth, CGFLOAT_MAX)];
     CGRect priceLabelFrame = CGRectMake(insetX, CGRectGetMaxY(mealTextLabelFrame) + 10.f, priceSize.width, priceSize.height);
     self.priceTextLabel.frame = CGRectIntegral(priceLabelFrame);
     
     
-    CGSize infoSize = [self.infoTextLabel.text boundingRectWithSize:CGSizeMake(contentWidth, CGFLOAT_MAX)
-                                                            options:NSStringDrawingUsesLineFragmentOrigin
-                                                         attributes:@{ NSFontAttributeName : self.infoTextLabel.font }
-                                                            context:nil].size;
+    CGSize infoSize = [[self class] sizeForText:self.infoTextLabel.text
+                                       withFont:self.infoTextLabel.font
+                                andBoundingSize:CGSizeMake(contentWidth, CGFLOAT_MAX)];
     CGRect infoLabelFrame = CGRectMake(insetX, CGRectGetMaxY(priceLabelFrame) + 10.f, infoSize.width, infoSize.height);
     self.infoTextLabel.frame = CGRectIntegral(infoLabelFrame);
 }

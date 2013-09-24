@@ -24,14 +24,22 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 
 @implementation KPBMealplanViewController
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(50.f, 0.f, 0.f, 0.f);
     
     [self.collectionView registerClass:[KPBMealCell class] forCellWithReuseIdentifier:KPBMealplanViewControllerMealCellIdentifier];
     [self.collectionView registerClass:[KPBMenuHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KPBMealplanViewControllerMenuHeaderViewIdentifier];
     [self.collectionView registerClass:[KPBMealplanInfoView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:KPBMealplanViewControllerInfoViewIdentifier];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onContentSizeCategoryDidChange:) name:UIContentSizeCategoryDidChangeNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -386,6 +394,12 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 {
     KPBMensaDetailViewController *mensaDetailViewController = segue.destinationViewController;
     mensaDetailViewController.mensa = _mensa;
+}
+
+- (void)onContentSizeCategoryDidChange:(NSNotification *)notification
+{
+    NSLog(@"need to reload collection view");
+    [self.collectionView reloadData];
 }
 
 @end

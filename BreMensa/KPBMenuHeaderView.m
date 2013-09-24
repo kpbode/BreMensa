@@ -23,7 +23,7 @@ static UIFont *DateLabelFont;
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor darkGrayColor];
+        self.backgroundColor = [UIColor lightGrayColor];
         
         UILabel *dayLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         dayLabel.backgroundColor = [UIColor clearColor];
@@ -49,7 +49,7 @@ static UIFont *DateLabelFont;
 
 - (void)setupBackgroundForToday:(BOOL)today
 {
-    self.backgroundColor = today ? [UIColor darkGrayColor] : [UIColor lightGrayColor];
+    self.backgroundColor = today ? [UIColor colorWithRed:1.000 green:0.231 blue:0.188 alpha:1] : [UIColor lightGrayColor];
 }
 
 - (void)layoutSubviews
