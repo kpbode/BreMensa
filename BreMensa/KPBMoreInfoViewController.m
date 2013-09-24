@@ -51,37 +51,14 @@
                      completion:nil];
 }
 
-#pragma mark UIWebViewDelegate
-
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
-    if ([[request.URL absoluteString] hasPrefix:@"mailto:"]) {
-        
-        MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
-        mailComposeViewController.mailComposeDelegate = self;
-        [mailComposeViewController setToRecipients:@[@"mail@kpbo.de"]];
-        [mailComposeViewController setSubject:@"BreMensa-Feedback"];
-        
-        NSBundle *bundle = [NSBundle mainBundle];
-        
-        NSString *message = [NSString stringWithFormat:@"\n\n --- BreMensa %@ [%@] -- %@, iOS %@ (%@)", [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [bundle objectForInfoDictionaryKey:@"CFBundleVersion"], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [bundle preferredLocalizations][0]];
-        
-        
-        [mailComposeViewController setMessageBody:message isHTML:NO];
-        
-        [self presentViewController:mailComposeViewController animated:YES completion:nil];
-        
-        return NO;
-    }
-    return YES;
-}
-
 #pragma mark MFMailComposeViewControllerDelegate
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark UITextViewDelegate
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange
 {
