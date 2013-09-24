@@ -69,13 +69,26 @@
                                     <segue destination="dFd-eb-HPa" kind="modal" id="XCG-c8-DmD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2X2-Ri-6xp">
+                                <rect key="frame" x="20" y="522" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bx5-kX-Pvo" kind="modal" identifier="ShowSettingsSegue" modalTransitionStyle="flipHorizontal" id="q2C-eH-ry1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4bl-Ka-RvR" secondAttribute="trailing" constant="20" id="7Bm-Aw-CaW"/>
+                            <constraint firstItem="2X2-Ri-6xp" firstAttribute="leading" secondItem="VRv-14-R4m" secondAttribute="leading" constant="20" id="CZm-z2-EKj"/>
                             <constraint firstItem="ocm-vP-bmy" firstAttribute="top" secondItem="4bl-Ka-RvR" secondAttribute="bottom" constant="20" id="SnX-QO-Qhj"/>
                             <constraint firstAttribute="centerY" secondItem="hrU-Db-BwN" secondAttribute="centerY" id="VMc-S2-KwY"/>
                             <constraint firstItem="hrU-Db-BwN" firstAttribute="leading" secondItem="VRv-14-R4m" secondAttribute="leading" constant="20" id="c6e-S1-YBE"/>
+                            <constraint firstItem="ocm-vP-bmy" firstAttribute="top" secondItem="2X2-Ri-6xp" secondAttribute="bottom" constant="24" id="jyg-BS-9Ci"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OQL-tr-dl0"/>
@@ -305,9 +318,56 @@
             </objects>
             <point key="canvasLocation" x="1247" y="76"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oOY-dY-Q6z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bx5-kX-Pvo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lDh-FR-kHT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="axI-JM-Iw4" kind="relationship" relationship="rootViewController" id="Ugn-Ws-BYh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S8u-va-owp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="-744"/>
+        </scene>
+        <!--App Settings View Controller-->
+        <scene sceneID="HRp-xs-aXl">
+            <objects>
+                <tableViewController id="axI-JM-Iw4" customClass="IASKAppSettingsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lNt-uM-wjF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PzY-a6-Sib">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PzY-a6-Sib" id="ckW-tc-dlV">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="axI-JM-Iw4" id="SD9-kK-CT6"/>
+                            <outlet property="delegate" destination="axI-JM-Iw4" id="5Kf-pk-Ie0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BFC-CH-qij"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22e-Zs-gEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1277" y="-744"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="background" width="320" height="568"/>
+        <image name="background" width="320" height="480"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -91,7 +91,7 @@ static NSString * const KPBServerIdKey = @"serverId";
 - (NSString *)typeAsString
 {
     switch (self.type) {
-        case KPBMealTypeVegetarian: return @"vegetarisch";
+        case KPBMealTypeVegetarian: return NSLocalizedString(@"vegetarian", nil);
         case KPBMealTypeVegan: return @"vegan";
         case KPBMealTypeVenison: return @"Wild";
         case KPBMealTypePork: return @"Schwein";

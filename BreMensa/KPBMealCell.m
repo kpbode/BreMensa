@@ -24,7 +24,6 @@ static NSCache *textSizeCache;
     TextFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     PriceFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption2];
     InfoFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
-    BackgroundImage = [[UIImage imageNamed:@"meal_background.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(4.f, 4.f, 16.f, 17.f)];
 }
 
 + (void)initialize
@@ -33,7 +32,6 @@ static NSCache *textSizeCache;
     [[self class] setupFonts];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UIContentSizeCategoryDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        NSLog(@"need to empty cache and reinitalize fonts");
         [textSizeCache removeAllObjects];
         [[self class] setupFonts];
     }];

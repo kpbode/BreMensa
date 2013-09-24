@@ -44,8 +44,12 @@
 		CB9806BB17EECFDE0017D644 /* NSCalendar+KPBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806BA17EECFDE0017D644 /* NSCalendar+KPBAdditions.m */; };
 		CB9806BE17EEE09E0017D644 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9806BD17EEE09E0017D644 /* MapKit.framework */; };
 		CB9806C017EEE0AA0017D644 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */; };
-		CB9806C217EF25E20017D644 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = CB9806C117EF25E20017D644 /* info.html */; };
 		CB98070617F0B57E0017D644 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98070517F0B57E0017D644 /* SystemConfiguration.framework */; };
+		CB98070A17F1C0C90017D644 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB98070C17F1C0C90017D644 /* Localizable.strings */; };
+		CB98071017F1C1580017D644 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = CB98071217F1C1580017D644 /* info.html */; };
+		CB98071517F1C5EA0017D644 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB98071417F1C5EA0017D644 /* Settings.bundle */; };
+		CB98071817F1CC830017D644 /* KPBAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98071717F1CC830017D644 /* KPBAppConfig.m */; };
+		CB98071A17F1D3100017D644 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98071917F1D3100017D644 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,8 +125,17 @@
 		CB9806BA17EECFDE0017D644 /* NSCalendar+KPBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+KPBAdditions.m"; sourceTree = "<group>"; };
 		CB9806BD17EEE09E0017D644 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CB9806C117EF25E20017D644 /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = info.html; sourceTree = "<group>"; };
 		CB98070517F0B57E0017D644 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CB98070B17F1C0C90017D644 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB98070D17F1C0F10017D644 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB98070E17F1C0F10017D644 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB98070F17F1C0F10017D644 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB98071117F1C1580017D644 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/info.html; sourceTree = "<group>"; };
+		CB98071317F1C1610017D644 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/info.html; sourceTree = "<group>"; };
+		CB98071417F1C5EA0017D644 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		CB98071617F1CC830017D644 /* KPBAppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBAppConfig.h; sourceTree = "<group>"; };
+		CB98071717F1CC830017D644 /* KPBAppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBAppConfig.m; sourceTree = "<group>"; };
+		CB98071917F1D3100017D644 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB98071A17F1D3100017D644 /* AVFoundation.framework in Frameworks */,
 				CB98070617F0B57E0017D644 /* SystemConfiguration.framework in Frameworks */,
 				CB9806C017EEE0AA0017D644 /* QuartzCore.framework in Frameworks */,
 				CB9806BE17EEE09E0017D644 /* MapKit.framework in Frameworks */,
@@ -176,6 +190,7 @@
 		CB98064517EEC0840017D644 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB98071917F1D3100017D644 /* AVFoundation.framework */,
 				CB98070517F0B57E0017D644 /* SystemConfiguration.framework */,
 				CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */,
 				CB9806BD17EEE09E0017D644 /* MapKit.framework */,
@@ -191,13 +206,11 @@
 		CB98064C17EEC0840017D644 /* BreMensa */ = {
 			isa = PBXGroup;
 			children = (
+				CB98070717F1C00B0017D644 /* Resources */,
 				CB98067717EEC26F0017D644 /* Classes */,
 				CB98067517EEC22E0017D644 /* Storyboard_iPhone.storyboard */,
-				CB9806B717EEC9880017D644 /* config.plist */,
-				CB9806C117EF25E20017D644 /* info.html */,
 				CB98065517EEC0840017D644 /* KPBAppDelegate.h */,
 				CB98065617EEC0840017D644 /* KPBAppDelegate.m */,
-				CB98065817EEC0840017D644 /* Images.xcassets */,
 				CB98064D17EEC0840017D644 /* Supporting Files */,
 			);
 			path = BreMensa;
@@ -252,6 +265,8 @@
 				CB9806AE17EEC32C0017D644 /* KPBMensaDetailViewController.m */,
 				CB9806AF17EEC32C0017D644 /* KPBMoreInfoViewController.h */,
 				CB9806B017EEC32C0017D644 /* KPBMoreInfoViewController.m */,
+				CB98071617F1CC830017D644 /* KPBAppConfig.h */,
+				CB98071717F1CC830017D644 /* KPBAppConfig.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -301,6 +316,18 @@
 				CB9806B517EEC43E0017D644 /* NSDate+KPBAdditions.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		CB98070717F1C00B0017D644 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB9806B717EEC9880017D644 /* config.plist */,
+				CB98071217F1C1580017D644 /* info.html */,
+				CB98065817EEC0840017D644 /* Images.xcassets */,
+				CB98070C17F1C0C90017D644 /* Localizable.strings */,
+				CB98071417F1C5EA0017D644 /* Settings.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +394,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = CB98063A17EEC0840017D644;
 			productRefGroup = CB98064417EEC0840017D644 /* Products */;
@@ -385,10 +413,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB9806B817EEC9880017D644 /* config.plist in Resources */,
+				CB98070A17F1C0C90017D644 /* Localizable.strings in Resources */,
 				CB98065117EEC0840017D644 /* InfoPlist.strings in Resources */,
 				CB98067617EEC22E0017D644 /* Storyboard_iPhone.storyboard in Resources */,
-				CB9806C217EF25E20017D644 /* info.html in Resources */,
+				CB98071017F1C1580017D644 /* info.html in Resources */,
 				CB98065917EEC0840017D644 /* Images.xcassets in Resources */,
+				CB98071517F1C5EA0017D644 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +480,7 @@
 				CB9806B117EEC32C0017D644 /* KPBMealplanViewController.m in Sources */,
 				CB98068017EEC2BF0017D644 /* KPBMealplanSegue.m in Sources */,
 				CB98069117EEC2DC0017D644 /* KPBMealplan.m in Sources */,
+				CB98071817F1CC830017D644 /* KPBAppConfig.m in Sources */,
 				CB9806AA17EEC31A0017D644 /* KPBMenuHeaderView.m in Sources */,
 				CB98065317EEC0840017D644 /* main.m in Sources */,
 				CB98069217EEC2DC0017D644 /* KPBMenu.m in Sources */,
@@ -488,6 +519,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CB98065017EEC0840017D644 /* en */,
+				CB98070E17F1C0F10017D644 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -496,8 +528,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				CB98066917EEC0840017D644 /* en */,
+				CB98070F17F1C0F10017D644 /* de */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CB98070C17F1C0C90017D644 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB98070B17F1C0C90017D644 /* en */,
+				CB98070D17F1C0F10017D644 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		CB98071217F1C1580017D644 /* info.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB98071117F1C1580017D644 /* en */,
+				CB98071317F1C1610017D644 /* de */,
+			);
+			name = info.html;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

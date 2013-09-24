@@ -95,7 +95,20 @@
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         
         self.lastSelectedMensa = mensa;
+    } else if ([segue.identifier isEqualToString:@"ShowSettingsSegue"]) {
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        UIViewController *settingsViewController = navigationController.topViewController;
+        settingsViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                                                target:self
+                                                                                                                action:@selector(onDoneShowingSettings:)];
+        
     }
+}
+
+- (void)onDoneShowingSettings:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)onTapContainerView:(id)sender

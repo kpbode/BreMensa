@@ -137,8 +137,6 @@
     fetchRequestOperation.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[ @"text/html", @"application/json" ]];
     [fetchRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSLog(@"response content type: %@", operation.response.allHeaderFields[@"Content-Type"]);
-        
         KPBMealplan *mealplan = [KPBMealplan mealplanFromDictionary:responseObject];
         mealplan.mensa = self;
         

@@ -10,16 +10,19 @@ PODS:
   - AFNetworking/Reachability (2.0.0-RC3)
   - AFNetworking/Security (2.0.0-RC3)
   - AFNetworking/Serialization (2.0.0-RC3)
+  - InAppSettingsKit (1.1)
   - MBProgressHUD (0.8)
   - Reveal-iOS-SDK (0.9.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - InAppSettingsKit
   - MBProgressHUD
   - Reveal-iOS-SDK
 
 SPEC CHECKSUMS:
   AFNetworking: ebc18e280dab2e71f9368cfc8e5c60ed125eec1a
+  InAppSettingsKit: cf2c4193c3269d6acf996f7975f310d18a5e1e3c
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   Reveal-iOS-SDK: 7396a20e743807b1e6f1caae664e1a9dc0cc442c
 

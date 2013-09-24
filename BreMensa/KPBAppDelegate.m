@@ -7,6 +7,8 @@
 {
     self.window.tintColor = [UIColor colorWithRed:1.000 green:0.231 blue:0.188 alpha:1];
     
+    [KPBAppConfig prepareDefaults];
+    
 //    [[AFNetworkReachabilityManager managerForDomain:[KPBMensa backendBasePath]] startMonitoring];
     
     return YES;
