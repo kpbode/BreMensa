@@ -2,8 +2,8 @@
 
 @interface KPBMenuHeaderView ()
 
-@property (nonatomic, weak, readwrite) UILabel *dayLabel;
-@property (nonatomic, weak, readwrite) UILabel *dateLabel;
+@property (nonatomic, weak) UILabel *dayLabel;
+@property (nonatomic, weak) UILabel *dateLabel;
 
 @end
 

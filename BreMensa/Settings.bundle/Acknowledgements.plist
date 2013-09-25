@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>FooterText</key>
+			<string>This application makes use of the following third party libraries:</string>
+			<key>Title</key>
+			<string>Acknowledgements</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright (c) 2013 AFNetworking (http://afnetworking.com/)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</string>
+			<key>Title</key>
+			<string>AFNetworking</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright (c) 2009-2010:
+Luc Vandal, Edovia Inc., http://www.edovia.com
+Ortwin Gentz, FutureTap GmbH, http://www.futuretap.com
+All rights reserved.
+
+It is appreciated but not required that you give credit to Luc Vandal and Ortwin Gentz, 
+as the original authors of this code. You can give credit in a blog post, a tweet or on 
+a info page of your app. Also, the original authors appreciate letting them know if you
+use this code.
+
+The above copyright notice and this permission notice shall be included in all copies
+or substantial portions of the Software.
+
+This code is licensed under the BSD license that is available at: &lt;http://www.opensource.org/licenses/bsd-license.php&gt;
+</string>
+			<key>Title</key>
+			<string>InAppSettingsKit</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright (c) 2013 Matej Bukovinski
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</string>
+			<key>Title</key>
+			<string>MBProgressHUD</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>&lt;!DOCTYPE html&gt;  
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+  &lt;title&gt;LICENSE&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;style&gt;
+/* 
+   This document has been created with Marked.app &lt;http://markedapp.com&gt;, Copyright 2011 Brett Terpstra
+   Please leave this notice in place, along with any additional credits below.
+   ---------------------------------------------------------------
+   Title: Theme title
+   Author: Your name and optional url
+   Description: Basic description of the theme.
+*/
+
+body
+{
+    -webkit-font-smoothing:antialiased;
+    font:normal .8764em/1.5em Arial,Verdana,sans-serif;
+    margin:0
+}
+
+html&gt;body
+{
+    font-size: 10px}
+
+li
+{
+    font-size:110%
+}
+
+li li
+{
+    font-size:100%
+}
+
+li p
+{
+    font-size:100%;
+    margin:.5em 0
+}
+
+h1
+{
+    color:#000;
+    line-height: .6563em;
+    margin:.6563em 0;
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h2
+{
+    color:#111;
+    line-height: .875em;
+	font-size: 1.5em;
+}
+
+h3
+{
+    color:#111;
+    font-size:1.5em;
+    line-height:1em;
+    margin:1em 0
+}
+
+h4
+{
+    color:#111;
+    font-size:1.2857em;
+    line-height:1.1667em;
+    margin:1.1667em 0
+}
+
+h5
+{
+    color:#111;
+    font-size:1.15em;
+    line-height:1.3em;
+    margin:1.3em 0
+}
+
+h6
+{
+    font-size:1em;
+    line-height:1.5em;
+    margin:1.5em 0
+}
+
+body,p,td,div
+{
+    color:#111;
+    font-family:"Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+    word-wrap:break-word
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    line-height:1.5em
+}
+
+a
+{
+    -webkit-transition:color .2s ease-in-out;
+    color:#0d6ea1;
+    text-decoration:none
+}
+
+a:hover
+{
+    color:#3593d9
+}
+
+/*h2 em
+{
+    color:#111;
+    padding-left:10px;
+    text-shadow:0 1px 0 #FFF
+}*/
+
+blockquote p
+{
+  font-size:110%;
+  font-style:italic;
+  line-height:1.6em;
+}
+
+.footnote
+{
+    color:#0d6ea1;
+    font-size:.8em;
+    vertical-align:super
+}
+
+#wrapper img
+{
+    max-width:100%;
+    height:auto
+}
+
+dd
+{
+    margin-bottom:1em
+}
+
+li &gt; p:first-child
+{
+    margin:0
+}
+
+ul ul,ul ol
+{
+    margin-bottom:.4em
+}
+
+caption,col,colgroup,table,tbody,td,tfoot,th,thead,tr
+{
+    border-spacing:0
+}
+
+table
+{
+    border:1px solid rgba(0,0,0,0.25);
+    border-collapse:collapse;
+    display:table;
+    empty-cells:hide;
+    margin:-1px 0 23px;
+    padding:0;
+    table-layout:fixed
+}
+
+caption
+{
+    display:table-caption;
+    font-weight:700
+}
+
+col
+{
+    display:table-column
+}
+
+colgroup
+{
+    display:table-column-group
+}
+
+tbody
+{
+    display:table-row-group
+}
+
+tfoot
+{
+    display:table-footer-group
+}
+
+thead
+{
+    display:table-header-group
+}
+
+td,th
+{
+    display:table-cell
+}
+
+tr
+{
+    display:table-row
+}
+
+table th,table td
+{
+    font-size:1.1em;
+    line-height:23px;
+    padding:0 1em
+}
+
+table thead
+{
+    background:rgba(0,0,0,0.15);
+    border:1px solid rgba(0,0,0,0.15);
+    border-bottom:1px solid rgba(0,0,0,0.2)
+}
+
+table tbody
+{
+    background:rgba(0,0,0,0.05)
+}
+
+table tfoot
+{
+    background:rgba(0,0,0,0.15);
+    border:1px solid rgba(0,0,0,0.15);
+    border-top:1px solid rgba(0,0,0,0.2)
+}
+
+figure
+{
+    display:inline-block;
+    margin-bottom:1.2em;
+    position:relative;
+    margin:1em 0
+}
+
+figcaption
+{
+    font-style:italic;    
+    text-align:center;
+    background:rgba(0,0,0,.9);
+    color:rgba(255,255,255,1);
+    position:absolute;
+    left:0;
+    bottom:-24px;
+    width:98%;
+    padding:1%;
+    -webkit-transition:all .2s ease-in-out;
+}
+
+figure:hover&gt;figcaption
+{
+    /* background:rgba(0,0,0,1) */
+}
+
+/* Styles used when "Tab-indented text is poetry" is set */
+.poetry pre
+{
+    display:block;
+    font-family:Georgia, Garamond, serif!important;
+    font-size:110%!important;
+    font-style:italic;
+    line-height:1.6em;
+    margin-left:1em
+}
+
+.poetry pre code
+{
+    font-family:Georgia, Garamond, serif!important
+}
+
+/* important rules for keeping line-height from being affected by sub */
+sup,sub,a.footnote
+{
+    font-size:1.4ex;
+    height:0;
+    line-height:1;
+    position:relative;
+}
+
+sup {
+    vertical-align:super;
+}
+
+sub {
+    vertical-align: sub;
+    top: -1px;
+}
+
+p,h5
+{
+    font-size:1.1429em;
+    line-height:1.3125em;
+    margin:1.3125em 0
+}
+
+dt,th
+{
+    font-weight:700
+}
+
+table tr:nth-child(odd),table th:nth-child(odd),table td:nth-child(odd)
+{
+    background:rgba(255,255,255,0.06)
+}
+
+table tr:nth-child(even),table td:nth-child(even)
+{
+    background:rgba(0,0,0,0.06)
+}
+
+@media print {
+    /* print only styles. Keep it clean */
+    body
+    {
+        overflow:auto
+    }
+    img, pre, blockquote, table, figure, p {
+        page-break-inside: avoid
+    }
+    .footnotes { page-break-before: always }
+
+    #wrapper
+    {
+        background:#fff;
+        color:#303030;
+        font-size:85%;
+        padding:10px;
+        position:relative;
+        text-indent:0
+    }
+}
+
+@media screen {
+    /* Screen-only styles, including inverted styles */
+    .inverted #wrapper,.inverted {
+        background:rgba(37, 42, 42, 1)
+    }
+    .inverted hr {
+        border-color: rgba(51, 63, 64, 1) !important;
+    }
+    .inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted pre,.inverted code,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt
+    {
+        color:#eee!important
+    }
+    .inverted table tr:nth-child(odd), .inverted table th:nth-child(odd), .inverted table td:nth-child(odd) {
+      background: none;
+    }
+    .inverted a
+    {
+        color:rgba(172, 209, 213, 1);
+    }
+
+    #wrapper
+    {
+        padding:20px
+    }
+
+    /* styles for more colorful selection highlights */
+    ::selection { background:rgba(157, 193, 200,.5)}
+    h1::selection { background-color:rgba(45, 156, 208, .3)}
+    h2::selection { background-color:rgba(90, 182, 224, .3)}
+    h3::selection,
+    h4::selection,
+    h5::selection,
+    h6::selection,li::selection,ol::selection { background-color:rgba(133, 201, 232, .3)}
+    code::selection { background-color:rgba(0,0,0,.7);color:#eee}
+    code span::selection {background-color:rgba(0,0,0,.7) !important;color:#eee !important}
+    a::selection { background-color:rgba(255, 230, 102,.2)}
+    .inverted a::selection { background-color:rgba(255, 230, 102,.6)}
+	td::selection,th::selection,caption::selection { background-color: rgba(180, 237, 95, .5);}
+}
+
+
+&lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body class="normal"&gt;
+  &lt;div id="wrapper"&gt;
+      &lt;h1 id="revealbetatestagreement"&gt;REVEAL BETA TEST AGREEMENT&lt;/h1&gt;
+
+&lt;h2 id="noticetouser:"&gt;NOTICE TO USER:&lt;/h2&gt;
+
+&lt;p&gt;This Software Beta Test Agreement is a CONTRACT between you (either an individual or a single entity)(&lt;strong&gt;&amp;#8220;Licensee&amp;#8221;&lt;/strong&gt; or &lt;strong&gt;&amp;#8220;you&amp;#8221;&lt;/strong&gt;) and Itty Bitty Apps Pty Ltd. (&lt;strong&gt;&amp;#8220;the Company&amp;#8221;&lt;/strong&gt;), which covers your use of the Reveal beta software product that accompanies this Software Beta Test Agreement and related software components, which may include associated media, printed materials, and &amp;#8220;online&amp;#8221; or electronic documentation. All such software and materials are referred to herein as the &lt;strong&gt;&amp;#8220;Beta Software&amp;#8221;&lt;/strong&gt;. If you do not agree to the terms of this Software Beta Test Agreement, then do not install or use the Beta Software. By explicitly accepting this Software Beta Test Agreement, however, or by installing, copying, downloading, accessing, or otherwise using the Beta Software, you are acknowledging and agreeing to be bound by the following terms.&lt;/p&gt;
+
+&lt;h2 id="definitions"&gt;1. DEFINITIONS&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;(a) &amp;#8220;Beta Software&amp;#8221;&lt;/strong&gt; shall mean the beta version of Reveal software including any Updates thereto, in object and source form, (excluding any Open Source Software provided with such software), and the media and Documentation provided by the Company to Licensee and for which Licensee is granted a use license pursuant to this Agreement.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b) &amp;#8220;Documentation&amp;#8221;&lt;/strong&gt; shall mean the printed or online written reference material furnished to Licensee in conjunction with the Beta Software, including, without limitation, instructions, run rules, beta testing guidelines, and end user guides.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c) &amp;#8220;Intellectual Property Rights&amp;#8221;&lt;/strong&gt; shall mean all intellectual property rights, including, without limitation, patent, copyright, trademark, and trade secret.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d) &amp;#8220;Open Source Software&amp;#8221;&lt;/strong&gt; means various open source software components provided with the Beta Software that are licensed to you under the terms of the applicable license agreements included with such open source software components or other materials for the Beta Software.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(e) &amp;#8220;Updates&amp;#8221;&lt;/strong&gt; shall mean a modification, error correction, bug fix, new release, or other update to or for the Beta Software.&lt;/p&gt;
+
+&lt;h2 id="licensegrantuseandownership"&gt;2. LICENSE GRANT, USE AND OWNERSHIP&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;(a) Limited License.&lt;/strong&gt; Subject to the terms and conditions of this Agreement, the Company grants to Licensee a non-exclusive, nontransferable license (without the right to sublicense) (i) to use the Beta Software in accordance with the Documentation solely for purposes of internal testing and evaluation, (ii) to use the Documentation provided with the Beta Software in support of Licensee’s authorized use of the Beta Software, and (iii) to copy Beta Software for archival or backup purposes, provided that all titles and trademarks, copyright, and restricted rights notices are reproduced on such copies. Nothing in this limited license permits Licensee to modify the Beta Software.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b) Evaluation Feedback.&lt;/strong&gt; The purpose of this limited license is the testing and evaluation of the Beta Software and Documentation. In furtherance of this purpose, Licensee shall provide feedback to the Company concerning the functionality and performance of the Beta Software from time to time as reasonably requested by the Company, including, without limitation, identifying potential errors, improvements, modifications, bug fixes, or enhancements (&lt;strong&gt;&amp;#8220;Feedback&amp;#8221;&lt;/strong&gt;). Such Feedback will be in a manner convenient to Licensee and will be subject to reasonable availability of Licensee’s personnel. Notwithstanding the foregoing, prior to Licensee disclosing to the Company any information in connection with this Agreement which Licensee considers proprietary or confidential, Licensee shall obtain the Company’s prior written approval to disclose such information to the Company, and without such prior written approval from the Company, Licensee shall not disclose any such information to the Company. Feedback and other information which is provided by Licensee to the Company in connection with the Beta Software or this Agreement may be used by the Company to improve or enhance its products and, accordingly, Licensee grants the Company a non-exclusive, perpetual, irrevocable, royalty-free, worldwide right and license to use, reproduce, disclose, sublicense, distribute, modify, and otherwise exploit such Feedback and information without restriction.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c) Restrictions.&lt;/strong&gt; Licensee shall not copy or use the Beta Software (including the Documentation) or disseminate Confidential Information, as defined below, to any third party except as expressly permitted in this Agreement. Licensee will not, and will not permit any third party to, sublicense, rent, copy, modify, create derivative works of, translate, reverse engineer, decompile, disassemble, or otherwise reduce to human perceivable form any portion of the Beta Software or accompanying Documentation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d) Ownership.&lt;/strong&gt; The Company shall own and retain all right, title and interest in and to the Intellectual Property Rights in the Beta Software and any derivative works thereof, subject only to the limited license expressly set forth in Section 2(a) hereof. Licensee does not acquire any other rights, express or implied, in the Beta Software. ALL RIGHTS NOT EXPRESSLY GRANTED HEREUNDER ARE RESERVED TO THE COMPANY.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(e) No Support Services.&lt;/strong&gt; The Company is under no obligation to support the Beta Software in any way or to provide any Updates to Licensee. In the event the Company, in its sole discretion, supplies any Update to Licensee, such Update shall be deemed Beta Software hereunder and shall be subject to the terms and conditions of this Agreement.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(f) Open Source Software.&lt;/strong&gt; The terms and conditions of this Agreement shall not apply to any Open Source Software accompanying the Beta Software. Any such Open Source Software is provided under the terms of the open source license agreement or copyright notice accompanying the Beta Software.&lt;/p&gt;
+
+&lt;h2 id="termandtermination"&gt;3. TERM AND TERMINATION&lt;/h2&gt;
+
+&lt;p&gt;Unless otherwise terminated as specified under this Agreement, Licensee’s rights with respect to the Beta Software will terminate upon the earlier of (a) the initial release by the Company of a generally available version of the Beta Software or (b) one year after acceptance of this agreement. Both parties may terminate this Agreement at any time for any reason or no reason. The Company shall immediately terminate this Agreement and any Licensee rights with respect to the Beta Software without notice in the event of improper disclosure of the Company’s Beta Software as specified under Section 4 (Confidentiality) below. Upon any expiration or termination of this Agreement, the rights and licenses granted to Licensee under this Agreement shall immediately terminate, and Licensee shall immediately cease using, and will return to the Company (or, at the Company’s request, destroy), the Beta Software, Documentation, and all other tangible items in Licensee’s possession or control that are proprietary to or contain Confidential Information. The rights and obligations of the parties set forth in Sections 2(b) 2(c), 2(d), 2(e), 2(f), 3, 4, 5, and 6 shall survive termination or expiration of this Agreement for any reason.&lt;/p&gt;
+
+&lt;h2 id="limitationofliability"&gt;4. LIMITATION OF LIABILITY&lt;/h2&gt;
+
+&lt;p&gt;IT IS UNDERSTOOD THAT THE BETA SOFTWARE IS PROVIDED WITHOUT CHARGE FOR LIMITED EVALUATION PURPOSES. ACCORDINGLY, THE TOTAL LIABILITY OF THE COMPANY AND ITS SUPPLIERS ARISING OUT OF OR RELATED TO THIS AGREEMENT SHALL NOT EXCEED $1. IN NO EVENT SHALL THE COMPANY OR ITS SUPPLIERS HAVE LIABILITY FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, OR LOSS OF BUSINESS INFORMATION), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, EVEN IF THE COMPANY AND ITS SUPPLIERS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.&lt;/p&gt;
+
+&lt;h2 id="warrantydisclaimer"&gt;5. WARRANTY DISCLAIMER&lt;/h2&gt;
+
+&lt;p&gt;IT IS UNDERSTOOD THAT THE BETA SOFTWARE, DOCUMENTATION, AND ANY UPDATES MAY CONTAIN ERRORS AND ARE PROVIDED FOR LIMITED EVALUATION ONLY. THE BETA SOFTWARE, THE DOCUMENTATION, AND ANY UPDATES ARE PROVIDED &amp;#8220;AS IS&amp;#8221; WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE. THE COMPANY AND ITS SUPPLIERS SPECIFICALLY DISCLAIM ALL IMPLIED WARRANTIES OF MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE. Licensee acknowledges that the Company has not promised or guaranteed to Licensee that such Beta Software will be announced or made available to anyone in the future, that the Company has no express or implied obligation to Licensee to announce or introduce the Beta Software, and that the Company may not introduce a product similar or compatible with the Beta Software. Accordingly, Licensee acknowledges that any research or development that it performs regarding the Beta Software or any product associated with the Beta Software is done entirely at Licensee’s own risk. Specifically, the Beta Software may contain features, functionality or modules that will not be included in the production version of the Beta Software, if released, or that will be marketed separately for additional fees.&lt;/p&gt;
+
+&lt;h2 id="otherprovisions"&gt;6. OTHER PROVISIONS&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;(a) Governing Law.&lt;/strong&gt; This Agreement, and all disputes arising out of or related thereto, shall be governed by and construed under the laws of the State of Victoria, Australia, without reference to conflict of laws principles. All such disputes shall be subject to the exclusive jurisdiction of the state and federal courts located in Australia, and the parties agree and submit to the personal and exclusive jurisdiction and venue of these courts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b) Assignment.&lt;/strong&gt; Licensee shall not assign this Agreement or any rights or obligations hereunder, directly or indirectly, by operation of law, merger, acquisition of stock or assets, or otherwise, without the prior written consent of the Company. Subject to the foregoing, this Agreement shall inure to the benefit of and be binding upon the parties and their respective successors and permitted assigns.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c) Modification.&lt;/strong&gt; This is the entire agreement between the parties relating to the subject matter hereof and all other terms are rejected. No waiver or modification of this Agreement shall be valid unless in writing signed by each party. The waiver of a breach of any term hereof shall in no way be construed as a waiver of any term or other breach hereof. If any provision of this Agreement is held by a court of competent jurisdiction to be contrary to law the remaining provisions of this Agreement shall remain in full force and effect.&lt;/p&gt;
+
+&lt;h2 id="contactinformation"&gt;7. CONTACT INFORMATION&lt;/h2&gt;
+
+&lt;p&gt;If you have any questions about this Software Beta Test Agreement, or if you want to contact the Company for any reason, please direct all mail correspondence to: Itty Bitty Apps Pty. Ltd. Unit 1, 663 Victoria St, Abbotsford, Victoria, Australia, 3067, or electronic correspondence to info@ittybittyapps.com.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</string>
+			<key>Title</key>
+			<string>Reveal-iOS-SDK</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Generated by CocoaPods - http://cocoapods.org</string>
+			<key>Title</key>
+			<string></string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Acknowledgements</string>
+	<key>Title</key>
+	<string>Acknowledgements</string>
+</dict>
+</plist>

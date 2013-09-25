@@ -70,9 +70,14 @@ static NSTimeInterval const KPBPhoneMenuViewControllerTransitionDuration = .4;
 
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
-    UIGraphicsBeginImageContextWithOptions(fromViewController.view.bounds.size, YES, 0.f);
+    CGRect bounds = fromViewController.view.bounds;
     
-    [fromViewController.view drawViewHierarchyInRect:fromViewController.view.bounds
+    UIGraphicsBeginImageContextWithOptions(bounds.size, YES, 0.f);
+    
+    [[UIColor whiteColor] setFill];
+    [[UIBezierPath bezierPathWithRect:bounds] fill];
+    
+    [fromViewController.view drawViewHierarchyInRect:bounds
                                   afterScreenUpdates:YES];
     
     UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
@@ -81,7 +86,7 @@ static NSTimeInterval const KPBPhoneMenuViewControllerTransitionDuration = .4;
     
     [_delegate mealplanPresentationAnimator:self screenshotTakenBeforeDismiss:screenshot];
     
-    [UIView animateWithDuration:KPBPhoneMenuViewControllerTransitionDuration delay:.0 usingSpringWithDamping:1. initialSpringVelocity:1. options:0 animations:^{
+    [UIView animateWithDuration:KPBPhoneMenuViewControllerTransitionDuration delay:.0 usingSpringWithDamping:.8 initialSpringVelocity:.3 options:0 animations:^{
         
         fromViewController.view.transform = _hiddenTransform;
         

@@ -29,14 +29,14 @@
 {
     [super prepareLayout];
     
+    UICollectionView *collectionView = self.collectionView;
+    
     NSMutableArray *sections = [[NSMutableArray alloc] init];
     CGFloat height = 0.f;
     CGFloat width = 0.f;
     
     CGPoint currentOrigin = CGPointZero;
     NSInteger numberOfSections = [self.collectionView numberOfSections];
-    
-    UICollectionView *collectionView = (UICollectionView *) self.collectionView;
     
     for (NSInteger sectionIndex = 0; sectionIndex < numberOfSections; sectionIndex++) {
         
@@ -113,6 +113,11 @@
     
     height += self.footerHeight;
     
+    if (collectionView.pagingEnabled) {
+//        CGFloat pageHeight = CGRectGetHeight(collectionView.bounds) - collectionView.contentInset.top - collectionView.contentInset.bottom;
+//        height = ceilf(height / pageHeight) * pageHeight;
+    }
+    
     self.sections = sections;
     self.width = width;
     self.height = height;
@@ -184,8 +189,8 @@
             
             
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:column inSection:sectionIndex];
-            UICollectionViewLayoutAttributes *layoutAttributes = (UICollectionViewLayoutAttributes *) [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-                                                                                                                                               atIndexPath:indexPath];
+            UICollectionViewLayoutAttributes *layoutAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                                                                                      atIndexPath:indexPath];
             
             CGRect headerFrame = layoutAttributes.frame;
             
@@ -195,8 +200,8 @@
         }
         
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:sectionIndex];
-        UICollectionViewLayoutAttributes *footerLayoutAttributes = (UICollectionViewLayoutAttributes *) [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter
-                                                                                                                                                 atIndexPath:indexPath];
+        UICollectionViewLayoutAttributes *footerLayoutAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+                                                                                                        atIndexPath:indexPath];
         
         CGRect footerFrame = footerLayoutAttributes.frame;
         

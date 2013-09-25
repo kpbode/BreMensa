@@ -13,6 +13,7 @@
 static NSString * const KPBMealplanViewControllerMealCellIdentifier = @"MealCell";
 static NSString * const KPBMealplanViewControllerMenuHeaderViewIdentifier = @"MenuHeaderView";
 static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"MealplanInfoView";
+static CGFloat const KPBMealplanViewControllerMenuHeaderHeight = 50.f;
 
 @interface KPBMealplanViewController () <KPBMealplanLayoutDelegate, UIScrollViewAccessibilityDelegate>
 
@@ -33,7 +34,9 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 {
     [super viewDidLoad];
     
-    self.collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(50.f, 0.f, 0.f, 0.f);
+    self.accessibilityLabel = NSLocalizedString(@"Mealplan", nil);
+    
+    self.collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(KPBMealplanViewControllerMenuHeaderHeight, 0.f, 0.f, 0.f);
     
     [self.collectionView registerClass:[KPBMealCell class] forCellWithReuseIdentifier:KPBMealplanViewControllerMealCellIdentifier];
     [self.collectionView registerClass:[KPBMenuHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KPBMealplanViewControllerMenuHeaderViewIdentifier];
@@ -132,9 +135,10 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
     [self.collectionView reloadData];
     
     if ([self canScrollToToday]) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute"
+        UIBarButtonItem *scrollToDayButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute"
                                                                                   style:UIBarButtonItemStyleBordered
                                                                                  target:self action:@selector(onScrollToToday:)];
+        self.navigationItem.rightBarButtonItem = scrollToDayButtonItem;
     }
     
     [self scrollToTodayAnimated:YES];
@@ -251,8 +255,7 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)layout sizeForItemWithWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath
 {
-    
-    if (self.mealplan == nil) CGSizeMake(width, 80.f);
+    if (_mealplan == nil) return CGSizeMake(width, 80.f);
     
     NSInteger day = indexPath.item % 5;
     
@@ -279,12 +282,12 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)layout sizeForHeaderWithWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(width, 50.f);
+    return CGSizeMake(width, KPBMealplanViewControllerMenuHeaderHeight);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)layout insetsForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    return UIEdgeInsetsZero;
+    return UIEdgeInsetsMake(0.f, 1.f, 0.f, 1.f);
 }
 
 - (NSDateFormatter *)menuHeaderDateFormatter
@@ -335,7 +338,7 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
             offsetX = 0.f;
         }
         
-        [self.collectionView setContentOffset:CGPointMake(offsetX, -64.f) animated:animated];
+        [self.collectionView setContentOffset:CGPointMake(offsetX, -self.collectionView.contentInset.top) animated:animated];
     }
     
 }
@@ -394,38 +397,28 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
     [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    KPBMensaDetailViewController *mensaDetailViewController = segue.destinationViewController;
-    mensaDetailViewController.mensa = _mensa;
-}
-
 - (void)onContentSizeCategoryDidChange:(NSNotification *)notification
 {
     [self.collectionView reloadData];
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    static NSInteger previousPage = 0;
-    NSInteger page = [self pagePageNumberForScrollview:scrollView];
-    if (previousPage != page) {
-        previousPage = page;
-        [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, -64.f) animated:YES];
-    }
-}
-
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
-    if( UIAccessibilityIsVoiceOverRunning() ) {
-        UIAccessibilityPostNotification( UIAccessibilityScreenChangedNotification, [self accessibilityTextForWeekday:[self pagePageNumberForScrollview:scrollView]]);
+    if(UIAccessibilityIsVoiceOverRunning()) {
+        NSString *text = [self accessibilityTextForPage:[self pageForScrollview:scrollView]];
+        UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, text);
     }
 }
 
-- (NSInteger)pagePageNumberForScrollview:(UIScrollView *)scrollView
+- (NSInteger)pageForScrollview:(UIScrollView *)scrollView
 {
-    CGFloat pageWidth = scrollView.frame.size.width;
-    float page = scrollView.contentOffset.x / pageWidth;
+    return lroundf(scrollView.contentOffset.x / CGRectGetWidth(scrollView.bounds));
+}
+
+- (NSInteger)verticalPagePageNumberForScrollview:(UIScrollView *)scrollView
+{
+    CGFloat pageHeight = CGRectGetHeight(scrollView.bounds);
+    float page = scrollView.contentOffset.y / pageHeight;
     return lround(page);
 }
 
@@ -433,21 +426,20 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
 {
     NSString *text = nil;
     
-    static NSInteger previousPage = 0;
-    NSInteger page = [self pagePageNumberForScrollview:scrollView];
-    if (previousPage != page) {
+    NSInteger previousPage = 0;
+    NSInteger page = [self pageForScrollview:scrollView];
+    if (page != previousPage) {
+        text = [self accessibilityTextForPage:page];
         previousPage = page;
-        
-        text = [self accessibilityTextForWeekday:page];
     }
     
     return text;
 }
 
-- (NSString *)accessibilityTextForWeekday:(NSInteger)weekday
+- (NSString *)accessibilityTextForPage:(NSInteger)page
 {
-    
-    KPBMenu *menu = _mealplan.menus[weekday];
+    NSInteger day = page;
+    KPBMenu *menu = _mealplan.menus[day];
     
     NSDateFormatter *dateFormatter = self.menuHeaderDateFormatter;
     
@@ -455,7 +447,7 @@ static NSString * const KPBMealplanViewControllerInfoViewIdentifier = @"Mealplan
     
     NSString *weekdayText = [dateFormatter stringFromDate:menu.date];
     
-    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    dateFormatter.dateStyle = NSDateFormatterLongStyle;
     
     NSString *dateText = [dateFormatter stringFromDate:menu.date];
     

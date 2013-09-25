@@ -15,9 +15,9 @@
     
     self.title = @"Info";
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                                                                           target:self action:@selector(onShareAppWithFriends:)];
-    
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+//                                                                                           target:self action:@selector(onShareAppWithFriends:)];
+//    
     
     NSURL *infoFileURL = [[NSBundle mainBundle] URLForResource:@"info" withExtension:@"html"];
     
