@@ -1,29 +1,19 @@
 PODS:
-  - AFNetworking (2.0.0-RC3):
-    - AFNetworking/Core
-  - AFNetworking/Core (2.0.0-RC3):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLConnection (2.0.0-RC3)
-  - AFNetworking/Reachability (2.0.0-RC3)
-  - AFNetworking/Security (2.0.0-RC3)
-  - AFNetworking/Serialization (2.0.0-RC3)
   - InAppSettingsKit (1.1)
   - MBProgressHUD (0.8)
+  - Reachability (3.1.1)
   - Reveal-iOS-SDK (0.9.1)
 
 DEPENDENCIES:
-  - AFNetworking
   - InAppSettingsKit
   - MBProgressHUD
+  - Reachability
   - Reveal-iOS-SDK
 
 SPEC CHECKSUMS:
-  AFNetworking: 49f64af62e643a68a3f906202f4ed51e18f3bd5c
   InAppSettingsKit: cf2c4193c3269d6acf996f7975f310d18a5e1e3c
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
+  Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
   Reveal-iOS-SDK: 7396a20e743807b1e6f1caae664e1a9dc0cc442c
 
 COCOAPODS: 0.25.0

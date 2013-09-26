@@ -1,30 +1,28 @@
 #import "KPBMensa.h"
 #import "KPBMealplan.h"
 #import "KPBMensaOpeningInfo.h"
-#import <AFNetworking/AFJSONRequestOperation.h>
+#import <Reachability/Reachability.h>
 
 @implementation KPBMensa
 
 + (void)initialize
 {
-    [[self class] reachabilityManager];
+    [[self class] reachability];
 }
 
-+ (AFNetworkReachabilityManager *)reachabilityManager
++ (Reachability *)reachability
 {
-    static AFNetworkReachabilityManager *manager;
+    static Reachability *reachability;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *domain = @"appspot.com";
-        manager = [AFNetworkReachabilityManager managerForDomain:domain];
-        [manager startMonitoring];
+        reachability = [Reachability reachabilityWithHostname:@"appspot.com"];
     });
-    return manager;
+    return reachability;
 }
 
 + (BOOL)isBackendReachable
 {
-    return [[[self class] reachabilityManager] isReachable];
+    return [[[self class] reachability] isReachable];
 }
 
 + (NSString *)backendBasePath
@@ -132,10 +130,38 @@
     NSString *urlString = [NSString stringWithFormat:@"%@/mensa?id=%@&format=json", [[self class] backendBasePath], _serverId];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
-    AFJSONRequestOperation *fetchRequestOperation = [[AFJSONRequestOperation alloc] initWithRequest:request];
-    // app engine server answers with text/html on initial request
-    fetchRequestOperation.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[ @"text/html", @"application/json" ]];
-    [fetchRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    static NSOperationQueue *operationQueue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        operationQueue = [[NSOperationQueue alloc] init];
+    });
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:operationQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+        if (connectionError != nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure(self, connectionError);
+            });
+            return;
+        }
+        
+        
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+        if (httpResponse.statusCode >= 400) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure(self, connectionError);
+            });
+            return;
+        }
+        
+        NSError *jsonError;
+        NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        if (responseObject == nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure(self, jsonError);
+            });
+            return;
+        }
         
         KPBMealplan *mealplan = [KPBMealplan mealplanFromDictionary:responseObject];
         mealplan.mensa = self;
@@ -147,14 +173,11 @@
             NSLog(@"failed to write mealplan to disk");
         }
         
-        success(self, mealplan);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        failure(self, error);
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            success(self, mealplan);
+        });
     }];
-    [fetchRequestOperation start];
+    
 }
 
 @end

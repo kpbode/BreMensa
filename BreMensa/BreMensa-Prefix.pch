@@ -7,11 +7,10 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import <AFNetworking/AFNetworking.h>
     #import <MBProgressHUD/MBProgressHUD.h>
     #import <InAppSettingsKit/IASKAppSettingsViewController.h>
+    #import <AVFoundation/AVFoundation.h>
     #import "NSCalendar+KPBAdditions.h"
     #import "NSDate+KPBAdditions.h"
     #import "KPBAppConfig.h"
-    #import <AVFoundation/AVFoundation.h>
 #endif
