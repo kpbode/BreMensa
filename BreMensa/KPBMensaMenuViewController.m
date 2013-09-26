@@ -23,6 +23,8 @@ static NSString * const KPBMensaMenuViewControllerPresentingMensaRestorationKey 
 {
     [super viewDidLoad];
     
+    self.tableView.accessibilityLabel = NSLocalizedString(@"Mensa Menu", nil);
+    
     self.mensas = [KPBMensa availableMensaObjects];
     
     CGRect containerFrame = self.view.bounds;
@@ -30,6 +32,7 @@ static NSString * const KPBMensaMenuViewControllerPresentingMensaRestorationKey 
     UIImageView *containerView = [[UIImageView alloc] initWithFrame:containerFrame];
     containerView.backgroundColor = [UIColor clearColor];
     containerView.userInteractionEnabled = YES;
+    containerView.accessibilityElementsHidden = YES;
     
     UITapGestureRecognizer *tapContainerViewGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapContainerView:)];
     [containerView addGestureRecognizer:tapContainerViewGestureRecognizer];

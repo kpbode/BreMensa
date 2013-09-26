@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hrU-Db-BwN">
-                                <rect key="frame" x="20" y="152" width="199" height="264"/>
+                                <rect key="frame" x="0.0" y="152" width="199" height="264"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -77,7 +77,7 @@
                             <constraint firstAttribute="trailing" secondItem="4bl-Ka-RvR" secondAttribute="trailing" constant="20" id="7Bm-Aw-CaW"/>
                             <constraint firstItem="ocm-vP-bmy" firstAttribute="top" secondItem="4bl-Ka-RvR" secondAttribute="bottom" constant="20" id="SnX-QO-Qhj"/>
                             <constraint firstAttribute="centerY" secondItem="hrU-Db-BwN" secondAttribute="centerY" id="VMc-S2-KwY"/>
-                            <constraint firstItem="hrU-Db-BwN" firstAttribute="leading" secondItem="VRv-14-R4m" secondAttribute="leading" constant="20" id="c6e-S1-YBE"/>
+                            <constraint firstItem="hrU-Db-BwN" firstAttribute="leading" secondItem="VRv-14-R4m" secondAttribute="leading" id="c6e-S1-YBE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OQL-tr-dl0"/>

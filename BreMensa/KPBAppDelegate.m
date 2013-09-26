@@ -5,7 +5,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window.backgroundColor = [UIColor whiteColor];
     self.window.tintColor = [UIColor colorWithRed:1.000 green:0.231 blue:0.188 alpha:1];
     
     [KPBAppConfig prepareDefaults];
