@@ -1,16 +1,24 @@
 PODS:
+  - HockeySDK (3.5.0rc2)
   - InAppSettingsKit (1.1)
   - MBProgressHUD (0.8)
   - Reachability (3.1.1)
   - Reveal-iOS-SDK (0.9.1)
 
 DEPENDENCIES:
+  - HockeySDK
   - InAppSettingsKit
-  - MBProgressHUD
+  - MBProgressHUD (from `git@github.com:kpbode/MBProgressHUD.git`, commit `0e5ffa6a7e3cea6c23a09068dee9cae1c5106908`)
   - Reachability
   - Reveal-iOS-SDK
 
+EXTERNAL SOURCES:
+  MBProgressHUD:
+    :commit: 0e5ffa6a7e3cea6c23a09068dee9cae1c5106908
+    :git: git@github.com:kpbode/MBProgressHUD.git
+
 SPEC CHECKSUMS:
+  HockeySDK: b972c57d3fe4cae0ebc0d38764cc8ecd8c58a716
   InAppSettingsKit: cf2c4193c3269d6acf996f7975f310d18a5e1e3c
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883

@@ -1,2 +1,28 @@
 "vegetarian" = "vegetarian";
 "vegan" = "vegan";
+
+"venison" = "Venison";
+"pork" = "Pork";
+"fish" = "Fish";
+"beef" = "Beef";
+"fowl" = "Fowl";
+"lamb" = "Lamb";
+"dessert" = "Dessert";
+"soup" = "Soup";
+
+"students" = "Students";
+"staff" = "Staff";
+
+"Settings" = "Settings";
+"Mensa Menu" = "Mensamenu";
+
+"Mealplan" = "Mealplan";
+"Mealplan is being loaded" = "Mealplan is being loaded";
+
+"Data loaded:" = "Data loaded:";
+
+"select a mensa first" = "Please select a mensa first";
+"no connection to backend" = "There is currently no connection to our servers";
+"data could not be loaded" = "Sorry, this mealplan can currently not be loaded. Sometimes it takes a little until data is available for us... :(";
+
+"today" = "Today";

@@ -50,6 +50,7 @@
 		CB98071517F1C5EA0017D644 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB98071417F1C5EA0017D644 /* Settings.bundle */; };
 		CB98071817F1CC830017D644 /* KPBAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98071717F1CC830017D644 /* KPBAppConfig.m */; };
 		CB98071A17F1D3100017D644 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98071917F1D3100017D644 /* AVFoundation.framework */; };
+		CB9E57FD17F56E0F00943829 /* apiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9E57FC17F56E0F00943829 /* apiKeys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,16 +127,17 @@
 		CB9806BD17EEE09E0017D644 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CB98070517F0B57E0017D644 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CB98070B17F1C0C90017D644 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CB98070D17F1C0F10017D644 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB98070B17F1C0C90017D644 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB98070D17F1C0F10017D644 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB98070E17F1C0F10017D644 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB98070F17F1C0F10017D644 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CB98071117F1C1580017D644 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/info.html; sourceTree = "<group>"; };
-		CB98071317F1C1610017D644 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/info.html; sourceTree = "<group>"; };
+		CB98071117F1C1580017D644 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/info.html; sourceTree = "<group>"; };
+		CB98071317F1C1610017D644 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/info.html; sourceTree = "<group>"; };
 		CB98071417F1C5EA0017D644 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CB98071617F1CC830017D644 /* KPBAppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBAppConfig.h; sourceTree = "<group>"; };
 		CB98071717F1CC830017D644 /* KPBAppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBAppConfig.m; sourceTree = "<group>"; };
 		CB98071917F1D3100017D644 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CB9E57FC17F56E0F00943829 /* apiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apiKeys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +328,7 @@
 				CB98065817EEC0840017D644 /* Images.xcassets */,
 				CB98070C17F1C0C90017D644 /* Localizable.strings */,
 				CB98071417F1C5EA0017D644 /* Settings.bundle */,
+				CB9E57FC17F56E0F00943829 /* apiKeys.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				CB98067617EEC22E0017D644 /* Storyboard_iPhone.storyboard in Resources */,
 				CB98071017F1C1580017D644 /* info.html in Resources */,
 				CB98065917EEC0840017D644 /* Images.xcassets in Resources */,
+				CB9E57FD17F56E0F00943829 /* apiKeys.plist in Resources */,
 				CB98071517F1C5EA0017D644 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

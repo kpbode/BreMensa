@@ -1,15 +1,21 @@
 #import "KPBAppDelegate.h"
 #import "KPBMensa.h"
+#import <HockeySDK/HockeySDK.h>
+
+@interface KPBAppDelegate () <BITHockeyManagerDelegate, BITCrashManagerDelegate>
+
+@end
 
 @implementation KPBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:[KPBAppConfig hockeyAppApiKey] delegate:self];
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    
     self.window.tintColor = [UIColor colorWithRed:1.000 green:0.231 blue:0.188 alpha:1];
     
     [KPBAppConfig prepareDefaults];
-    
-//    [[AFNetworkReachabilityManager managerForDomain:[KPBMensa backendBasePath]] startMonitoring];
     
     return YES;
 }

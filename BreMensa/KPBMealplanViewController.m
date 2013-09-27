@@ -104,12 +104,12 @@ static CGFloat const KPBMealplanViewControllerMenuHeaderHeight = 50.f;
     
     [self hidePlaceholder];
     
-    MBProgressHUD *progressHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUD *progressHud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     progressHud.mode = MBProgressHUDModeIndeterminate;
-    progressHud.labelText = @"Speiseplan wird geladen";
+    progressHud.labelText = NSLocalizedString(@"Mealplan is being loaded", nil);
     
     [self.mensa currentMealplanWithSuccess:^(KPBMensa *mensa, KPBMealplan *mealplan) {
-        [progressHud hide:YES];
+        
         
         if (mealplan == nil) {
             [self showErrorPlaceholder];
@@ -117,12 +117,13 @@ static CGFloat const KPBMealplanViewControllerMenuHeaderHeight = 50.f;
             [self onLoadedMealplan:mealplan];
         }
         
+        [progressHud hide:YES];
+        
     } failure:^(KPBMensa *mensa, NSError *error) {
         
-        [progressHud hide:YES];
         NSLog(@"failed to get mealplan data: %@", error);
         [self showErrorPlaceholder];
-        
+        [progressHud hide:YES];
     }];
     
 }
@@ -135,7 +136,7 @@ static CGFloat const KPBMealplanViewControllerMenuHeaderHeight = 50.f;
     [self.collectionView reloadData];
     
     if ([self canScrollToToday]) {
-        UIBarButtonItem *scrollToDayButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Heute"
+        UIBarButtonItem *scrollToDayButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"today", nil)
                                                                                   style:UIBarButtonItemStyleBordered
                                                                                  target:self action:@selector(onScrollToToday:)];
         self.navigationItem.rightBarButtonItem = scrollToDayButtonItem;
@@ -212,10 +213,10 @@ static CGFloat const KPBMealplanViewControllerMenuHeaderHeight = 50.f;
         KPBMealplanInfoView *infoView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:KPBMealplanViewControllerInfoViewIdentifier forIndexPath:indexPath];
         
         NSDateFormatter *dateFormatter = self.menuHeaderDateFormatter;
+        dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        dateFormatter.timeStyle = NSDateFormatterShortStyle;
         
-        dateFormatter.dateFormat = @"'Daten geladen am' dd.MM.YYYY 'um' HH:MM 'Uhr'";
-        
-        infoView.textLabel.text = [dateFormatter stringFromDate:self.mealplan.fetchDate];
+        infoView.textLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Data loaded:", nil), [dateFormatter stringFromDate:self.mealplan.fetchDate]];
         
         return infoView;
     } else if ([UICollectionElementKindSectionHeader isEqualToString:kind]) {
@@ -231,7 +232,8 @@ static CGFloat const KPBMealplanViewControllerMenuHeaderHeight = 50.f;
         
         headerView.dayLabel.text = [dateFormatter stringFromDate:menu.date];
         
-        dateFormatter.dateFormat = @"dd.MM.YYYY";
+        dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        dateFormatter.timeStyle = NSDateFormatterNoStyle;
         
         headerView.dateLabel.text = [dateFormatter stringFromDate:menu.date];
         
@@ -295,6 +297,7 @@ static CGFloat const KPBMealplanViewControllerMenuHeaderHeight = 50.f;
     if (_menuHeaderDateFormatter != nil) return _menuHeaderDateFormatter;
     
     _menuHeaderDateFormatter = [[NSDateFormatter alloc] init];
+//    _menuHeaderDateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"de_DE"];
     
     return _menuHeaderDateFormatter;
 }
@@ -310,8 +313,7 @@ static CGFloat const KPBMealplanViewControllerMenuHeaderHeight = 50.f;
 {
     NSDate *now = [NSDate date];
     
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    calendar.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"DE_de"];
+    NSCalendar *calendar = [NSCalendar KPB_germanCalendar];
     
     NSDateComponents *nowComponents = [calendar components:NSWeekdayCalendarUnit fromDate:now];
     
@@ -353,17 +355,17 @@ static CGFloat const KPBMealplanViewControllerMenuHeaderHeight = 50.f;
 
 - (void)showNoMensaPlaceholder
 {
-    [self showPlaceholderWithText:@"Bitte wähle zunächst eine Mensa aus"];
+    [self showPlaceholderWithText:NSLocalizedString(@"select a mensa first", nil)];
 }
 
 - (void)showOfflinePlaceholder
 {
-    [self showPlaceholderWithText:@"Es besteht derzeit keine Verbindung zum Internet!"];
+    [self showPlaceholderWithText:NSLocalizedString(@"no connection to backend", nil)];
 }
 
 - (void)showErrorPlaceholder
 {
-    [self showPlaceholderWithText:@"Der Speiseplan konnte nicht geladen werden. Bitte probiere es später erneut! \n Manchmal dauert es am Montag leider ein wenig, bis die Daten bereit stehen... :(  "];
+    [self showPlaceholderWithText:NSLocalizedString(@"data could not be loaded", nil)];
 }
 
 - (void)showPlaceholderWithText:(NSString *)text

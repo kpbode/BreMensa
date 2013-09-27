@@ -53,7 +53,7 @@ static NSString * const KPBServerIdKey = @"serverId";
 {
     NSString *text = nil;
     if (self.studentPrice != nil) {
-        text = [NSString stringWithFormat:@"Studenten: %@", self.studentPrice];
+        text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"students", nil), self.studentPrice];
     }
     
     if (self.staffPrice != nil) {
@@ -62,7 +62,7 @@ static NSString * const KPBServerIdKey = @"serverId";
         } else {
             text = @"";
         }
-        text = [text stringByAppendingFormat:@"Mitarbeiter: %@", self.staffPrice];
+        text = [text stringByAppendingFormat:@"%@: %@", NSLocalizedString(@"staff", nil), self.staffPrice];
     }
     
     return text;
@@ -92,13 +92,13 @@ static NSString * const KPBServerIdKey = @"serverId";
 {
     switch (self.type) {
         case KPBMealTypeVegetarian: return NSLocalizedString(@"vegetarian", nil);
-        case KPBMealTypeVegan: return @"vegan";
-        case KPBMealTypeVenison: return @"Wild";
-        case KPBMealTypePork: return @"Schwein";
-        case KPBMealTypeFish: return @"Fisch";
-        case KPBMealTypeBeef: return @"Rind";
-        case KPBMealTypeFowl: return @"Geflügel";
-        case KPBMealTypeLamb: return @"Lamm";
+        case KPBMealTypeVegan: return NSLocalizedString(@"vegan", nil);
+        case KPBMealTypeVenison: return NSLocalizedString(@"venison", nil);
+        case KPBMealTypePork: return NSLocalizedString(@"pork", nil);
+        case KPBMealTypeFish: return NSLocalizedString(@"fish", nil);
+        case KPBMealTypeBeef: return NSLocalizedString(@"rind", nil);
+        case KPBMealTypeFowl: return NSLocalizedString(@"fowl", nil);
+        case KPBMealTypeLamb: return NSLocalizedString(@"lamb", nil);
         case KPBMealTypeUndefined: return nil;
     }
     return nil;
@@ -107,8 +107,8 @@ static NSString * const KPBServerIdKey = @"serverId";
 - (NSString *)extraAsString
 {
     switch (self.extra) {
-        case KPBMealExtraDessert: return @"Dessert";
-        case KPBMealExtraSoup: return @"Suppe";
+        case KPBMealExtraDessert: return NSLocalizedString(@"dessert", nil);
+        case KPBMealExtraSoup: return NSLocalizedString(@"soup", nil);
         case KPBMealExtraNone: return nil;
     }
     return nil;

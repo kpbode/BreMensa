@@ -65,32 +65,44 @@ static NSTimeInterval const KPBPhoneMenuViewControllerTransitionDuration = .4;
     }];
 }
 
-- (void)animateDismissTransition:(id <UIViewControllerContextTransitioning>)transitionContext
+- (UIImage *)takeScreenShotFromViewController:(UIViewController *)viewController
 {
-
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    
-    CGRect bounds = fromViewController.view.bounds;
+    CGRect bounds = viewController.view.bounds;
     
     UIGraphicsBeginImageContextWithOptions(bounds.size, YES, 0.f);
     
-    [[UIColor whiteColor] setFill];
+    [[UIColor colorWithWhite:.9f alpha:1.f] setFill];
     [[UIBezierPath bezierPathWithRect:bounds] fill];
     
-    [fromViewController.view drawViewHierarchyInRect:bounds
+    [viewController.view drawViewHierarchyInRect:bounds
                                   afterScreenUpdates:YES];
     
     UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     
-    [_delegate mealplanPresentationAnimator:self screenshotTakenBeforeDismiss:screenshot];
+    return screenshot;
+}
+
+- (void)animateDismissTransition:(id <UIViewControllerContextTransitioning>)transitionContext
+{
+
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
-    [UIView animateWithDuration:KPBPhoneMenuViewControllerTransitionDuration delay:.0 usingSpringWithDamping:.8 initialSpringVelocity:.3 options:0 animations:^{
+    __block UIImage *screenshot = nil;
+    
+    double delayInSeconds = 0.11;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        screenshot = [self takeScreenShotFromViewController:fromViewController];
+    });
+    
+    [UIView animateWithDuration:KPBPhoneMenuViewControllerTransitionDuration delay:.12 usingSpringWithDamping:.8 initialSpringVelocity:.3 options:0 animations:^{
         
         fromViewController.view.transform = _hiddenTransform;
         
     } completion:^(BOOL finished) {
+        [_delegate mealplanPresentationAnimator:self screenshotTakenBeforeDismiss:screenshot];
         [transitionContext completeTransition:finished];
     }];
     

@@ -17,6 +17,8 @@ DerivedData
 *.hmap
 *.xccheckout
 
+BreMensa/apiKeys.plist
+
 #CocoaPods
 Pods
 

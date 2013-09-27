@@ -10,6 +10,7 @@ var win = app.mainWindow();
 // So you have to run this twice.
 // Once to set the language, another to actually pick the screenshot.
 app.setPreferencesValueForKey([forcelanguage], 'AppleLanguages');
+app.setPreferencesValueForKey('de_DE', 'AppleLocale');
 
 // You can define your own settings of course, for example:
 //app.setPreferencesValueForKey("0.85", 'fakePercentageForShots');
