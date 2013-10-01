@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Revealing.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>Screenshots.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>CB98065D17EEC0840017D644</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBD19B9C17F832EC0060820D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBD19BCF17F832F90060820D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

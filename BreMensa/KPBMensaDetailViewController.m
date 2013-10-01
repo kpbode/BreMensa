@@ -68,10 +68,10 @@
     KPBMensaOpeningInfo *info = self.mensa.openingInfos[section];
     
     if (info.subtitle != nil && [info.subtitle length] > 0) {
-        return [NSString stringWithFormat:@"%@ (%@)", info.title, info.subtitle];
+        return [NSString stringWithFormat:@"%@ (%@)", NSLocalizedString(info.title, nil), NSLocalizedString(info.subtitle, nil)];
     }
     
-    return info.title;
+    return NSLocalizedString(info.title, nil);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -84,7 +84,7 @@
     KPBMensaOpeningInfo *info = self.mensa.openingInfos[indexPath.section];
     KPBMensaOpeningTime *time = info.times[indexPath.row];
     
-    cell.textLabel.text = time.label;
+    cell.textLabel.text = NSLocalizedString(time.label, nil);
     cell.detailTextLabel.text = time.value;
 }
 

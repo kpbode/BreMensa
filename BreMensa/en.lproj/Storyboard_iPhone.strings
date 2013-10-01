@@ -1,0 +1,21 @@
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "1EL-mt-7kI"; */
+"1EL-mt-7kI.text" = "Title";
+
+/* Class = "IBUIButton"; accessibilityHint = "Info and Settings"; ObjectID = "4bl-Ka-RvR"; */
+"4bl-Ka-RvR.accessibilityHint" = "Info and Settings";
+
+/* Class = "IBUIButton"; accessibilityLabel = "Info"; ObjectID = "4bl-Ka-RvR"; */
+"4bl-Ka-RvR.accessibilityLabel" = "Info";
+
+/* Class = "IBUIBarButtonItem"; title = "Settings"; ObjectID = "AvC-OC-8NL"; */
+"AvC-OC-8NL.title" = "Settings";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "FH9-DH-wem"; */
+"FH9-DH-wem.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "LiG-6J-g85"; */
+"LiG-6J-g85.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "Öffnungszeiten"; ObjectID = "gPI-tG-vwz"; */
+"gPI-tG-vwz.text" = "Opening Times";

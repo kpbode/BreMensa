@@ -2,6 +2,12 @@
 #import "KPBMensa.h"
 #import <HockeySDK/HockeySDK.h>
 
+#if TAKING_SCREENSHOTS
+
+#import <SDScreenshotCapture/SDScreenshotCapture.h>
+
+#endif
+
 @interface KPBAppDelegate () <BITHockeyManagerDelegate, BITCrashManagerDelegate>
 
 @end
@@ -16,9 +22,42 @@
     self.window.tintColor = [UIColor colorWithRed:1.000 green:0.231 blue:0.188 alpha:1];
     
     [KPBAppConfig prepareDefaults];
+
+#if TAKING_SCREENSHOTS
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognized:)];
+    tapGesture.numberOfTouchesRequired = 5;
+    [self.window addGestureRecognizer:tapGesture];
+
+#endif
     
     return YES;
 }
+
+#if TAKING_SCREENSHOTS
+    
+- (void)tapGestureRecognized:(UITapGestureRecognizer *)tapGesture
+{
+    NSString *screenshotDirectoryPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"uiautomation_screens"];
+    
+    NSString *preferredLanguage = [[NSLocale preferredLanguages] firstObject];
+    NSString *device = @"3.5inch";
+    if (CGRectGetHeight(tapGesture.view.bounds) == 568.f) {
+        device = @"4inch";
+    }
+    
+    screenshotDirectoryPath = [screenshotDirectoryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_%@", preferredLanguage, device]];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:screenshotDirectoryPath]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:screenshotDirectoryPath
+                                  withIntermediateDirectories:YES
+                                                   attributes:nil error:NULL];
+    }
+    
+    [SDScreenshotCapture takeScreenshotToDirectoryAtPath:screenshotDirectoryPath];
+}
+
+#endif
 
 - (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
 {

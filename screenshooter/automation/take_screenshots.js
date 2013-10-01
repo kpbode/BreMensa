@@ -5,8 +5,6 @@ function takeScreenshot() {
 	win.tapWithOptions({ x: 10, y: 10, touchCount: 5 });	
 }
 
-var forcelanguage = 'de';
-
 // Setup some variables for readability
 var target = UIATarget.localTarget();
 var app = target.frontMostApp();
@@ -16,14 +14,22 @@ var win = app.mainWindow();
 // Note that this will only take effect on next run.
 // So you have to run this twice.
 // Once to set the language, another to actually pick the screenshot.
-app.setPreferencesValueForKey([forcelanguage], 'AppleLanguages');
+//app.setPreferencesValueForKey([forcelanguage], 'AppleLanguages');
 //app.setPreferencesValueForKey('de_DE', 'AppleLocale');
 
-// You can define your own settings of course, for example:
-//app.setPreferencesValueForKey("0.85", 'fakePercentageForShots');
+var strings = {};
+strings['de'] = {};
+strings['de']['mensaMenu'] = 'Mensaauswahl';
+strings['de']['moreInfoAirport'] = 'Weitere Infos, Airport';
 
-// Store current language name for use in filenames
-lang = target.frontMostApp().preferencesValueForKey("AppleLanguages")[0];
+strings['en'] = {};
+strings['en']['mensaMenu'] = 'Mensamenu';
+strings['en']['moreInfoAirport'] = 'More info, Airport';
+
+UIALogger.logMessage('languages: ' + target.frontMostApp().preferencesValueForKey("AppleLanguages"));
+
+var language = target.frontMostApp().preferencesValueForKey("AppleLanguages")[0];
+UIALogger.logMessage('language: ' + language);
 
 // Pause for two seconds (screen capture takes a second !)
 target.delay(2);
@@ -49,9 +55,9 @@ app.navigationBar().leftButton().tap();
 
 target.delay(2);
 
-target.frontMostApp().mainWindow().tableViews()["Mensamenu"].cells()["Airport"].tap();
+target.frontMostApp().mainWindow().tableViews()[strings[language]['mensaMenu']].cells()["Airport"].tap();
 
-target.delay(2);
+target.delay(5);
 
 takeScreenshot();
 
@@ -59,7 +65,7 @@ target.delay(2);
 
 target.frontMostApp().navigationBar().leftButton().tap();
 
-target.frontMostApp().mainWindow().tableViews()["Mensamenu"].cells()["Airport"].buttons()["More info, Airport"].tap();
+target.frontMostApp().mainWindow().tableViews()[strings[language]['mensaMenu']].cells()["Airport"].buttons()[0].tap();
 
 // wait a little until tiles have been loaded
 target.delay(4);

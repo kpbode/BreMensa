@@ -13,7 +13,6 @@
 "students" = "Students";
 "staff" = "Staff";
 
-"Settings" = "Settings";
 "Mensa Menu" = "Mensamenu";
 
 "Mealplan" = "Mealplan";
@@ -26,3 +25,16 @@
 "data could not be loaded" = "Sorry, this mealplan can currently not be loaded. Sometimes it takes a little until data is available for us... :(";
 
 "today" = "Today";
+
+"Allgemein" = "General";
+"Mittagsausgabe" = "Lunch";
+"Vorlesungszeit" = "Lecture Period";
+"Frühstück" = "Breakfast";
+
+"Montag" = "Monday";
+"Montag bis Freitag" = "Monday to Friday";
+"Montag bis Donnerstag" = "Monday to Thursday";
+"Freitag" = "Friday";
+
+"Kaffeebar" = "Coffeebar";
+"heiße Snacks" = "hot Snacks";

@@ -96,7 +96,7 @@ static NSString * const KPBServerIdKey = @"serverId";
         case KPBMealTypeVenison: return NSLocalizedString(@"venison", nil);
         case KPBMealTypePork: return NSLocalizedString(@"pork", nil);
         case KPBMealTypeFish: return NSLocalizedString(@"fish", nil);
-        case KPBMealTypeBeef: return NSLocalizedString(@"rind", nil);
+        case KPBMealTypeBeef: return NSLocalizedString(@"beef", nil);
         case KPBMealTypeFowl: return NSLocalizedString(@"fowl", nil);
         case KPBMealTypeLamb: return NSLocalizedString(@"lamb", nil);
         case KPBMealTypeUndefined: return nil;

@@ -1,4 +1,4 @@
-"vegetarian" = "vegetarian";
+"vegetarian" = "vegetarisch";
 "vegan" = "vegan";
 
 "venison" = "Wild";
@@ -13,7 +13,6 @@
 "students" = "Studenten";
 "staff" = "Mitarbeiter";
 
-"Settings" = "Einstellungen";
 "Mensa Menu" = "Mensaauswahl";
 
 "Mealplan" = "Speiseplan";
@@ -26,3 +25,6 @@
 "data could not be loaded" = "Der Speiseplan konnte nicht geladen werden. Bitte probiere es später erneut! \n Manchmal dauert es am Montag leider ein wenig, bis die Daten bereit stehen... :(";
 
 "today" = "Heute";
+
+"Share BreMensa" = "BreMensa teilen";
+"Have you heard of BreMensa?" = "Kennst du schon BreMensa?";

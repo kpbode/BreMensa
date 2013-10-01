@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1043BDAFD1A9465FAE0B4DCC /* libPods-Revealing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE46F4E548F482A82639862 /* libPods-Revealing.a */; };
 		89750CD7CCA144BCB9858C10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 379672A3B97448C085FD2FFD /* libPods.a */; };
 		CB98064717EEC0840017D644 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064617EEC0840017D644 /* Foundation.framework */; };
 		CB98064917EEC0840017D644 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064817EEC0840017D644 /* CoreGraphics.framework */; };
@@ -20,7 +21,6 @@
 		CB98066217EEC0840017D644 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064A17EEC0840017D644 /* UIKit.framework */; };
 		CB98066A17EEC0840017D644 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB98066817EEC0840017D644 /* InfoPlist.strings */; };
 		CB98066C17EEC0840017D644 /* BreMensaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98066B17EEC0840017D644 /* BreMensaTests.m */; };
-		CB98067617EEC22E0017D644 /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB98067517EEC22E0017D644 /* Storyboard_iPhone.storyboard */; };
 		CB98067A17EEC2A30017D644 /* KPBMensaMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98067917EEC2A30017D644 /* KPBMensaMenuViewController.m */; };
 		CB98068017EEC2BF0017D644 /* KPBMealplanSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98067D17EEC2BF0017D644 /* KPBMealplanSegue.m */; };
 		CB98068117EEC2BF0017D644 /* KPBPhoneMealplanPresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98067F17EEC2BF0017D644 /* KPBPhoneMealplanPresentationAnimator.m */; };
@@ -51,6 +51,87 @@
 		CB98071817F1CC830017D644 /* KPBAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98071717F1CC830017D644 /* KPBAppConfig.m */; };
 		CB98071A17F1D3100017D644 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98071917F1D3100017D644 /* AVFoundation.framework */; };
 		CB9E57FD17F56E0F00943829 /* apiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9E57FC17F56E0F00943829 /* apiKeys.plist */; };
+		CB9E57FE17F574A500943829 /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9E580017F574A500943829 /* Storyboard_iPhone.storyboard */; };
+		CBD19B9B17F7FFF60060820D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD19B9A17F7FFF60060820D /* StoreKit.framework */; };
+		CBD19B9F17F832EC0060820D /* KPBMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068917EEC2DC0017D644 /* KPBMeal.m */; };
+		CBD19BA017F832EC0060820D /* KPBMensaOpeningInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068F17EEC2DC0017D644 /* KPBMensaOpeningInfo.m */; };
+		CBD19BA117F832EC0060820D /* KPBMensa.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068317EEC2DC0017D644 /* KPBMensa.m */; };
+		CBD19BA217F832EC0060820D /* KPBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98065617EEC0840017D644 /* KPBAppDelegate.m */; };
+		CBD19BA317F832EC0060820D /* KPBMoreInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806B017EEC32C0017D644 /* KPBMoreInfoViewController.m */; };
+		CBD19BA417F832EC0060820D /* KPBMensaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806AE17EEC32C0017D644 /* KPBMensaDetailViewController.m */; };
+		CBD19BA517F832EC0060820D /* KPBPhoneMealplanPresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98067F17EEC2BF0017D644 /* KPBPhoneMealplanPresentationAnimator.m */; };
+		CBD19BA617F832EC0060820D /* KPBMealplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806AC17EEC32C0017D644 /* KPBMealplanViewController.m */; };
+		CBD19BA717F832EC0060820D /* KPBMealplanSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98067D17EEC2BF0017D644 /* KPBMealplanSegue.m */; };
+		CBD19BA817F832EC0060820D /* KPBMealplan.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068517EEC2DC0017D644 /* KPBMealplan.m */; };
+		CBD19BA917F832EC0060820D /* KPBAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98071717F1CC830017D644 /* KPBAppConfig.m */; };
+		CBD19BAA17F832EC0060820D /* KPBMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806A417EEC31A0017D644 /* KPBMenuHeaderView.m */; };
+		CBD19BAB17F832EC0060820D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98065217EEC0840017D644 /* main.m */; };
+		CBD19BAC17F832EC0060820D /* KPBMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068717EEC2DC0017D644 /* KPBMenu.m */; };
+		CBD19BAD17F832EC0060820D /* NSCalendar+KPBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806BA17EECFDE0017D644 /* NSCalendar+KPBAdditions.m */; };
+		CBD19BAE17F832EC0060820D /* KPBMensaMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98067917EEC2A30017D644 /* KPBMensaMenuViewController.m */; };
+		CBD19BAF17F832EC0060820D /* KPBMensaLocationMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068B17EEC2DC0017D644 /* KPBMensaLocationMarker.m */; };
+		CBD19BB017F832EC0060820D /* KPBMealplanLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98069C17EEC31A0017D644 /* KPBMealplanLayoutSection.m */; };
+		CBD19BB117F832EC0060820D /* KPBMealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98069E17EEC31A0017D644 /* KPBMealCell.m */; };
+		CBD19BB217F832EC0060820D /* KPBMensaOpeningTime.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068D17EEC2DC0017D644 /* KPBMensaOpeningTime.m */; };
+		CBD19BB317F832EC0060820D /* NSDate+KPBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806B517EEC43E0017D644 /* NSDate+KPBAdditions.m */; };
+		CBD19BB417F832EC0060820D /* KPBMealplanInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806A017EEC31A0017D644 /* KPBMealplanInfoView.m */; };
+		CBD19BB517F832EC0060820D /* KPBMealplanLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98069A17EEC31A0017D644 /* KPBMealplanLayout.m */; };
+		CBD19BB717F832EC0060820D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD19B9A17F7FFF60060820D /* StoreKit.framework */; };
+		CBD19BB817F832EC0060820D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98071917F1D3100017D644 /* AVFoundation.framework */; };
+		CBD19BB917F832EC0060820D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98070517F0B57E0017D644 /* SystemConfiguration.framework */; };
+		CBD19BBA17F832EC0060820D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */; };
+		CBD19BBB17F832EC0060820D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9806BD17EEE09E0017D644 /* MapKit.framework */; };
+		CBD19BBC17F832EC0060820D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064817EEC0840017D644 /* CoreGraphics.framework */; };
+		CBD19BBD17F832EC0060820D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064A17EEC0840017D644 /* UIKit.framework */; };
+		CBD19BBE17F832EC0060820D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064617EEC0840017D644 /* Foundation.framework */; };
+		CBD19BC117F832EC0060820D /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9806B717EEC9880017D644 /* config.plist */; };
+		CBD19BC217F832EC0060820D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB98070C17F1C0C90017D644 /* Localizable.strings */; };
+		CBD19BC317F832EC0060820D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB98064F17EEC0840017D644 /* InfoPlist.strings */; };
+		CBD19BC417F832EC0060820D /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9E580017F574A500943829 /* Storyboard_iPhone.storyboard */; };
+		CBD19BC517F832EC0060820D /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = CB98071217F1C1580017D644 /* info.html */; };
+		CBD19BC617F832EC0060820D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB98065817EEC0840017D644 /* Images.xcassets */; };
+		CBD19BC717F832EC0060820D /* apiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9E57FC17F56E0F00943829 /* apiKeys.plist */; };
+		CBD19BC817F832EC0060820D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB98071417F1C5EA0017D644 /* Settings.bundle */; };
+		CBD19BD217F832F90060820D /* KPBMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068917EEC2DC0017D644 /* KPBMeal.m */; };
+		CBD19BD317F832F90060820D /* KPBMensaOpeningInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068F17EEC2DC0017D644 /* KPBMensaOpeningInfo.m */; };
+		CBD19BD417F832F90060820D /* KPBMensa.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068317EEC2DC0017D644 /* KPBMensa.m */; };
+		CBD19BD517F832F90060820D /* KPBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98065617EEC0840017D644 /* KPBAppDelegate.m */; };
+		CBD19BD617F832F90060820D /* KPBMoreInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806B017EEC32C0017D644 /* KPBMoreInfoViewController.m */; };
+		CBD19BD717F832F90060820D /* KPBMensaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806AE17EEC32C0017D644 /* KPBMensaDetailViewController.m */; };
+		CBD19BD817F832F90060820D /* KPBPhoneMealplanPresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98067F17EEC2BF0017D644 /* KPBPhoneMealplanPresentationAnimator.m */; };
+		CBD19BD917F832F90060820D /* KPBMealplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806AC17EEC32C0017D644 /* KPBMealplanViewController.m */; };
+		CBD19BDA17F832F90060820D /* KPBMealplanSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98067D17EEC2BF0017D644 /* KPBMealplanSegue.m */; };
+		CBD19BDB17F832F90060820D /* KPBMealplan.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068517EEC2DC0017D644 /* KPBMealplan.m */; };
+		CBD19BDC17F832F90060820D /* KPBAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98071717F1CC830017D644 /* KPBAppConfig.m */; };
+		CBD19BDD17F832F90060820D /* KPBMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806A417EEC31A0017D644 /* KPBMenuHeaderView.m */; };
+		CBD19BDE17F832F90060820D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98065217EEC0840017D644 /* main.m */; };
+		CBD19BDF17F832F90060820D /* KPBMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068717EEC2DC0017D644 /* KPBMenu.m */; };
+		CBD19BE017F832F90060820D /* NSCalendar+KPBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806BA17EECFDE0017D644 /* NSCalendar+KPBAdditions.m */; };
+		CBD19BE117F832F90060820D /* KPBMensaMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98067917EEC2A30017D644 /* KPBMensaMenuViewController.m */; };
+		CBD19BE217F832F90060820D /* KPBMensaLocationMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068B17EEC2DC0017D644 /* KPBMensaLocationMarker.m */; };
+		CBD19BE317F832F90060820D /* KPBMealplanLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98069C17EEC31A0017D644 /* KPBMealplanLayoutSection.m */; };
+		CBD19BE417F832F90060820D /* KPBMealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98069E17EEC31A0017D644 /* KPBMealCell.m */; };
+		CBD19BE517F832F90060820D /* KPBMensaOpeningTime.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98068D17EEC2DC0017D644 /* KPBMensaOpeningTime.m */; };
+		CBD19BE617F832F90060820D /* NSDate+KPBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806B517EEC43E0017D644 /* NSDate+KPBAdditions.m */; };
+		CBD19BE717F832F90060820D /* KPBMealplanInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9806A017EEC31A0017D644 /* KPBMealplanInfoView.m */; };
+		CBD19BE817F832F90060820D /* KPBMealplanLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CB98069A17EEC31A0017D644 /* KPBMealplanLayout.m */; };
+		CBD19BEA17F832F90060820D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD19B9A17F7FFF60060820D /* StoreKit.framework */; };
+		CBD19BEB17F832F90060820D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98071917F1D3100017D644 /* AVFoundation.framework */; };
+		CBD19BEC17F832F90060820D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98070517F0B57E0017D644 /* SystemConfiguration.framework */; };
+		CBD19BED17F832F90060820D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */; };
+		CBD19BEE17F832F90060820D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9806BD17EEE09E0017D644 /* MapKit.framework */; };
+		CBD19BEF17F832F90060820D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064817EEC0840017D644 /* CoreGraphics.framework */; };
+		CBD19BF017F832F90060820D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064A17EEC0840017D644 /* UIKit.framework */; };
+		CBD19BF117F832F90060820D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064617EEC0840017D644 /* Foundation.framework */; };
+		CBD19BF417F832F90060820D /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9806B717EEC9880017D644 /* config.plist */; };
+		CBD19BF517F832F90060820D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB98070C17F1C0C90017D644 /* Localizable.strings */; };
+		CBD19BF617F832F90060820D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB98064F17EEC0840017D644 /* InfoPlist.strings */; };
+		CBD19BF717F832F90060820D /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9E580017F574A500943829 /* Storyboard_iPhone.storyboard */; };
+		CBD19BF817F832F90060820D /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = CB98071217F1C1580017D644 /* info.html */; };
+		CBD19BF917F832F90060820D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB98065817EEC0840017D644 /* Images.xcassets */; };
+		CBD19BFA17F832F90060820D /* apiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9E57FC17F56E0F00943829 /* apiKeys.plist */; };
+		CBD19BFB17F832F90060820D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB98071417F1C5EA0017D644 /* Settings.bundle */; };
+		FAE378D04A034D9FA8E480CF /* libPods-Screenshots.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9633786AC7A641BB9BA35445 /* libPods-Screenshots.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +145,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EE46F4E548F482A82639862 /* libPods-Revealing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Revealing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F411563D854C0089CBCF02 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		379672A3B97448C085FD2FFD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DD581F489784E5D8DAB483D /* Pods-Revealing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revealing.xcconfig"; path = "Pods/Pods-Revealing.xcconfig"; sourceTree = "<group>"; };
+		9633786AC7A641BB9BA35445 /* libPods-Screenshots.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Screenshots.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90B11D8934743369E0427DC /* Pods-Screenshots.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Screenshots.xcconfig"; path = "Pods/Pods-Screenshots.xcconfig"; sourceTree = "<group>"; };
+		CB2AA75F17F5777F0047747B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Storyboard_iPhone.strings; sourceTree = "<group>"; };
+		CB2AA76117F577870047747B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Storyboard_iPhone.strings; sourceTree = "<group>"; };
 		CB98064317EEC0840017D644 /* BreMensa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreMensa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB98064617EEC0840017D644 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB98064817EEC0840017D644 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,7 +169,6 @@
 		CB98066717EEC0840017D644 /* BreMensaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BreMensaTests-Info.plist"; sourceTree = "<group>"; };
 		CB98066917EEC0840017D644 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB98066B17EEC0840017D644 /* BreMensaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BreMensaTests.m; sourceTree = "<group>"; };
-		CB98067517EEC22E0017D644 /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
 		CB98067817EEC2A30017D644 /* KPBMensaMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMensaMenuViewController.h; sourceTree = "<group>"; };
 		CB98067917EEC2A30017D644 /* KPBMensaMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBMensaMenuViewController.m; sourceTree = "<group>"; };
 		CB98067C17EEC2BF0017D644 /* KPBMealplanSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPBMealplanSegue.h; sourceTree = "<group>"; };
@@ -138,6 +224,12 @@
 		CB98071717F1CC830017D644 /* KPBAppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPBAppConfig.m; sourceTree = "<group>"; };
 		CB98071917F1D3100017D644 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CB9E57FC17F56E0F00943829 /* apiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apiKeys.plist; sourceTree = "<group>"; };
+		CB9E580117F574B400943829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
+		CBD19B9A17F7FFF60060820D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CBD19BCD17F832EC0060820D /* BreMensa Revealing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BreMensa Revealing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBD19BCE17F832ED0060820D /* Revealing.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Revealing.plist; path = /Users/karl/Documents/Projekte/SideProjects/BreMensa/BreMensa/Revealing.plist; sourceTree = "<absolute>"; };
+		CBD19C0017F832F90060820D /* BreMensa Screenshots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BreMensa Screenshots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBD19C0117F832F90060820D /* Screenshots.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Screenshots.plist; path = /Users/karl/Documents/Projekte/SideProjects/BreMensa/BreMensa/Screenshots.plist; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD19B9B17F7FFF60060820D /* StoreKit.framework in Frameworks */,
 				CB98071A17F1D3100017D644 /* AVFoundation.framework in Frameworks */,
 				CB98070617F0B57E0017D644 /* SystemConfiguration.framework in Frameworks */,
 				CB9806C017EEE0AA0017D644 /* QuartzCore.framework in Frameworks */,
@@ -166,6 +259,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBD19BB617F832EC0060820D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD19BB717F832EC0060820D /* StoreKit.framework in Frameworks */,
+				CBD19BB817F832EC0060820D /* AVFoundation.framework in Frameworks */,
+				CBD19BB917F832EC0060820D /* SystemConfiguration.framework in Frameworks */,
+				CBD19BBA17F832EC0060820D /* QuartzCore.framework in Frameworks */,
+				CBD19BBB17F832EC0060820D /* MapKit.framework in Frameworks */,
+				CBD19BBC17F832EC0060820D /* CoreGraphics.framework in Frameworks */,
+				CBD19BBD17F832EC0060820D /* UIKit.framework in Frameworks */,
+				CBD19BBE17F832EC0060820D /* Foundation.framework in Frameworks */,
+				1043BDAFD1A9465FAE0B4DCC /* libPods-Revealing.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD19BE917F832F90060820D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD19BEA17F832F90060820D /* StoreKit.framework in Frameworks */,
+				CBD19BEB17F832F90060820D /* AVFoundation.framework in Frameworks */,
+				CBD19BEC17F832F90060820D /* SystemConfiguration.framework in Frameworks */,
+				CBD19BED17F832F90060820D /* QuartzCore.framework in Frameworks */,
+				CBD19BEE17F832F90060820D /* MapKit.framework in Frameworks */,
+				CBD19BEF17F832F90060820D /* CoreGraphics.framework in Frameworks */,
+				CBD19BF017F832F90060820D /* UIKit.framework in Frameworks */,
+				CBD19BF117F832F90060820D /* Foundation.framework in Frameworks */,
+				FAE378D04A034D9FA8E480CF /* libPods-Screenshots.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -177,6 +302,10 @@
 				CB98064517EEC0840017D644 /* Frameworks */,
 				CB98064417EEC0840017D644 /* Products */,
 				25F411563D854C0089CBCF02 /* Pods.xcconfig */,
+				CBD19BCE17F832ED0060820D /* Revealing.plist */,
+				CBD19C0117F832F90060820D /* Screenshots.plist */,
+				4DD581F489784E5D8DAB483D /* Pods-Revealing.xcconfig */,
+				C90B11D8934743369E0427DC /* Pods-Screenshots.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +314,8 @@
 			children = (
 				CB98064317EEC0840017D644 /* BreMensa.app */,
 				CB98065E17EEC0840017D644 /* BreMensaTests.xctest */,
+				CBD19BCD17F832EC0060820D /* BreMensa Revealing.app */,
+				CBD19C0017F832F90060820D /* BreMensa Screenshots.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +323,7 @@
 		CB98064517EEC0840017D644 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBD19B9A17F7FFF60060820D /* StoreKit.framework */,
 				CB98071917F1D3100017D644 /* AVFoundation.framework */,
 				CB98070517F0B57E0017D644 /* SystemConfiguration.framework */,
 				CB9806BF17EEE0AA0017D644 /* QuartzCore.framework */,
@@ -201,6 +333,8 @@
 				CB98064A17EEC0840017D644 /* UIKit.framework */,
 				CB98065F17EEC0840017D644 /* XCTest.framework */,
 				379672A3B97448C085FD2FFD /* libPods.a */,
+				1EE46F4E548F482A82639862 /* libPods-Revealing.a */,
+				9633786AC7A641BB9BA35445 /* libPods-Screenshots.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,7 +344,7 @@
 			children = (
 				CB98070717F1C00B0017D644 /* Resources */,
 				CB98067717EEC26F0017D644 /* Classes */,
-				CB98067517EEC22E0017D644 /* Storyboard_iPhone.storyboard */,
+				CB9E580017F574A500943829 /* Storyboard_iPhone.storyboard */,
 				CB98065517EEC0840017D644 /* KPBAppDelegate.h */,
 				CB98065617EEC0840017D644 /* KPBAppDelegate.m */,
 				CB98064D17EEC0840017D644 /* Supporting Files */,
@@ -373,6 +507,44 @@
 			productReference = CB98065E17EEC0840017D644 /* BreMensaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CBD19B9C17F832EC0060820D /* Revealing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBD19BCA17F832EC0060820D /* Build configuration list for PBXNativeTarget "Revealing" */;
+			buildPhases = (
+				CBD19B9D17F832EC0060820D /* Check Pods Manifest.lock */,
+				CBD19B9E17F832EC0060820D /* Sources */,
+				CBD19BB617F832EC0060820D /* Frameworks */,
+				CBD19BC017F832EC0060820D /* Resources */,
+				CBD19BC917F832EC0060820D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Revealing;
+			productName = BreMensa;
+			productReference = CBD19BCD17F832EC0060820D /* BreMensa Revealing.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CBD19BCF17F832F90060820D /* Screenshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBD19BFD17F832F90060820D /* Build configuration list for PBXNativeTarget "Screenshots" */;
+			buildPhases = (
+				CBD19BD017F832F90060820D /* Check Pods Manifest.lock */,
+				CBD19BD117F832F90060820D /* Sources */,
+				CBD19BE917F832F90060820D /* Frameworks */,
+				CBD19BF317F832F90060820D /* Resources */,
+				CBD19BFC17F832F90060820D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Screenshots;
+			productName = BreMensa;
+			productReference = CBD19C0017F832F90060820D /* BreMensa Screenshots.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -398,6 +570,7 @@
 			knownRegions = (
 				en,
 				de,
+				Base,
 			);
 			mainGroup = CB98063A17EEC0840017D644;
 			productRefGroup = CB98064417EEC0840017D644 /* Products */;
@@ -406,6 +579,8 @@
 			targets = (
 				CB98064217EEC0840017D644 /* BreMensa */,
 				CB98065D17EEC0840017D644 /* BreMensaTests */,
+				CBD19B9C17F832EC0060820D /* Revealing */,
+				CBD19BCF17F832F90060820D /* Screenshots */,
 			);
 		};
 /* End PBXProject section */
@@ -418,7 +593,7 @@
 				CB9806B817EEC9880017D644 /* config.plist in Resources */,
 				CB98070A17F1C0C90017D644 /* Localizable.strings in Resources */,
 				CB98065117EEC0840017D644 /* InfoPlist.strings in Resources */,
-				CB98067617EEC22E0017D644 /* Storyboard_iPhone.storyboard in Resources */,
+				CB9E57FE17F574A500943829 /* Storyboard_iPhone.storyboard in Resources */,
 				CB98071017F1C1580017D644 /* info.html in Resources */,
 				CB98065917EEC0840017D644 /* Images.xcassets in Resources */,
 				CB9E57FD17F56E0F00943829 /* apiKeys.plist in Resources */,
@@ -431,6 +606,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB98066A17EEC0840017D644 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD19BC017F832EC0060820D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD19BC117F832EC0060820D /* config.plist in Resources */,
+				CBD19BC217F832EC0060820D /* Localizable.strings in Resources */,
+				CBD19BC317F832EC0060820D /* InfoPlist.strings in Resources */,
+				CBD19BC417F832EC0060820D /* Storyboard_iPhone.storyboard in Resources */,
+				CBD19BC517F832EC0060820D /* info.html in Resources */,
+				CBD19BC617F832EC0060820D /* Images.xcassets in Resources */,
+				CBD19BC717F832EC0060820D /* apiKeys.plist in Resources */,
+				CBD19BC817F832EC0060820D /* Settings.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD19BF317F832F90060820D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD19BF417F832F90060820D /* config.plist in Resources */,
+				CBD19BF517F832F90060820D /* Localizable.strings in Resources */,
+				CBD19BF617F832F90060820D /* InfoPlist.strings in Resources */,
+				CBD19BF717F832F90060820D /* Storyboard_iPhone.storyboard in Resources */,
+				CBD19BF817F832F90060820D /* info.html in Resources */,
+				CBD19BF917F832F90060820D /* Images.xcassets in Resources */,
+				CBD19BFA17F832F90060820D /* apiKeys.plist in Resources */,
+				CBD19BFB17F832F90060820D /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +670,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD19B9D17F832EC0060820D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD19BC917F832EC0060820D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Revealing-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD19BD017F832F90060820D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD19BFC17F832F90060820D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Screenshots-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -505,6 +770,66 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB98066C17EEC0840017D644 /* BreMensaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD19B9E17F832EC0060820D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD19B9F17F832EC0060820D /* KPBMeal.m in Sources */,
+				CBD19BA017F832EC0060820D /* KPBMensaOpeningInfo.m in Sources */,
+				CBD19BA117F832EC0060820D /* KPBMensa.m in Sources */,
+				CBD19BA217F832EC0060820D /* KPBAppDelegate.m in Sources */,
+				CBD19BA317F832EC0060820D /* KPBMoreInfoViewController.m in Sources */,
+				CBD19BA417F832EC0060820D /* KPBMensaDetailViewController.m in Sources */,
+				CBD19BA517F832EC0060820D /* KPBPhoneMealplanPresentationAnimator.m in Sources */,
+				CBD19BA617F832EC0060820D /* KPBMealplanViewController.m in Sources */,
+				CBD19BA717F832EC0060820D /* KPBMealplanSegue.m in Sources */,
+				CBD19BA817F832EC0060820D /* KPBMealplan.m in Sources */,
+				CBD19BA917F832EC0060820D /* KPBAppConfig.m in Sources */,
+				CBD19BAA17F832EC0060820D /* KPBMenuHeaderView.m in Sources */,
+				CBD19BAB17F832EC0060820D /* main.m in Sources */,
+				CBD19BAC17F832EC0060820D /* KPBMenu.m in Sources */,
+				CBD19BAD17F832EC0060820D /* NSCalendar+KPBAdditions.m in Sources */,
+				CBD19BAE17F832EC0060820D /* KPBMensaMenuViewController.m in Sources */,
+				CBD19BAF17F832EC0060820D /* KPBMensaLocationMarker.m in Sources */,
+				CBD19BB017F832EC0060820D /* KPBMealplanLayoutSection.m in Sources */,
+				CBD19BB117F832EC0060820D /* KPBMealCell.m in Sources */,
+				CBD19BB217F832EC0060820D /* KPBMensaOpeningTime.m in Sources */,
+				CBD19BB317F832EC0060820D /* NSDate+KPBAdditions.m in Sources */,
+				CBD19BB417F832EC0060820D /* KPBMealplanInfoView.m in Sources */,
+				CBD19BB517F832EC0060820D /* KPBMealplanLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD19BD117F832F90060820D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD19BD217F832F90060820D /* KPBMeal.m in Sources */,
+				CBD19BD317F832F90060820D /* KPBMensaOpeningInfo.m in Sources */,
+				CBD19BD417F832F90060820D /* KPBMensa.m in Sources */,
+				CBD19BD517F832F90060820D /* KPBAppDelegate.m in Sources */,
+				CBD19BD617F832F90060820D /* KPBMoreInfoViewController.m in Sources */,
+				CBD19BD717F832F90060820D /* KPBMensaDetailViewController.m in Sources */,
+				CBD19BD817F832F90060820D /* KPBPhoneMealplanPresentationAnimator.m in Sources */,
+				CBD19BD917F832F90060820D /* KPBMealplanViewController.m in Sources */,
+				CBD19BDA17F832F90060820D /* KPBMealplanSegue.m in Sources */,
+				CBD19BDB17F832F90060820D /* KPBMealplan.m in Sources */,
+				CBD19BDC17F832F90060820D /* KPBAppConfig.m in Sources */,
+				CBD19BDD17F832F90060820D /* KPBMenuHeaderView.m in Sources */,
+				CBD19BDE17F832F90060820D /* main.m in Sources */,
+				CBD19BDF17F832F90060820D /* KPBMenu.m in Sources */,
+				CBD19BE017F832F90060820D /* NSCalendar+KPBAdditions.m in Sources */,
+				CBD19BE117F832F90060820D /* KPBMensaMenuViewController.m in Sources */,
+				CBD19BE217F832F90060820D /* KPBMensaLocationMarker.m in Sources */,
+				CBD19BE317F832F90060820D /* KPBMealplanLayoutSection.m in Sources */,
+				CBD19BE417F832F90060820D /* KPBMealCell.m in Sources */,
+				CBD19BE517F832F90060820D /* KPBMensaOpeningTime.m in Sources */,
+				CBD19BE617F832F90060820D /* NSDate+KPBAdditions.m in Sources */,
+				CBD19BE717F832F90060820D /* KPBMealplanInfoView.m in Sources */,
+				CBD19BE817F832F90060820D /* KPBMealplanLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +880,16 @@
 			name = info.html;
 			sourceTree = "<group>";
 		};
+		CB9E580017F574A500943829 /* Storyboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB9E580117F574B400943829 /* Base */,
+				CB2AA75F17F5777F0047747B /* en */,
+				CB2AA76117F577870047747B /* de */,
+			);
+			name = Storyboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -562,7 +897,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -601,7 +936,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -641,6 +976,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
 				INFOPLIST_FILE = "BreMensa/BreMensa-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -704,6 +1040,72 @@
 			};
 			name = Release;
 		};
+		CBD19BCB17F832EC0060820D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD581F489784E5D8DAB483D /* Pods-Revealing.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
+				INFOPLIST_FILE = Revealing.plist;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "BreMensa Revealing";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CBD19BCC17F832EC0060820D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD581F489784E5D8DAB483D /* Pods-Revealing.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
+				INFOPLIST_FILE = Revealing.plist;
+				PRODUCT_NAME = "BreMensa Revealing";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CBD19BFE17F832F90060820D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C90B11D8934743369E0427DC /* Pods-Screenshots.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "TAKING_SCREENSHOTS=1";
+				INFOPLIST_FILE = Screenshots.plist;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "BreMensa Screenshots";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CBD19BFF17F832F90060820D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C90B11D8934743369E0427DC /* Pods-Screenshots.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "TAKING_SCREENSHOTS=1";
+				INFOPLIST_FILE = Screenshots.plist;
+				PRODUCT_NAME = "BreMensa Screenshots";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -730,6 +1132,24 @@
 			buildConfigurations = (
 				CB98067317EEC0840017D644 /* Debug */,
 				CB98067417EEC0840017D644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBD19BCA17F832EC0060820D /* Build configuration list for PBXNativeTarget "Revealing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBD19BCB17F832EC0060820D /* Debug */,
+				CBD19BCC17F832EC0060820D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBD19BFD17F832F90060820D /* Build configuration list for PBXNativeTarget "Screenshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBD19BFE17F832F90060820D /* Debug */,
+				CBD19BFF17F832F90060820D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

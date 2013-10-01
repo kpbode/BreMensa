@@ -1,7 +1,7 @@
 #import "KPBMoreInfoViewController.h"
 #import <MessageUI/MessageUI.h>
 
-@interface KPBMoreInfoViewController () <MFMailComposeViewControllerDelegate, UITextViewDelegate>
+@interface KPBMoreInfoViewController () <MFMailComposeViewControllerDelegate, UITextViewDelegate, SKStoreProductViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 
@@ -14,11 +14,7 @@
     [super viewDidLoad];
     
     self.title = @"Info";
-    
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-//                                                                                           target:self action:@selector(onShareAppWithFriends:)];
-//    
-    
+
     NSURL *infoFileURL = [[NSBundle mainBundle] URLForResource:@"info" withExtension:@"html"];
     
     NSError *error;
@@ -30,25 +26,66 @@
     _textView.attributedText = attributedText;
 }
 
-- (IBAction)onDone:(id)sender {
+- (IBAction)onDone:(id)sender
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)onShareAppWithFriends:(id)sender
+- (void)sendFeedbackMail
+{
+    MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
+    mailComposeViewController.mailComposeDelegate = self;
+    [mailComposeViewController setToRecipients:@[@"support+edc2bb4bd8da40c587b4b322017c0136@feedback.hockeyapp.net"]];
+    [mailComposeViewController setSubject:@"BreMensa-Feedback"];
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    
+    NSString *message = [NSString stringWithFormat:@"\n\n --- BreMensa %@ [%@] -- %@, iOS %@ (%@)", [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [bundle objectForInfoDictionaryKey:@"CFBundleVersion"], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [bundle preferredLocalizations][0]];
+    
+    
+    [mailComposeViewController setMessageBody:message isHTML:NO];
+    
+    [self presentViewController:mailComposeViewController animated:YES completion:nil];
+}
+
+- (void)shareAppWithFriends
 {
 
-    NSString *text = @"Kennst du schon BreMensa?";
-    NSURL *url = [NSURL URLWithString:@"http://kpbo.de/BreMensa"];
+    NSString *text = NSLocalizedString(@"Did you know BreMensa?", nil);;
+    NSURL *url = [NSURL URLWithString:@"http://bremensa.github.com"];
     
     NSArray *activityItems = @[ text, url ];
     
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-    activityViewController.title = @"BreMensa teilen";
+    activityViewController.title = NSLocalizedString(@"Share BreMensa", nil);
     activityViewController.excludedActivityTypes = @[ UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll ];
     
     [self presentViewController:activityViewController
                        animated:YES
                      completion:nil];
+}
+
+- (void)rateAppInStore
+{
+    // 394396552
+    
+    MBProgressHUD *progressHud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    progressHud.mode = MBProgressHUDModeIndeterminate;
+    
+    SKStoreProductViewController *productViewController = [[SKStoreProductViewController alloc] init];
+    productViewController.delegate = self;
+    NSDictionary *productParameters = @{ SKStoreProductParameterITunesItemIdentifier : @"394396552" };
+    [productViewController loadProductWithParameters:productParameters completionBlock:^(BOOL result, NSError *error) {
+        [progressHud hide:YES];
+        [self presentViewController:productViewController animated:YES completion:nil];
+    }];
+}
+
+#pragma mark SKStoreProductViewControllerDelegate
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark MFMailComposeViewControllerDelegate
@@ -62,24 +99,21 @@
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange
 {
-    if ([URL.absoluteString hasPrefix:@"mailto:"]) {
+    if ([URL.absoluteString hasPrefix:@"sendfeedbackmail"]) {
         
-        MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
-        mailComposeViewController.mailComposeDelegate = self;
-        [mailComposeViewController setToRecipients:@[@"support+edc2bb4bd8da40c587b4b322017c0136@feedback.hockeyapp.net"]];
-        [mailComposeViewController setSubject:@"BreMensa-Feedback"];
+        [self sendFeedbackMail];
+    
+    } else if ([URL.absoluteString hasPrefix:@"share:"]) {
+      
+        [self shareAppWithFriends];
         
-        NSBundle *bundle = [NSBundle mainBundle];
+    } else if ([URL.absoluteString hasPrefix:@"rate"]) {
         
-        NSString *message = [NSString stringWithFormat:@"\n\n --- BreMensa %@ [%@] -- %@, iOS %@ (%@)", [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [bundle objectForInfoDictionaryKey:@"CFBundleVersion"], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [bundle preferredLocalizations][0]];
-        
-        
-        [mailComposeViewController setMessageBody:message isHTML:NO];
-        
-        [self presentViewController:mailComposeViewController animated:YES completion:nil];
+        [self rateAppInStore];
         
     } else {
         [[UIApplication sharedApplication] openURL:URL];
+        return YES;
     }
     
     return NO;

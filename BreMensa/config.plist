@@ -28,7 +28,7 @@
 								<key>label</key>
 								<string>Montag bis Freitag</string>
 								<key>value</key>
-								<string>7:30 Uhr bis 14:30 Uhr</string>
+								<string>7:30 - 14:30</string>
 							</dict>
 						</array>
 					</dict>
@@ -43,13 +43,13 @@
 								<key>label</key>
 								<string>Montag bis Donnerstag</string>
 								<key>value</key>
-								<string>11:30 Uhr bis 14:00 Uhr</string>
+								<string>11:30 - 14:00</string>
 							</dict>
 							<dict>
 								<key>label</key>
 								<string>Freitag</string>
 								<key>value</key>
-								<string>11:30 Uhr bis 13:30 Uhr</string>
+								<string>11:30 - 13:30</string>
 							</dict>
 						</array>
 					</dict>
@@ -77,13 +77,13 @@
 								<key>label</key>
 								<string>Montag bis Freitag</string>
 								<key>value</key>
-								<string>7:45 Uhr bis 14:30 Uhr</string>
+								<string>7:45 - 14:30</string>
 							</dict>
 							<dict>
 								<key>label</key>
 								<string>Frühstück</string>
 								<key>value</key>
-								<string>ab 7:45 Uhr</string>
+								<string>7:45</string>
 							</dict>
 						</array>
 					</dict>
@@ -98,7 +98,7 @@
 								<key>label</key>
 								<string>Montag bis Freitag</string>
 								<key>value</key>
-								<string>11:20 bis 14:00 Uhr</string>
+								<string>11:20 - 14:00</string>
 							</dict>
 						</array>
 					</dict>
@@ -126,13 +126,13 @@
 								<key>label</key>
 								<string>Montag bis Donnerstag</string>
 								<key>value</key>
-								<string>7:45 Uhr bis 18:45 Uhr</string>
+								<string>7:45 - 18:45</string>
 							</dict>
 							<dict>
 								<key>label</key>
 								<string>Freitag</string>
 								<key>value</key>
-								<string>7:45 Uhr bis 17:00 Uhr</string>
+								<string>7:45 - 17:00</string>
 							</dict>
 						</array>
 					</dict>
@@ -147,13 +147,13 @@
 								<key>label</key>
 								<string>Montag bis Donnerstag</string>
 								<key>value</key>
-								<string>11:30 bis 16:00 Uhr</string>
+								<string>11:30 - 16:00</string>
 							</dict>
 							<dict>
 								<key>label</key>
 								<string>Freitag</string>
 								<key>value</key>
-								<string>11:30 bis 15:00 Uhr</string>
+								<string>11:30 - 15:00</string>
 							</dict>
 						</array>
 					</dict>
@@ -181,7 +181,7 @@
 								<key>label</key>
 								<string>Montag bis Freitag</string>
 								<key>value</key>
-								<string>7:45 Uhr bis 16:00 Uhr</string>
+								<string>7:45 - 16:00</string>
 							</dict>
 						</array>
 					</dict>
@@ -196,7 +196,7 @@
 								<key>label</key>
 								<string>Montag bis Freitag</string>
 								<key>value</key>
-								<string>11:30 bis 14:00 Uhr</string>
+								<string>11:30 - 14:00</string>
 							</dict>
 						</array>
 					</dict>
@@ -211,7 +211,7 @@
 								<key>label</key>
 								<string>Montag bis Freitag</string>
 								<key>value</key>
-								<string>14:00 bis 15:00 Uhr</string>
+								<string>14:00 - 15:00</string>
 							</dict>
 						</array>
 					</dict>
@@ -226,7 +226,7 @@
 								<key>label</key>
 								<string>Montag bis Freitag</string>
 								<key>value</key>
-								<string>9:00 bis 16:00 Uhr</string>
+								<string>9:00 - 16:00</string>
 							</dict>
 						</array>
 					</dict>

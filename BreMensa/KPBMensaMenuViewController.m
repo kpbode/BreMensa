@@ -136,7 +136,7 @@ static NSString * const KPBMensaMenuViewControllerPresentingMensaRestorationKey 
         
     } else if ([segue.identifier isEqualToString:@"ShowMensaDetails"]) {
         
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         KPBMensa *mensa = [self mensaAtIndexPath:indexPath];
         
         UINavigationController *navigationController = segue.destinationViewController;

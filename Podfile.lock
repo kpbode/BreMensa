@@ -4,6 +4,7 @@ PODS:
   - MBProgressHUD (0.8)
   - Reachability (3.1.1)
   - Reveal-iOS-SDK (0.9.1)
+  - SDScreenshotCapture (1.1)
 
 DEPENDENCIES:
   - HockeySDK
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - MBProgressHUD (from `git@github.com:kpbode/MBProgressHUD.git`, commit `0e5ffa6a7e3cea6c23a09068dee9cae1c5106908`)
   - Reachability
   - Reveal-iOS-SDK
+  - SDScreenshotCapture
 
 EXTERNAL SOURCES:
   MBProgressHUD:
@@ -23,5 +25,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
   Reveal-iOS-SDK: 7396a20e743807b1e6f1caae664e1a9dc0cc442c
+  SDScreenshotCapture: 84bde211ba3ffa4656c4093f9ee2a762bb4c121f
 
 COCOAPODS: 0.25.0
