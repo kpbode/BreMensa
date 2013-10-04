@@ -183,6 +183,10 @@ footer {
   bottom:50px;
 }
 
+p.view {
+  margin-top: 50px;
+}
+
 @media print, screen and (max-width: 960px) {
   
   div.wrapper {
@@ -199,6 +203,8 @@ footer {
   header {
     padding-right:320px;
   }
+  
+  
   
   section {
     border:1px solid #e5e5e5;
@@ -225,10 +231,6 @@ footer {
   
   header {
     padding:0;
-  }
-  
-  header ul, header p.view {
-    position:static;
   }
   
   pre, code {
