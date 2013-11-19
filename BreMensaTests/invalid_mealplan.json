@@ -1,0 +1,209 @@
+{
+    "menues": [
+               {
+               "day": 0,
+               "foods": [
+                         {
+                         "desc": "Krautsalat Bifteki mit Djuwetschreis dazu Tzatziki",
+                         "extra": 84,
+                         "id": 5707702298738688,
+                         "staffprice": "4,20\u20ac",
+                         "studentprice": "2,20\u20ac",
+                         "title": "Essen 1",
+                         "type": 82
+                         },
+                         {
+                         "desc": "Pasta in Basilikumrahm",
+                         "extra": 78,
+                         "id": 5668600916475904,
+                         "staffprice": "3,00\u20ac",
+                         "studentprice": "1,20\u20ac",
+                         "title": "Essen 2",
+                         "type": 86
+                         },
+                         {
+                         "desc": "Fingerfoodteller mit Chili-Dip und Mix Salat",
+                         "extra": 78,
+                         "id": 5741031244955648,
+                         "staffprice": "3,30\u20ac",
+                         "studentprice": "3,10\u20ac",
+                         "title": "Vegetarisch",
+                         "type": 86
+                         },
+                         {
+                         "desc": "Gegrillte H\u00e4hnchenbrust mit frischen Pilzen in Rahm dazu Kroketten",
+                         "extra": 78,
+                         "id": 5649050225344512,
+                         "staffprice": "5,70\u20ac",
+                         "studentprice": "5,50\u20ac",
+                         "title": "Pfanne, Wok u. Co.",
+                         "type": 71
+                         },
+                         {
+                         "desc": "Milchreisauflauf mit Pflaumen-Zimtkompott",
+                         "extra": 78,
+                         "id": 5724160613416960,
+                         "staffprice": "2,80\u20ac",
+                         "studentprice": "2,70\u20ac",
+                         "title": "Aufl\u00e4ufe, Gratin",
+                         "type": 86
+                         }
+                         ],
+               "id": 5629499534213120
+               },
+               {
+               "day": 1,
+               "foods": [
+                         {
+                         "desc": "Marktsalat in Balsamico Dressing Spaghetti Bolognese mit Hackfleischsauce",
+                         "extra": 84,
+                         "id": 5757334940811264,
+                         "staffprice": "4,20\u20ac",
+                         "studentprice": "2,20\u20ac",
+                         "title": "Essen 1",
+                         "type": 83
+                         },
+                         {
+                         "desc": "Gef\u00fcllter Germkn\u00f6del mit Pflaumenf\u00fcllung und warmer Vanilla-Sauce",
+                         "extra": 78,
+                         "id": 5639274879778816,
+                         "staffprice": "3,00\u20ac",
+                         "studentprice": "1,20\u20ac",
+                         "title": "Essen 2",
+                         "type": 86
+                         },
+                         {
+                         "desc": "Pasta Cappeletti Funghi mit frischem Porree und Kirschtomaten dazu Streuk\u00e4se",
+                         "extra": 78,
+                         "id": 5717271485874176,
+                         "staffprice": "3,30\u20ac",
+                         "studentprice": "3,10\u20ac",
+                         "title": "Vegetarisch",
+                         "type": 86
+                         },
+                         {
+                         "desc": "\u00dcberbackenes Lachsfilet mit K\u00fcrbis-Frischk\u00e4sekruste dazu Zitronen-Velout\u00e9 und Dillkartoffeln",
+                         "extra": 78,
+                         "id": 5676830073815040,
+                         "staffprice": "6,10\u20ac",
+                         "studentprice": "5,90\u20ac",
+                         "title": "Pfanne, Wok u. Co.",
+                         "type": 70
+                         },
+                         {
+                         "desc": "Milchreisauflauf mit Pflaumen-Zimtkompott",
+                         "extra": 78,
+                         "id": 5750085036015616,
+                         "staffprice": "2,80\u20ac",
+                         "studentprice": "2,70\u20ac",
+                         "title": "Aufl\u00e4ufe, Gratin",
+                         "type": 86
+                         }
+                         ],
+               "id": 5685265389584384
+               },
+               {
+               "day": 2,
+               "foods": [
+                         {
+                         "desc": "Blattsalat in Vinaigrette Polenta Taschen Florentiner Art mit Spinat-K\u00e4se-F\u00fcllung dazu Tomatensauce und Fusili",
+                         "extra": 44,
+                         "id": 5733935958982656,
+                         "staffprice": "4,20\u20ac",
+                         "studentprice": "2,20\u20ac",
+                         "title": "Essen 1",
+                         "type": 86
+                         },
+                         {
+                         "desc": "Wei\u00dfkohleintopf mit Hackfleisch",
+                         "extra": 78,
+                         "id": 5693417237512192,
+                         "staffprice": "3,00\u20ac",
+                         "studentprice": "1,20\u20ac",
+                         "title": "Essen 2",
+                         "type": 82
+                         },
+                         {
+                         "desc": "Herbstliche Sp\u00e4tzlepfanne mit kleinen Kartoffeln, Wirsing, Rosenkohl und Sauerrahm",
+                         "extra": 78,
+                         "id": 5766466041282560,
+                         "staffprice": "3,30\u20ac",
+                         "studentprice": "3,10\u20ac",
+                         "title": "Vegetarisch",
+                         "type": 86
+                         },
+                         {
+                         "desc": "Mariniertes Gefl\u00fcgelsteak Teriyaki dazu karamellisiertes M\u00f6hrengem\u00fcse mit frischem Koriander und Duftreis",
+                         "extra": 78,
+                         "id": 5634387206995968,
+                         "staffprice": "6,10\u20ac",
+                         "studentprice": "5,90\u20ac",
+                         "title": "Pfanne, Wok u. Co.",
+                         "type": 71
+                         },
+                         {
+                         "desc": "Milchreisauflauf mit Pflaumen-Zimtkompott",
+                         "extra": 78,
+                         "id": 5194384987389952,
+                         "staffprice": "2,80\u20ac",
+                         "studentprice": "2,70\u20ac",
+                         "title": "Aufl\u00e4ufe, Gratin",
+                         "type": 86
+                         }
+                         ],
+               "id": 5657382461898752
+               },
+               {
+               "day": 3,
+               "foods": [
+                         {
+                         "desc": "Paniertes Putenschnitzel mit Champignons in Rahm dazu Petersilienkartoffeln",
+                         "extra": 84,
+                         "id": 5154321532452864,
+                         "staffprice": "4,20\u20ac",
+                         "studentprice": "2,20\u20ac",
+                         "title": "Essen 1",
+                         "type": 71
+                         },
+                         {
+                         "desc": "Nudelsalat mit Baguette",
+                         "extra": 78,
+                         "id": 5113880120393728,
+                         "staffprice": "3,00\u20ac",
+                         "studentprice": "1,20\u20ac",
+                         "title": "Essen 2",
+                         "type": 80
+                         },
+                         {
+                         "desc": "Kartoffelpizza Western Style (Brokkoli, Mais, Zwiebeln) mit K\u00e4se \u00fcberbacken Salatbeilage",
+                         "extra": 78,
+                         "id": 5187135082594304,
+                         "staffprice": "3,30\u20ac",
+                         "studentprice": "3,10\u20ac",
+                         "title": "Vegetarisch",
+                         "type": 86
+                         },
+                         {
+                         "desc": "Knusprige Entenkeule mit Rotkohl oder Gr\u00fcnkohl und Bratkartoffeln",
+                         "extra": 78,
+                         "id": 5700735861784576,
+                         "staffprice": "6,10\u20ac",
+                         "studentprice": "5,90\u20ac",
+                         "title": "Pfanne, Wok u. Co.",
+                         "type": 71
+                         },
+                         {
+                         "desc": "Milchreisauflauf mit Pflaumen-Zimtkompott",
+                         "extra": 78,
+                         "id": 5673385510043648,
+                         "staffprice": "2,80\u20ac",
+                         "studentprice": "2,70\u20ac",
+                         "title": "Aufl\u00e4ufe, Gratin",
+                         "type": 86
+                         }
+                         ],
+               "id": 5076324926357504
+               }
+               ],
+    "weeknumber": 47
+}

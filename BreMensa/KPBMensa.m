@@ -27,7 +27,7 @@
 
 + (NSString *)backendBasePath
 {
-    return @"http://17.foodspl.appspot.com"; // should go to config
+    return @"http://foodspl.appspot.com"; // should go to config
 }
 
 + (NSArray *)availableMensaObjects

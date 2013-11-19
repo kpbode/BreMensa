@@ -1,10 +1,10 @@
 PODS:
-  - HockeySDK (3.5.0rc2)
-  - InAppSettingsKit (1.1)
+  - HockeySDK (3.5.0)
+  - InAppSettingsKit (2.0)
   - MBProgressHUD (0.8)
   - Reachability (3.1.1)
-  - Reveal-iOS-SDK (0.9.1)
-  - SDScreenshotCapture (1.1)
+  - Reveal-iOS-SDK (1.0.1)
+  - SDScreenshotCapture (1.2)
 
 DEPENDENCIES:
   - HockeySDK
@@ -20,11 +20,11 @@ EXTERNAL SOURCES:
     :git: git@github.com:kpbode/MBProgressHUD.git
 
 SPEC CHECKSUMS:
-  HockeySDK: b972c57d3fe4cae0ebc0d38764cc8ecd8c58a716
-  InAppSettingsKit: cf2c4193c3269d6acf996f7975f310d18a5e1e3c
+  HockeySDK: 685e6ca0b78668ef8b595fba17fe087ea6074b05
+  InAppSettingsKit: 2b85ba925a81634860461c21274f54b130c84614
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
-  Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
-  Reveal-iOS-SDK: 7396a20e743807b1e6f1caae664e1a9dc0cc442c
-  SDScreenshotCapture: 84bde211ba3ffa4656c4093f9ee2a762bb4c121f
+  Reachability: be4883bb93f31e38266ae3365e5600a317aae735
+  Reveal-iOS-SDK: 46150c4842289e303a5da32b092686ef3c6737f5
+  SDScreenshotCapture: 3e0e88484b2c6ecf27bb81a9ad67fcf29c01bf69
 
-COCOAPODS: 0.25.0
+COCOAPODS: 0.26.2

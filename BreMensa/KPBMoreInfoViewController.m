@@ -35,7 +35,7 @@
 {
     MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
     mailComposeViewController.mailComposeDelegate = self;
-    [mailComposeViewController setToRecipients:@[@"support+edc2bb4bd8da40c587b4b322017c0136@feedback.hockeyapp.net"]];
+    [mailComposeViewController setToRecipients:@[@"mail@kpbo.de"]];
     [mailComposeViewController setSubject:@"BreMensa-Feedback"];
     
     NSBundle *bundle = [NSBundle mainBundle];

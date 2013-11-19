@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1043BDAFD1A9465FAE0B4DCC /* libPods-Revealing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE46F4E548F482A82639862 /* libPods-Revealing.a */; };
 		89750CD7CCA144BCB9858C10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 379672A3B97448C085FD2FFD /* libPods.a */; };
+		CB308633183BFAA800648D95 /* invalid_mealplan.json in Resources */ = {isa = PBXBuildFile; fileRef = CB308632183BFAA800648D95 /* invalid_mealplan.json */; };
 		CB98064717EEC0840017D644 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064617EEC0840017D644 /* Foundation.framework */; };
 		CB98064917EEC0840017D644 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064817EEC0840017D644 /* CoreGraphics.framework */; };
 		CB98064B17EEC0840017D644 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98064A17EEC0840017D644 /* UIKit.framework */; };
@@ -153,6 +154,9 @@
 		C90B11D8934743369E0427DC /* Pods-Screenshots.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Screenshots.xcconfig"; path = "Pods/Pods-Screenshots.xcconfig"; sourceTree = "<group>"; };
 		CB2AA75F17F5777F0047747B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Storyboard_iPhone.strings; sourceTree = "<group>"; };
 		CB2AA76117F577870047747B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Storyboard_iPhone.strings; sourceTree = "<group>"; };
+		CB308632183BFAA800648D95 /* invalid_mealplan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid_mealplan.json; sourceTree = "<group>"; };
+		CB308634183BFC9400648D95 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		CB308636183BFE2200648D95 /* libPods-MBProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libPods-MBProgressHUD.a"; path = "Pods/build/Debug-iphoneos/libPods-MBProgressHUD.a"; sourceTree = "<group>"; };
 		CB98064317EEC0840017D644 /* BreMensa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreMensa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB98064617EEC0840017D644 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB98064817EEC0840017D644 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -294,6 +298,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB308631183BFA8600648D95 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB308632183BFAA800648D95 /* invalid_mealplan.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		CB98063A17EEC0840017D644 = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +335,8 @@
 		CB98064517EEC0840017D644 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB308636183BFE2200648D95 /* libPods-MBProgressHUD.a */,
+				CB308634183BFC9400648D95 /* libPods.a */,
 				CBD19B9A17F7FFF60060820D /* StoreKit.framework */,
 				CB98071917F1D3100017D644 /* AVFoundation.framework */,
 				CB98070517F0B57E0017D644 /* SystemConfiguration.framework */,
@@ -366,6 +380,7 @@
 		CB98066517EEC0840017D644 /* BreMensaTests */ = {
 			isa = PBXGroup;
 			children = (
+				CB308631183BFA8600648D95 /* Resources */,
 				CB98066B17EEC0840017D644 /* BreMensaTests.m */,
 				CB98066617EEC0840017D644 /* Supporting Files */,
 			);
@@ -561,6 +576,14 @@
 					CB98065D17EEC0840017D644 = {
 						TestTargetID = CB98064217EEC0840017D644;
 					};
+					CBD19BCF17F832F90060820D = {
+						DevelopmentTeam = 54P5ZF49BC;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = CB98063E17EEC0840017D644 /* Build configuration list for PBXProject "BreMensa" */;
@@ -606,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB98066A17EEC0840017D644 /* InfoPlist.strings in Resources */,
+				CB308633183BFAA800648D95 /* invalid_mealplan.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -897,7 +921,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -936,7 +960,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -969,13 +993,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 25F411563D854C0089CBCF02 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
 				INFOPLIST_FILE = "BreMensa/BreMensa-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -986,13 +1011,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 25F411563D854C0089CBCF02 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
 				INFOPLIST_FILE = "BreMensa/BreMensa-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1000,6 +1026,7 @@
 		};
 		CB98067317EEC0840017D644 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25F411563D854C0089CBCF02 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BreMensa.app/BreMensa";
@@ -1023,6 +1050,7 @@
 		};
 		CB98067417EEC0840017D644 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25F411563D854C0089CBCF02 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BreMensa.app/BreMensa";
@@ -1044,13 +1072,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4DD581F489784E5D8DAB483D /* Pods-Revealing.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"$(inherited)",
+					"BITHOCKEY_VERSION=\"@\\\"3.5.0rc2\\\"\"",
+				);
 				INFOPLIST_FILE = Revealing.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "BreMensa Revealing";
 				WRAPPER_EXTENSION = app;
@@ -1061,13 +1096,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4DD581F489784E5D8DAB483D /* Pods-Revealing.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BreMensa/BreMensa-Prefix.pch";
 				INFOPLIST_FILE = Revealing.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "BreMensa Revealing";
 				WRAPPER_EXTENSION = app;
 			};

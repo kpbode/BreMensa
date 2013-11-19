@@ -11,4 +11,6 @@
 @property (nonatomic, copy) NSArray *menus;
 @property (nonatomic) NSDate *fetchDate;
 
+- (BOOL)isValid;
+
 @end

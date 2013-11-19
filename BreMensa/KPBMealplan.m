@@ -64,6 +64,13 @@ static NSString * const KPBMealplanFetchDateKey = @"fetchDate";
     return mealplan;
 }
 
+- (BOOL)isValid
+{
+    if ([_menus count] != 5) return NO;
+    if (_weekNumber == 0) return NO;
+    return YES;
+}
+
 - (id)initWithCoder:(NSCoder *)decoder
 {
     self = [super init];

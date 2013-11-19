@@ -111,7 +111,7 @@ static CGFloat const KPBMealplanViewControllerMenuHeaderHeight = 50.f;
     [self.mensa currentMealplanWithSuccess:^(KPBMensa *mensa, KPBMealplan *mealplan) {
         
         
-        if (mealplan == nil) {
+        if (mealplan == nil || ![mealplan isValid]) {
             [self showErrorPlaceholder];
         } else {
             [self onLoadedMealplan:mealplan];

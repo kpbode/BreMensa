@@ -1,12 +1,5 @@
-//
-//  BreMensaTests.m
-//  BreMensaTests
-//
-//  Created by Karl on 9/22/13.
-//  Copyright (c) 2013 Karl Bode. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
+#import "KPBMealplan.h"
 
 @interface BreMensaTests : XCTestCase
 
@@ -26,9 +19,20 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testIfMensaPlanIsBeingIndicatedAsInvalid
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    
+    NSString *jsonFilePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"invalid_mealplan" ofType:@"json"];
+    XCTAssertNotNil(jsonFilePath, @"json file should not be nil");
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:jsonFilePath];
+    XCTAssertNotNil(jsonData, @"json data should not be nil");
+    NSDictionary *mealplanDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:NULL];
+    XCTAssertNotNil(mealplanDictionary, @"dictionary should not be nil");
+    
+    KPBMealplan *mealplan = [KPBMealplan mealplanFromDictionary:mealplanDictionary];
+    XCTAssertNotNil(mealplan, @"mealplan should not be nil");
+    XCTAssertTrue([mealplan.menus count] == 4, @"there should be four menus, but there are %i", [mealplan.menus count]);
+    XCTAssertFalse([mealplan isValid], @"mealplan should be invalid");
 }
 
 @end
