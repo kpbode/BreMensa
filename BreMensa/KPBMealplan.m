@@ -19,7 +19,7 @@ static NSString * const KPBMealplanFetchDateKey = @"fetchDate";
     NSArray *menuDictionaries = dictionary[@"menues"];
     
     if (weekNumber != currentWeek) {
-        NSLog(@"weeks do not match: %i != %i", weekNumber, currentWeek);
+        NSLog(@"weeks do not match: %li != %li", (long) weekNumber, (long) currentWeek);
     }
     
     NSMutableArray *menus = [[NSMutableArray alloc] init];
